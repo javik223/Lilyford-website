@@ -1,0 +1,43 @@
+.footer {
+  clear: both;
+  padding: $global-padding;
+  padding-top: $global-padding * 4;
+  color: $dark-gray;
+  @include xy-grid-container();
+
+  a {
+    color: $dark-gray;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.secondary-nav {
+  // flex-flow: column;
+
+  ::selection {
+    background-color: $crimson;
+    color: $white;
+  }
+
+  ul {
+    margin-left: 0;
+
+    // Exchange the last item on the list with the immediate
+    // to eliminate the space between the first and the second
+    // on mobile
+    @include breakpoint(medium only) {
+      margin-bottom: 0;
+
+      &:nth-child(2) {
+        order: 2;
+      }
+    }
+  }
+
+  li {
+    list-style-type: none;
+  }
+}

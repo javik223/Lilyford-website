@@ -1,0 +1,22 @@
+.button {
+  box-shadow: 0 rem-calc(4) rem-calc(10) rem-calc(1) rgba($black, 0.2);
+  transition: all 0.3s ease-out;
+  user-select: none;
+  outline: 0;
+  filter: blur(0);
+
+  &:hover {
+    box-shadow: rem-calc(2) rem-calc(8) rem-calc(8) rem-calc(1)
+      rgba($black, 0.2);
+    transform: scale(1.1);
+    // perspective: 1000;
+  }
+
+  &:active {
+    border: none;
+  }
+
+  &.no-radius {
+    border-radius: 0;
+  }
+}

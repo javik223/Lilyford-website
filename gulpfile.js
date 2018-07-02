@@ -1,15 +1,15 @@
-const gulp = require("gulp");
-const pug = require("gulp-pug2");
-const gutil = require("gulp-util");
-const plumber = require("gulp-plumber");
-const notify = require("gulp-notify");
-const browserSync = require("browser-sync").create();
-const sass = require("gulp-sass");
-const autoprefixer = require("gulp-autoprefixer");
-const sourcemaps = require("gulp-sourcemaps");
+const gulp = require('gulp');
+const pug = require('gulp-pug2');
+const gutil = require('gulp-util');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
 
 /* ---------------------------------------------------------------
-*  Settings 
+*  Settings
 *  -------------------------------------------------------------*/
 // All source files and folders are placed in the "src" directory,
 // the processed files will be compiled to the "dist" folder
@@ -19,26 +19,26 @@ const sourcemaps = require("gulp-sourcemaps");
 
 const settings = {
   pug: {
-    src: "src/pug",
-    dist: "dist",
+    src: 'src/pug',
+    dist: 'dist',
   },
   sass: {
-    src: "src/sass",
-    dist: "dist/assets/css",
-    includePaths: ["node_modules/foundation-sites/scss"],
-    outputStyle: "compressed",
+    src: 'src/sass',
+    dist: 'dist/assets/css',
+    includePaths: ['node_modules/foundation-sites/scss'],
+    outputStyle: 'compressed',
   },
   js: {
-    src: "src/js",
-    dist: "dist/assets/js",
+    src: 'src/js',
+    dist: 'dist/assets/js',
   },
   fonts: {
-    src: "src/fonts",
-    dist: "dist/assets/fonts",
+    src: 'src/fonts',
+    dist: 'dist/assets/fonts',
   },
   img: {
-    src: "src/img",
-    dist: "dist/assets/img",
+    src: 'src/img',
+    dist: 'dist/assets/img',
   },
 };
 
@@ -49,11 +49,11 @@ const settings = {
 /**
  * Pug Tasks
  */
-gulp.task("pug", () => {
+gulp.task('pug', () => {
   return gulp
     .src(`${settings.pug.src}/**/*.pug`)
     .pipe(plumber({ errorHandler: onError }))
-    .on("error", onError)
+    .on('error', onError)
     .pipe(pug())
     .pipe(gulp.dest(`${settings.pug.dist}`));
 });
@@ -62,12 +62,12 @@ gulp.task("pug", () => {
  * Sass Tasks
  * Compiles sass files to css and auto-inject into browsers
  */
-gulp.task("sass", () => {
+gulp.task('sass', () => {
   return gulp
     .src(`${settings.sass.src}/**/*.scss`)
     .pipe(sourcemaps.init())
     .pipe(plumber({ errorHandler: onError }))
-    .on("error", onError)
+    .on('error', onError)
     .pipe(
       sass({
         outputStyle: settings.sass.outputStyle,
@@ -75,70 +75,74 @@ gulp.task("sass", () => {
       }),
     )
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write("./sass-maps"))
+    .pipe(sourcemaps.write('./sass-maps'))
     .pipe(gulp.dest(settings.sass.dist))
     .pipe(browserSync.stream());
 });
 
 // Copy fonts
-gulp.task("fonts", () => {
+gulp.task('fonts', () => {
   return gulp
     .src(`${settings.fonts.src}/**/*.*`)
     .pipe(gulp.dest(settings.fonts.dist));
 });
 
 // Copy Images
-gulp.task("images", () => {
+gulp.task('images', () => {
   return gulp
     .src(`${settings.img.src}/**/*.*`)
     .pipe(gulp.dest(settings.img.dist));
 });
 
 // Copy JS
-gulp.task("js", () => {
-  return gulp
-    .src(`${settings.js.src}/**/*.*`)
-    .pipe(gulp.dest(settings.js.dist));
-});
+// gulp.task('js', () => {
+//   return gulp
+//     .src(`${settings.js.src}/**/*.*`)
+//     .pipe(gulp.dest(settings.js.dist));
+// });
 
 // Default Task
-gulp.task("default", ["pug", "sass", "fonts", "images", "js"], function() {
+
+gulp.task('serve', ['pug', 'sass', 'fonts', 'images'], function() {
   // Initialize Browsersync
   browserSync.init({
     server: {
-      baseDir: "./dist",
+      baseDir: './dist',
     },
   });
+
   // Watch pugfile and transpile
-  gulp.watch(`${settings.pug.src}/**/*.pug`, ["pug"]);
+  gulp.watch(`${settings.pug.src}/**/*.pug`, ['pug']);
 
   // Watch sass files
-  gulp.watch(`${settings.sass.src}/**/*.scss`, ["sass"]);
+  gulp.watch(`${settings.sass.src}/**/*.scss`, ['sass']);
 
   // Watch font files
-  gulp.watch(`${settings.fonts.src}/**/*.*`, ["fonts"]);
+  gulp.watch(`${settings.fonts.src}/**/*.*`, ['fonts']);
 
   // Watch image files
-  gulp.watch(`${settings.img.src}/**/*.*`, ["images"]);
+  gulp.watch(`${settings.img.src}/**/*.*`, ['images']);
 
   // Watch js files
-  gulp.watch(`${settings.js.src}/**/*.js`, ["js"]);
+  // gulp.watch(`${settings.js.src}/**/*.js`, ["js"]);
 
   // Watch html files and reload
-  gulp.watch(`${settings.pug.dist}/**/*.html`).on("change", browserSync.reload);
+  gulp.watch(`${settings.pug.dist}/**/*.html`).on('change', browserSync.reload);
 
   // Watch JS files and reload
-  gulp.watch(`${settings.js.dist}/**/*.js`).on("change", browserSync.reload);
+  gulp.watch(`${settings.js.dist}/**/*.js`).on('change', browserSync.reload);
 });
+
+gulp.task('default', ['serve']);
 
 // Utility Functions -----------------------------------------------------
 // Task error handler
 const onError = function(error, message) {
   notify({
-    title: "Error in Build",
+    title: 'Error in Build',
     message: error.message,
   }).write(error);
 
   gutil.log(gutil.colors.bgRed(error.message));
-  this.emit("end");
+  this.emit('end');
 };

@@ -1,0 +1,44 @@
+.prev,
+.next {
+  position: relative;
+  display: inline-block;
+  font-size: rem-calc(16);
+  padding: rem-calc(16);
+  z-index: 2000;
+  color: $blue;
+  cursor: pointer;
+
+  @include breakpoint(medium up) {
+    font-size: rem-calc(18);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background-color: rgba($purple, 0.05);
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1;
+    transition: background-color 0.3s ease-out;
+  }
+
+  &:hover {
+    &:after {
+      background-color: rgba($purple, 0.1);
+    }
+  }
+}
+
+.carousel {
+}
+
+.carousel__nav {
+  padding-top: rem-calc($global-padding * 2);
+  padding-bottom: rem-calc($global-padding * 2);
+  user-select: none;
+}

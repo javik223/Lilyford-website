@@ -1,0 +1,9 @@
+.page-header {
+  margin-top: $global-padding * 4;
+  margin-bottom: $global-padding;
+  padding: $global-padding * 2;
+  text-align: center;
+  @extend .medium-10;
+  @extend .large-6;
+  @extend .medium-centered;
+}

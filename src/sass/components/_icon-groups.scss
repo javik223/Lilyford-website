@@ -1,0 +1,95 @@
+.icon-groups {
+  margin-top: rem-calc(-100);
+  margin-bottom: rem-calc(-80);
+  user-select: none;
+
+  img {
+    float: none;
+    width: rem-calC(60);
+    display: inline-block;
+  }
+  p {
+    display: block;
+  }
+
+  &__item {
+    margin-bottom: rem-calc(40);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 10;
+    padding-top: rem-calc(110);
+    padding-bottom: rem-calc(80);
+    outline: 0;
+
+    &:hover {
+      transform: scale3d(1.1, 1.1, 1.1);
+
+      &:after {
+        animation: ripple 2.5s ease-in-out;
+      }
+
+      &:before {
+        animation: ripple2 3s ease-in-out;
+      }
+    }
+
+    &:after,
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      padding-top: 100%;
+      margin-left: -50%;
+      margin-top: -50%;
+      background: rgba($crimson, 0.1);
+      opacity: 0.5;
+      border-radius: 100%;
+      transform: scale(0);
+      visibility: hidden;
+    }
+
+    &:before {
+      opacity: 0.3;
+    }
+
+    &:hover:after,
+    &:hover:before {
+      visibility: visible;
+    }
+  }
+
+  @include breakpoint(small only) {
+    img {
+      height: rem-calc(70);
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ripple2 {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}

@@ -1,0 +1,46 @@
+@import 'settings';
+@import 'foundation';
+
+// Foundation classes & modules
+@include foundation-global-styles;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+// @include foundation-flex-grid;
+@include foundation-xy-grid-classes;
+@include foundation-grid;
+@include foundation-button;
+@include foundation-typography;
+// @include foundation-typography-helpers;
+@include foundation-prototype-spacing;
+@include foundation-forms;
+
+// Helpers
+@import 'helpers/color';
+@import 'helpers/_typography.scss';
+@import 'helpers/_button.scss';
+@import 'helpers/_circle-background.scss';
+
+// Components
+@import 'components/_hero.scss';
+@import 'components/_social-icons.scss';
+@import 'components/_icon-groups.scss';
+@import 'components/_carousel.scss';
+@import 'components/_circular-carousel.scss';
+@import 'components/_featured.scss';
+@import 'components/_page-header.scss';
+@import 'components/_news-box.scss';
+
+// Sections
+@import './sections/_header';
+@import './sections/_footer';
+
+// Icons
+@import './components/icons';
+
+html,
+body {
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}

@@ -1,0 +1,50 @@
+.header {
+  @extend .row;
+
+  .logo {
+    img {
+      @include breakpoint(large up) {
+        // max-width: 80%;
+      }
+    }
+  }
+
+  .social-icons {
+    a {
+      color: $dark-gray;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+}
+
+.primary-nav {
+  li {
+    float: left;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: darken($dark-gray, 10%);
+    font-weight: 600;
+    padding: $global-padding;
+    display: inline-block;
+
+    &:hover {
+      color: $blue;
+    }
+
+    @include breakpoint(medium up) {
+      font-size: $global-font-size * 0.5;
+      padding: $global-padding * 0.75;
+    }
+
+    @include breakpoint(large up) {
+      font-size: $global-font-size * 0.7;
+      padding: $global-padding * 0.75;
+    }
+  }
+}

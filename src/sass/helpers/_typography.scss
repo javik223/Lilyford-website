@@ -1,0 +1,49 @@
+.bold {
+  font-weight: 600;
+}
+
+.strong {
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// Styled selection
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &::selection {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+p {
+  &::selection {
+    background-color: $turquoise;
+  }
+}
+
+.heading {
+  color: $blue;
+  font-family: 'Neutraface 2 Display', Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+.text-2x {
+  font-size: $global-font-size * 1.2;
+}
+
+.page-title {
+  @extend .uppercase;
+  @extend .lead;
+  @extend .strong;
+  color: $blue;
+  margin-top: $global-margin * 2;
+}

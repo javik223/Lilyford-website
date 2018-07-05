@@ -2,7 +2,11 @@
   @include breakpoint(medium up) {
     position: absolute;
     right: 0;
-    top: rem-calc(-100);
+    top: rem-calc(-50);
     z-index: 300;
+  }
+
+  @include breakpoint(large up) {
+    top: rem-calc(-80);
   }
 }

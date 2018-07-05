@@ -3,6 +3,44 @@ extends ../_layout
 block main
 
   .page-header
-    h2.heading About
-    h3.subheader Lilyford Foundation is a not-for-profit organisation that helps people in need and provide opportunities for people to pursue their dreams and lead better lives
+    h2.heading About Lilyford
+    //- h3.subheader Lilyford Foundation is a not-for-profit organisation that helps people in need and provide opportunities for people to pursue their dreams and lead better lives
 
+  .flex-container
+    .hero.hero-50vh.hero--with-gradient-background
+      .hero__image
+        img(src="/assets/img/about-hero-image.jpg", alt="Lilyford Foundation in Onitsha")
+      .hero__content.hero__content--bottom
+        .cell.medium-10.large-6.medium-centered.padding-1
+          h3 Lilyford Foundation is a not-for-profit organisation that helps people in need and provide opportunities for people to pursue their dreams and lead better lives
+
+  .grid-container
+    .grid-x.position-relative
+      .cell.padding-top-3.medium-8
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium turpis sed libero sagittis faucibus. Donec magna justo, egestas sed ligula et, pharetra maximus ex. Donec mi justo, dictum at pharetra dapibus, elementum a orci. Praesent risus turpis, feugiat vel scelerisque a, finibus non orci. Vestibulum a metus sed nunc molestie pulvinar. Fusce non tortor quis quam tincidunt ullamcorper pretium eu massa. Praesent sit amet tellus a eros lacinia pretium.
+
+        p Nulla facilisi. Vivamus a dui eu enim congue porttitor. Donec in consequat arcu. Duis rutrum imperdiet auctor. Donec blandit sem non dictum suscipit. In ultrices orci turpis, a ornare quam convallis id. Phasellus iaculis augue a mollis hendrerit. Nulla ac quam sit amet nibh ultricies malesuada pharetra vitae elit. Sed luctus enim quis lectus commodo, quis fringilla purus finibus. Etiam in velit at felis varius semper posuere eget ipsum. Nam ut pellentesque velit.
+
+
+
+        img(src="/assets/img/our-focus.jpg", alt="Our Focus")
+        - var missions = [{ image: 'reduce-poverty icon.svg', title: 'Reduce Poverty', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color: 'purple', }, { image: 'improve-healthcare icon.svg', title: 'Improve Healthcare', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color: 'turquoise' }, { image: 'homelessness icon.svg', title: 'Eradicate Homelessness', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color: 'chinese-purple' }, { image: 'self-sustenance icon.svg', title: 'Provide Self Sustenance', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color: 'red' }]
+
+      .cell.small-10.medium-4.large-3.medium-detach-to-right-position-absolute.bg-white.small-centered.box-shadow
+        .cell.large-12.padding-2
+          .grid-y.grid-margin-y.grid-padding-x.text-center
+           each mission in missions
+            .cell
+              img(src="/assets/img/"+mission.image, alt=mission.title)
+              h4(class="color-"+mission.color).padding-top-1 #{mission.title}
+              p #{mission.text}
+
+
+  .grid-container.full.padding-top-3.padding-bottom-3
+    img(src="/assets/img/lilyford-doctors-assembly.jpg", alt="Lilyford outreach programme in Onitsha").w100
+
+  .grid-container.padding-top-2.padding-bottom-3
+    .grid-x
+     .cell.medium-8
+        h3.color-purple.string.uppercase Our Structure
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium turpis sed libero sagittis faucibus. Donec magna justo, egestas sed ligula et, pharetra maximus ex. Donec mi justo, dictum at pharetra dapibus, elementum a orci. Praesent risus turpis, feugiat vel scelerisque a, finibus non orci. Vestibulum a metus sed nunc molestie pulvinar. Fusce non tortor quis quam tincidunt ullamcorper pretium eu massa. Praesent sit amet tellus a eros lacinia pretium.

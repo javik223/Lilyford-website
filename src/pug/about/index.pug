@@ -1,0 +1,16 @@
+extends ../_layout
+
+block main
+
+  - var programmes = [{ image: 'health icon.svg', title: 'Health', backgroundColor: 'blue', }, { image: 'education icon.svg', title: 'Education', backgroundColor: 'purple'}, { image: 'welfare icon.svg', title: 'Welfare', backgroundColor: 'turquoise' }, { image: 'skill-and-opportunity icon.svg', title: 'Skill & Opportunity', backgroundColor: 'crimson'}, { image: 'water-and-sanitation icon.svg', title: 'Water & Sanitation', backgroundColor: 'sun-yellow' }, { image: 'housing-and-shelter icon.svg', title: 'Housing & Shelter', backgroundColor: 'darkblue'}  ]
+    .page-header
+        h2.heading Programmes
+        //- h5.subheader Support the Lilyford programmes by participating in our activities through lending a hand financially or by volunteering
+
+    .grid-container
+      .featured-programmes
+        each programme in programmes
+         a.featured-programme(class="bg-"+programme.backgroundColor href="#"+programme.title title=programme.title)
+           .featured-programme__content
+              img(src="/assets/img/"+programme.image, alt=programme.title)
+              p.featured-programme__title #{programme.title}

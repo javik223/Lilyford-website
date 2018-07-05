@@ -1,0 +1,8 @@
+.medium-detach-to-right-position-absolute {
+  @include breakpoint(medium up) {
+    position: absolute;
+    right: 0;
+    top: rem-calc(-100);
+    z-index: 300;
+  }
+}

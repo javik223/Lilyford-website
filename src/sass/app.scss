@@ -12,6 +12,7 @@
 @include foundation-typography;
 // @include foundation-typography-helpers;
 @include foundation-prototype-spacing;
+@include foundation-prototype-position;
 @include foundation-forms;
 
 // Helpers
@@ -19,6 +20,9 @@
 @import 'helpers/_typography.scss';
 @import 'helpers/_button.scss';
 @import 'helpers/_circle-background.scss';
+@import 'helpers/_dimensions.scss';
+@import 'helpers/_misc.scss';
+@import 'helpers/_box-shadow.scss';
 
 // Components
 @import 'components/_hero.scss';

@@ -134,3 +134,69 @@ $variations: (
     }
   }
 }
+
+// Programmes
+.featured-programmes {
+  @extend .grid-x;
+  @extend .grid-margin-x;
+  @extend .grid-margin-y;
+  // @extend .small-up-2;
+  @extend .medium-up-2;
+  @extend .large-up-3;
+  user-select: none;
+
+  @include breakpoint(small only) {
+    padding: rem-calc(20);
+  }
+}
+
+.featured-programme {
+  @extend .cell;
+  @extend .padding-3;
+  color: $white;
+  text-align: center;
+  padding-top: 25%;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease-out;
+  position: relative;
+  user-select: click;
+
+  @include breakpoint(small only) {
+    padding: rem-calc(90);
+
+    img {
+      height: rem-calc(60);
+    }
+  }
+
+  img {
+    margin-bottom: $global-margin;
+  }
+
+  &__title {
+    transition: transform 0.3s ease-out;
+  }
+
+  &__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: $white;
+    transition: all 0.3s ease-out;
+  }
+
+  &:hover {
+    box-shadow: rem-calc(2) rem-calc(10) rem-calc(40) rem-calc(2)
+      rgba($blue, 0.3);
+    transform: scale(1.1);
+    z-index: 1000;
+    color: rgba($white, 0.5);
+    border-radius: rem-calc(4);
+
+    .featured-programme__title {
+      transform: scale(1.2);
+    }
+  }
+}

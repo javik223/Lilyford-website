@@ -81,6 +81,8 @@ $blue: #3a2be0;
 $turquoise: #50e3c2;
 $chinese-purple: #bd10e0;
 $crimson: #ec2a81;
+$sun-yellow: #f5a623;
+$dark-red: #db1750;
 
 $foundation-palette: (
   primary: $blue,
@@ -102,6 +104,8 @@ $extended-palette: (
   very-light-gray: rgba($light-gray, 0.4),
   dark-gary: $dark-gray,
   black: $black,
+  sun-yellow: $sun-yellow,
+  dark-red: $dark-red,
 );
 
 $body-background: $white;

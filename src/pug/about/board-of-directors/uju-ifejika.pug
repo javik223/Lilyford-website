@@ -1,0 +1,44 @@
+extends ../../_layout
+block vars
+  - var title = "Uju Ifejika"
+block main
+
+  .grid-container.padding-bottom-3.bg-very-light-gray.full
+    .cell.padding-top-3.show-for-medium
+    .grid-container
+      .grid-x
+        .cell.medium-4.padding-2
+          img(src="/assets/img/uju-ifejika2.jpg", alt="Mrs. Uju Ifejika (Mrs)")
+        .cell.medium-8.large-7.padding-2
+          a(href="/about/board-of-directors", title="Board of Directors")
+          div.padding-bottom-2
+            h5.subheader BOARD OF DIRECTORS
+            h2.heading.color-blue Uju Ifejika (Mrs)
+
+          p Catherine is the first and so far, the only woman to become chair and CEO of an Upstream E&P Company in Nigeria. A graduate of  Ahmadu Bello University, Zaria, Catherine obtained a Diploma in Law and an LLB (Hons.) in 1985 and promptly called to the Nigerian Bar in 1986. She is a member of the Nigerian Bar Association, a fellow of the Institute of Arbitration and Conciliation, as well as a member of the Institute of Chartered Secretaries and Administrators.
+
+          p Her career in the petroleum industry started when she joined Texaco’s Legal Department as Junior Counsel in 1987 and rose swiftly to become Company Secretary in 1997. In 2003, her Government and Public Affairs responsibilities were extended to Cameroon, Togo, Benin, Cote D’Ivoire, and the Democratic Republic of Congo. She joined Brittania-U Nigeria Limited in 2007 as Chair/CEO and has since steered the indigenous company to its current market leading position.
+
+          p Formerly on the Board of Directors of the Federal Ministry of Arts and Culture (2001-2002), Catherine’s leadership of Brittania-U has brought a number significant ‘firsts’. The Ajapa Floating Production Storage Unit, 100% owned and operated by the company, produced its first oil from drilling in 17 months; a feat yet to be equaled by any other company of its kind in Nigeria. She has set up six subsidiary companies in seven years, receiving numerous awards for good governance and management in Nigeria, the US, China, and Europe.
+  .grid-container.padding-bottom-3.padding-top-3
+    h4.color-purple.text-center OTHER LILYFORD BOARD MEMBERS
+    - var boardMembers = [{ name: "Uju Ifejika", image: "uju-ifejika.jpg", designation: 'Chairman/Chief Executive Officer, Brittania-U Nigeria Limited' }, { name: "Igwe Alfred Achebe", image: "igwe-alfred-achebe.jpg", designation: 'The Obi of Onitsha' }, { name: "Godfrey Etikerentse", image: "blank.jpg", designation: 'Board Member' }, { name: "Mrs. Ojukwu", image: "blank.jpg", designation: 'Board Member' },{ name: "Mrs. Ojukwu", image: "blank.jpg", designation: 'Board Member' }, ]
+
+  .grid-container
+    .grid-x.small-up-2.medium-up-4.large-up-5.js-slick(data-slick='{"prevArrow": ".boardMemberThumb .prev", "nextArrow": ".boardMemberThumb .next", "slidesToShow": 2, "slidesToScroll": 2, "mobileFirst": true, "responsive": [{"breakpoint": 600, "settings": {"slidesToShow": 4, "slidesToScroll": 4}}, {"breakpoint": 1000, "settings": {"slidesToShow": 5, "slidesToScroll": 5}}]}')
+      each boardMember in boardMembers
+        .cell.text-center.padding-bottom-1.padding-top-2
+          a(href="about/board-of-directors/"+boardMember.name title=boardMember.name).avatar.box-shadow.w80
+            img(src="/assets/img/"+boardMember.image, alt=boardMember.name)
+
+          a(href="about/board-of-directors/"+boardMember.name title=boardMember.name)
+            h5.color-purple.padding-top-1 #{boardMember.name}
+            h6.color-black #{boardMember.designation}
+
+    .cell.medium-6.medium-centered.text-center.padding-2.position-relative.boardMemberThumb
+        span.prev
+            .icon.icon-arrow-left
+        span &nbsp; &nbsp;
+        span.next
+            .icon.icon-arrow-right
+

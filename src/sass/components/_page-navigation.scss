@@ -1,0 +1,96 @@
+.page-nav {
+  position: relative;
+  background-color: rgba($light-gray, 0.5);
+  display: block;
+  z-index: 200;
+
+  &__title {
+    @extend .hide-for-medium;
+    width: 100%;
+    display: block;
+    background-color: $blue;
+    color: $white;
+    padding: $global-padding / 3 $global-padding;
+    font-weight: bold;
+    @extend .box-shadow;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+
+    &:after {
+      content: '\203A';
+      float: right;
+      font-size: rem-calc(40);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-60%);
+      line-height: 1em;
+      right: rem-calc(10);
+    }
+  }
+  &__links {
+    list-style-type: none;
+    width: 100%;
+    // display: block;
+    margin: 0;
+    padding: rem-calc(10) rem-calc(10);
+    white-space: nowrap;
+
+    li {
+      display: inline;
+      padding: rem-calc(10);
+      padding-bottom: rem-calc(15);
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0%;
+        height: rem-calc(4);
+        background-color: $crimson;
+        transition: all 0.6s ease-in-out;
+      }
+
+      &:hover {
+        &:after {
+          width: 100%;
+          left: 0;
+          // left: auto;
+        }
+
+        a {
+          color: $crimson;
+        }
+      }
+    }
+
+    a {
+      color: $dark-gray;
+    }
+  }
+
+  &__links__container {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+
+    @include breakpoint(small only) {
+      position: absolute;
+      top: rem-calc(40);
+      left: 0;
+      margin-left: 0;
+      background-color: $white;
+      box-shadow: rem-calc(8) rem-calc(12) rem-calc(20) rem-calc(2)
+        rgba($blue, 0.1);
+      visibility: hidden;
+      overflow: hidden;
+
+      li {
+        display: block;
+        border-bottom: none;
+      }
+    }
+  }
+}

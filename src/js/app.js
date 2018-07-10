@@ -1,3 +1,4 @@
+import dynamics from 'dynamics.js';
 var carousel = $('.js-carousel');
 var circularCarousel = $('.js-circular-carousel');
 
@@ -80,5 +81,80 @@ $('.js-gallery-thumb').slick({
     },
   ],
 });
+
+let pageNav = (function pageNav() {
+  const container = $('.page-nav');
+  const pageNavHeader = container.find('.page-nav__title');
+  const dropDown = document.querySelector('.page-nav__links__container');
+  const $dropDown = $(dropDown);
+  let height = $(dropDown).outerHeight();
+
+  function showDropDown() {
+    $dropDown.css({ height: 0, visibility: 'visible' }).addClass('isVisible');
+    dynamics.animate(
+      dropDown,
+      { height },
+      {
+        type: dynamics.spring,
+        duration: 1300,
+        frequency: 200,
+        complete() {
+          document.addEventListener('click', listenToOutsideClicks);
+        },
+      },
+    );
+  }
+
+  function hideDropDown() {
+    $dropDown.removeClass('isVisible');
+    dynamics.animate(
+      dropDown,
+      { height: 0 },
+      {
+        type: dynamics.spring,
+        duration: 600,
+        frequency: 50,
+        complete() {
+          document.removeEventListener('click', listenToOutsideClicks);
+        },
+      },
+    );
+  }
+
+  function listenToOutsideClicks(event) {
+    if (!$(event.target).closest(container).length) {
+      hideDropDown();
+    }
+  }
+
+  /**
+   * Recalculate navigation height on window resize
+   * ----------------------------------------------
+   */
+  function reCalculateHeight() {
+    height = $(dropDown).outerHeight();
+  }
+
+  $(window).on('resize', reCalculateHeight);
+
+  /**
+   * ----------------------------------------------
+   */
+
+  pageNavHeader.on('click', function() {
+    if ($dropDown.hasClass('isVisible')) {
+      hideDropDown();
+    } else {
+      showDropDown();
+    }
+  });
+
+  return {
+    showDropDown,
+    hideDropDown,
+  };
+})();
+
+$('.js-slick').slick();
 
 console.log(circularCarousel);

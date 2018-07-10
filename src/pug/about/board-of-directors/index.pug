@@ -1,0 +1,25 @@
+extends ../../_layout
+
+block vars
+  - var title = "Board of Directors"
+
+block main
+
+  .page-header
+    h2.heading.color-blue Board of Directors
+    h4.subheader Lilyford’s Board of Directors includes individuals with extensive experience in advocacy, policy, politics and business. The board oversees Lilyford’s work and helps to ensure we continue to improve lives through our mission
+
+
+
+  - var boardMembers = [{ name: "Uju Ifejika", image: "uju-ifejika.jpg", designation: 'Chairman/Chief Executive Officer, Brittania-U Nigeria Limited' }, { name: "Igwe Alfred Achebe", image: "igwe-alfred-achebe.jpg", designation: 'The Obi of Onitsha' }, { name: "Godfrey Etikerentse", image: "blank.jpg", designation: 'Board Member' }, { name: "Mrs. Ojukwu", image: "blank.jpg", designation: 'Board Member' },{ name: "Mrs. Ojukwu", image: "blank.jpg", designation: 'Board Member' }, ]
+
+
+  .grid-container.padding-bottom-3
+    .grid-x.grid-margin-x.grid-margin-y.medium-up-2.large-up-3.text-center
+      each boardMember in boardMembers
+        .cell.box-shadow.padding-2
+          a(href="about/board-of-directors/"+boardMember.name title=boardMember.name).avatar.box-shadow.w80
+            img(src="/assets/img/"+boardMember.image, alt=boardMember.name)
+          a(href="about/board-of-directors/"+boardMember.name title=boardMember.name)
+            h3.color-purple.padding-top-1 #{boardMember.name}
+            h5.color-black #{boardMember.designation}

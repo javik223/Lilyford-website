@@ -1,0 +1,35 @@
+.gallery {
+  padding-top: $global-padding * 3;
+  padding-bottom: $global-padding * 3;
+  text-align: center;
+  @extend .cell;
+
+  &__title {
+    color: $purple;
+    padding-top: $global-padding * 2;
+    padding-bottom: $global-padding * 2;
+  }
+
+  &__main {
+    @extend .cell;
+
+    img {
+      margin-right: 0 !important;
+    }
+  }
+
+  &__thumbs {
+    //  outline: none;
+    cursor: pointer;
+    // padding-top: rem-calc(20);
+    padding-bottom: rem-calc(20);
+
+    &:active {
+      outline: none;
+      border: none;
+    }
+    img {
+      width: 95%;
+    }
+  }
+}

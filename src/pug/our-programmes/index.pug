@@ -2,15 +2,15 @@ extends ../_layout
 
 block main
 
-  - var programmes = [{ image: 'health icon.svg', title: 'Health', backgroundColor: 'blue', }, { image: 'education icon.svg', title: 'Education', backgroundColor: 'purple'}, { image: 'welfare icon.svg', title: 'Welfare', backgroundColor: 'turquoise' }, { image: 'skill-and-opportunity icon.svg', title: 'Skill & Opportunity', backgroundColor: 'crimson'}, { image: 'water-and-sanitation icon.svg', title: 'Water & Sanitation', backgroundColor: 'sun-yellow' }, { image: 'housing-and-shelter icon.svg', title: 'Housing & Shelter', backgroundColor: 'darkblue'}  ]
+  - var programmes = [{ image: 'health icon.svg', title: 'Health', backgroundColor: 'blue', link: 'health' }, { image: 'education icon.svg', title: 'Education', backgroundColor: 'purple', link: 'education' }, { image: 'welfare icon.svg', title: 'Welfare', backgroundColor: 'turquoise', link: 'welfare' }, { image: 'skill-and-opportunity icon.svg', title: 'Skill & Opportunity', backgroundColor: 'crimson', link: 'skill-and-opportunity' }, { image: 'water-and-sanitation icon.svg', title: 'Water & Sanitation', backgroundColor: 'sun-yellow', link: 'water-and-sanitation' }, { image: 'housing-and-shelter icon.svg', title: 'Housing & Shelter', backgroundColor: 'darkblue', link: 'housing-and-shelter' }]
     .page-header
-        h2.heading Programmes
+        h2.heading.color-blue Programmes
         //- h5.subheader Support the Lilyford programmes by participating in our activities through lending a hand financially or by volunteering
 
     .grid-container
       .featured-programmes
         each programme in programmes
-         a.featured-programme(class="bg-"+programme.backgroundColor href="#"+programme.title title=programme.title)
+         a.featured-programme(class="bg-"+programme.backgroundColor href=programme.link+".html" title=programme.title)
            .featured-programme__content
               img(src="/assets/img/"+programme.image, alt=programme.title)
               p.featured-programme__title #{programme.title}

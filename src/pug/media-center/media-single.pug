@@ -1,0 +1,76 @@
+extends ../_layout
+
+block main
+  .grid-container.full.padding-top-2
+    .page-header
+        h2.heading.color-blue Stronger in Health
+        h3.subheader A medical outreach by Lilyford in Ogidi & Onitsha areas of Anambra State, Nigeria
+        .cell.text-center
+        img(src="/assets/img/helping-hand-icon.svg", alt="Helping hands icon")
+
+  .grid-container
+    .grid-x.padding-1
+      .cell.medium-10.large-8.medium-centered.text-center
+        p Event Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium turpis sed libero sagittis faucibus. Donec magna justo, egestas sed ligula et, pharetra maximus ex. Donec mi justo, dictum at pharetra dapibus, elementum a orci. Praesent risus turpis, feugiat vel scelerisque a, finibus non orci. Vestibulum a metus sed nunc molestie pulvinar. Fusce non tortor quis quam tincidunt ullamcorper pretium eu massa. Praesent sit amet tellus a eros lacinia pretium.
+
+        p Nulla facilisi. Vivamus a dui eu enim congue porttitor. Donec in consequat arcu. Duis rutrum imperdiet auctor. Donec blandit sem non dictum suscipit. In ultrices orci turpis, a ornare quam convallis id. Phasellus iaculis augue a mollis hendrerit. Nulla ac quam sit amet nibh ultricies malesuada pharetra vitae elit. Sed luctus enim quis lectus commodo, quis fringilla purus finibus. Etiam in velit at felis varius semper posuere eget ipsum. Nam ut pellentesque velit.
+
+      .cell.text-center.padding-top-3.padding-bottom-3
+        .cell.padding-2
+            h4.uppercase.strong.color-blue Impact
+
+        - var impacts = [ { image: 'beneficiaries-icon.svg', title: 'Over 3000', text: 'Beneficiaries' }, { image: 'volunteers-icon.svg', title: 'Over 500', text: 'Medical & Non Medical Volunteers' }, { image: 'eye-test-icon.svg', title: 'Over 2000', text: 'Eye test performed' }, { image: 'glasses-icon.svg', title: 'Over 1500', text: 'Glasses dispensed' }, ]
+
+        .grid-x.small-up-2.medium-up-3.large-up-4.align-center-middle
+          each impact in impacts
+            .cell.padding-bottom-1
+              img(src="/assets/img/"+impact.image, alt=impact.title)
+              h3.margin-0.padding-top-1.strong.color-purple #{impact.title}
+              p #{impact.text}
+
+      .grid-x
+        .cell.medium-8.medium-centered
+          p Nulla facilisi. Vivamus a dui eu enim congue porttitor. Donec in consequat arcu. Duis rutrum imperdiet auctor. Donec blandit sem non dictum suscipit. In ultrices orci turpis, a ornare quam convallis id. Phasellus iaculis augue a mollis hendrerit. Nulla ac quam sit amet nibh ultricies malesuada pharetra vitae elit. Sed luctus enim quis lectus commodo, quis fringilla purus finibus. Etiam in velit at felis varius semper posuere eget ipsum. Nam ut pellentesque velit.
+
+  .grid-container.full.bg-very-light-gray
+    .grid-container
+      .grid-x.padding-3
+        .cell.medium-10.medium-centered
+          img(src="/assets/img/video.jpg", alt="Video").w100
+
+
+  .grid-container
+    .grid-x
+      .gallery
+        h3.gallery__title Event Gallery
+        .gallery__main.js-gallery-main
+          div
+            img(data-lazy="/assets/img/gallery1.jpg", alt="Gallery 1")
+          div
+            img(data-lazy="/assets/img/gallery1.jpg", alt="Gallery 1")
+          div
+            img(data-lazy="/assets/img/gallery1.jpg", alt="Gallery 1")
+          div
+            img(data-lazy="/assets/img/gallery1.jpg", alt="Gallery 1")
+          div
+            img(data-lazy="/assets/img/gallery1.jpg", alt="Gallery 1")
+
+        .gallery__thumbs.js-gallery-thumb
+          div
+            img(src="/assets/img/gallery-thumb1.jpg", alt="Gallery Thumb")
+          div
+            img(src="/assets/img/gallery-thumb2.jpg", alt="Gallery Thumb 2")
+          div
+            img(src="/assets/img/gallery-thumb3.jpg", alt="Gallery Thumbs 3")
+          div
+            img(src="/assets/img/gallery-thumb4.jpg", alt="Gallery Thumbs 4")
+          div
+            img(src="/assets/img/gallery-thumb4.jpg", alt="Gallery Thumbs 4")
+
+        .gallery__navigation.medium-6.medium-centered.text-center
+            span.prev
+                .icon.icon-arrow-left
+            span &nbsp; &nbsp;
+            span.next
+                .icon.icon-arrow-right
+

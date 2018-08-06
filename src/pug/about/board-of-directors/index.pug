@@ -7,19 +7,19 @@ block main
 
   .page-header
     h2.heading.color-blue Board of Directors
-    h4.subheader Lilyford’s Board of Directors includes individuals with extensive experience in advocacy, policy, politics and business. The board oversees Lilyford’s work and helps to ensure we continue to improve lives through our mission
+    h4.subheader Lilyford’s Board of Directors include individuals with extensive experience in advocacy, policy, politics and business. The board oversees Lilyford’s work and helps to ensure we continue to improve lives through our mission
 
 
 
-  - var boardMembers = [{ name: "Uju Ifejika", image: "uju-ifejika.jpg", designation: 'Chairman/Chief Executive Officer, Brittania-U Nigeria Limited' }, { name: "Igwe Alfred Achebe", image: "igwe-alfred-achebe.jpg", designation: 'The Obi of Onitsha' }, { name: "Godfrey Etikerentse", image: "blank.jpg", designation: 'Board Member' }, { name: "Mrs. Ojukwu", image: "blank.jpg", designation: 'Board Member' },{ name: "Mrs. Ojukwu", image: "blank.jpg", designation: 'Board Member' }, ]
+  - var boardMembers = [{ name: "Uju Ifejika", url: 'uju-ifejika', image: "uju-ifejika.jpg", designation: 'Chairman' }, { name: "Igwe Alfred Achebe", url: 'igwe-alfred-achebe', image: "igwe-alfred-achebe.jpg", designation: 'The Obi of Onitsha, Patron' }, { name: "Margaret Orakwusi", url: 'margaret-orakwusi', image: "margaret-orakwusi.jpg", designation: 'Board Member' }, { name: "Ada Kio", url: 'ada-kio', image: "blaånk.jpg", designation: 'Board Member' }, { name: "Godfrey Etikerentse", url: 'godfrey-etikerentse', image: "godwin-etikerentse.jpg", designation: 'Board Member' }, { name: "Florence C. Ezenwa", url: 'florcence-ezenwa', image: "florence-ezenwa.jpg", designation: 'Board Member' }, { name: "Chinwe F. Ojukwu", url: 'chinwe-ojukwu', image: "blank.jpg", designation: 'Board Member' }, { name: "Dr. Oguejiofor", url: 'dr-oguejiofor', image: "dr-oguejiofor.jpg", designation: 'Board Member' }, { name: "Golibe Ikpeze", url: 'golibe-ikpeze', image: "blank.jpg", designation: 'Board Member' }, { name: "Ahmed Akhter Qazi", url: 'ahmed-akhter-qazi', image: "ahmed-akhter-qazi.jpg", designation: 'Ex-Officio' }, { name: "Okey Ikpeze", url: 'okey-ikpeze', image: "blank.jpg", designation: 'Ex-Officio' }, ]
 
 
   .grid-container.padding-bottom-3
     .grid-x.grid-margin-x.grid-margin-y.medium-up-2.large-up-3.text-center
       each boardMember in boardMembers
         .cell.box-shadow.padding-2
-          a(href="about/board-of-directors/"+boardMember.name title=boardMember.name).avatar.box-shadow.w80
-            img(src="/assets/img/"+boardMember.image, alt=boardMember.name)
-          a(href="about/board-of-directors/"+boardMember.name title=boardMember.name)
+          a(href="/about/board-of-directors/"+boardMember.url+".html" title=boardMember.name).avatar.box-shadow.w80
+            img(src="/assets/img/"+boardMember.image, alt=boardMember.name, width="320", height="320")
+          a(href="about/board-of-directors/"+boardMember.url+".html" title=boardMember.name)
             h3.color-purple.padding-top-1 #{boardMember.name}
             h5.color-black #{boardMember.designation}

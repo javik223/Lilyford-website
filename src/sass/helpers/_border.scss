@@ -1,0 +1,8 @@
+$border-sizes: (2, 4, 8, 10);
+
+@each $value in $border-sizes {
+  .border-bottom-#{$value} {
+    border-bottom-width: rem-calc($value);
+    border-bottom-style: solid;
+  }
+}

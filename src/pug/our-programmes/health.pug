@@ -17,37 +17,35 @@ block main
           h2.heading.color-blue Health
           .cell
             img(src="/assets/img/health-icon.svg", alt="Health").padding-1
-          h4 The link between proper health care and productivity is well documented. Health care is one of the imost important need of people in rural and urban areas. Solutions are known, but requires considerable effort and qualified personnel.
+          h4 The link between proper health care and productivity is well documented. Health care is one of the most important needs of people in rural and urban areas.
 
       .grid-x.position-relative.margin-top-3
-        .cell.medium-8
+        .cell.medium-7
           h3.color-purple.padding-top-1.strong THE CHALLENGE
-          p Unclean water and a lack of basic sanitation are undermining efforts to end extreme poverty and disease in the world’s poorest countries. Sub-Saharan Africa faces some of the biggest challenges: only 68% of individuals living in the region have access to an improved water source and only 30% of individuals have access to improved sanitation services; nearly half of all people using unimproved sources live in sub-Saharan Africa (while one-fifth live in South Asia).
+          p A weak national health care system can be attributed to the level of poverty in Africa. As the type of illnesses metamorphosis throughout the continent, half of the population still lacks access to quality healthcare.
 
-          p Together, unclean water and poor sanitation are a leading cause of child mortality. An estimated 800 children die every day from diarrhoea, spread through poor sanitation and hygiene. Research suggests that in sub-Saharan Africa women and girls in low-income countries spend 40 billion hours per year collecting water. Furthermore, time spent gathering water around the world translates to $24 billion in lost economic benefits each year. On average, women and girls in developing countries walk six kilometres each day to collect water – time which could be spent in school or at work.
+          p Sub-saharan Africa faces some of the biggest challenges with only half the population having access to health care. In places where health care is available, these service provisions are skewed heavily in favour of the Urban population. The need for public health is enormous but in short supply. Inadequate health education and prevention mechanism put a huge percentage of the population at risk.
 
-          p Goal six of the newly adopted Sustainable Development Goals sets the target to achieve universal and equitable access to safe and affordable drinking water for all; and to achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations
+          p The World Health Organisation (WHO) report of 2006, put the African region at the centre of the health crisis, with 24% of the burden of diseases and only 3% of health workers. This discrepancy in the disease to health solution ratio has only served to increase the mortality rate in an otherwise burgeoning population.
+
+          p In recent years, the region has been able to increase the education and prevention of certain diseases in line with the Millennium Development Goals (MDGs), but the gap to adequate health care provision and personal health is still apparent.
+
+        - var quickFacts = [ { title: '< 50%', content: 'Amount of people with access to health care in Africa' }, { title: '24% & 3%', content: 'Sub-saharan Africa accounts for 24% of global burden of disease, but only 3% of the world’s health workforce.' }, { title: '3.7%', content: 'Percentage of GDP spent on health care in Nigeria, below the global average' }, {title: '18:100,000', content: 'Physician to population ratio in Sub-Saharan Africa'} ]
 
         .cell.small-10.small-centered.medium-4.large-3.medium-detach-to-right-position-absolute.bg-white.padding-3.box-shadow
           .h4.color-crimson.strong.uppercase Quick Facts
             hr
 
-          h3.strong.uppercase.color-purple 30 Million
-          p people around Nigeria do not have access to proper health care
-          hr
-
-          h3.strong.uppercase.color-purple 42KM
-          p average distance to the nearest health centre
-
-          hr
-
-          h3.strong.uppercase.color-purple 1
-          p average number of qualified doctors in a 420KM radius in rural areas in Nigeria
+          each quickFact, index in quickFacts
+            h3.strong.uppercase.color-purple #{quickFact.title}
+            p #{quickFact.content}
+            if index != quickFacts.length - 1
+              hr
 
         .cell.medium-8
           h3.color-purple.padding-top-1.strong WHAT WE ARE DOING
-          P Unclean water and a lack of basic sanitation are undermining efforts to end extreme poverty and disease in the world’s poorest countries. Sub-Saharan Africa faces some of the biggest challenges: only 68% of individuals living in the region have access to an improved water source and only 30% of individuals have access to improved sanitation services; nearly half of all people using unimproved sources live in sub-Saharan Africa (while one-fifth live in South Asia).
+          p We believe good health is the cradle for economic empowerment, community development and human mobility. At Lilyford, we are taking proactive steps to help improve access to health by providing health facilities for rural communities, donating health equipments to under-resourced health facilities, providing health education for communities, provision of unavailable drugs and medical appliances for the sick who can’t afford them and also implementing medical outreaches that runs eye tests, provide medicated glasses for those with optical deficiencies, and pay the bills for those that can’t afford thorough health care.
 
-          P Together, unclean water and poor sanitation are a leading cause of child mortality. An estimated 800 children die every day from diarrhoea, spread through poor sanitation and hygiene. Research suggests that in sub-Saharan Africa women and girls in low-income countries spend 40 billion hours per year collecting water. Furthermore, time spent gathering water around the world translates to $24 billion in lost economic benefits each year. On average, women and girls in developing countries walk six kilometres each day to collect water – time which could be spent in school or at work.
+          p Our health intervention covers the sick and elderly and ailment such as diabetes hypertension, arthritis, eye defects, kidney problems, prostate etc.
 
-          P Goal six of the newly adopted Sustainable Development Goals sets the target to achieve universal and equitable access to safe and affordable drinking water for all; and to achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations
+          p The health outreaches have touched more than 10,000 people and our goal is to reach more than 100,000 in the coming years.

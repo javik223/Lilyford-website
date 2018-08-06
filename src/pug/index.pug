@@ -1,5 +1,4 @@
 extends _layout
-
 block main
   .flex-container
     .hero.hero--with-gradient-background
@@ -12,7 +11,6 @@ block main
 
   // extra white space for tablet and large screens
   .padding-top-3.show-for-medium
-
 
   .grid-container.grid-x.text-center.padding-2
     cell.medium-10.large-8.medium-centered
@@ -61,27 +59,25 @@ block main
         p.subheader Our programmes are holistic and works together to help us achieve our mission to make life better
       .cell.padding-top-3.padding-bottom-3
         .grid-x.small-up-2.medium-up-4.text-center.small-unstack.icon-groups.grid-padding-x.carousel.js-carousel
-          a.icon-groups__item
+          a(href="/our-programmes/health.html" title="Health Programmes").icon-groups__item
             img(src="/assets/img/health-icon.svg", alt="Health")
             h4.color-blue Health
-          a.icon-groups__item
+          a(href="/our-programmes/education.html" title="Educational Programmes").icon-groups__item
             img(src="/assets/img/education-icon.svg", alt="Education")
             h4.color-purple Education
-          a.icon-groups__item
-            img(src="/assets/img/welfare-icon.svg", alt="Welfare")
-            h4.color-turquoise Welfare
-          a.icon-groups__item
+          a(href="/our-programmes/welfare.html" title="Welfare and Widow Empowerment").icon-groups__item
+            img(src="/assets/img/welfare-icon.svg", alt="Welfare and Widow Empowerement")
+            h4.color-turquoise Welfare &amp; Widow Empowerment
+          a(href="/our-programmes/skill-and-opportunity.html" title="Skill and Opportunity").icon-groups__item
             img(src="/assets/img/skill-icon.svg", alt="Skill & Opportunity")
             h4.color-crimson Skill &amp; Opportunity
-          a.icon-groups__item
+          a(href="/our-programmes/disaster-relief-for-idps.html" title="Disaster relief for IDPs").icon-groups__item
             img(src="/assets/img/education-icon.svg", alt="Education")
-            h4.color-purple Education
-          a.icon-groups__item
-            img(src="/assets/img/welfare-icon.svg", alt="Welfare")
-            h4.color-turquoise Welfare
-          a.icon-groups__item
-            img(src="/assets/img/skill-icon.svg", alt="Skill & Opportunity")
-            h4.color-crimson Skill &amp; Opportunity
+            h4.color-purple Disaster Relief for IDPs
+          a(href="/our-programmes/housing-and-shelter.html" title="Housing &amp; Shelter").icon-groups__item
+            img(src="/assets/img/housing-and-shelter-icon.svg", alt="Education")
+            h4.color-blue Housing &amp; Shelter
+
         .cell.carousel__nav
           .prev
             i.icon.icon-arrow-left &nbsp;
@@ -91,7 +87,7 @@ block main
   .grid-container.padding-bottom-3
     .grid-x
       h3.cell.uppercase.text-center.strong.color-blue Impact
-    .grid-x.padding-bottom-2.padding-top-1
+    .grid-x.padding-bottom-2.padding-top-1.js-slick(data-slick='{ "slidesToShow": 1, "slidesToScroll": 1, "prevArrow": ".js-featured-impacts .prev", "nextArrow": ".js-featured-impacts .next", "adaptiveHeight": true }')
       .featured.featured-double-image
         .featured__image
           div
@@ -101,7 +97,14 @@ block main
         .featured__content
           h4.strong.color-crimson Stronger in Health
           p Medical outreach by Lilyford in Ogidi & Onitsha, located in Anambra State, Nigeria
-    .cell.carousel__nav.text-center
+      .featured
+        .featured__image
+          div
+            img(src="assets/img/ogidi-onitsha-1.jpg", alt="")
+        .featured__content
+          h4.strong.color-crimson Stronger in Health
+          p Medical outreach by Lilyford in Ogidi & Onitsha, located in Anambra State, Nigeria
+    .cell.carousel__nav.text-center.js-featured-impacts
           .prev
             i.icon.icon-arrow-left &nbsp;
           .next
@@ -129,11 +132,13 @@ block main
           .cell.small-4.medium-3
             input(class="button", type="button", value="SIGN UP").button.no-radius
       .cell.medium-8.medium-centered
-        .flex-container.align-justify.column
-          .grid-x
-            p.subheader Follow us on social media
-          a(href="http://www.facebook.com" title="Lilyford Foundation on Facebook" target="_blank" rel="noopener").icon.icon-facebook.text-2x
-          a(href="http://www.twitter.com" title="Lilyford Foundation on Twitter" target="_blank" rel="noopener").icon.icon-twitter.text-2x
-          a(href="http://www.instagram.com" title="Lilyford Foundation on Instagram" target="_blank" rel="noopener").icon.icon-instagram.text-2x
-          a(href="htp://www.linkedin.com" title="Lilyford Foundation on Linkedin" target="_blank" rel="noopener").icon.icon-linkedin.text-2x
+          .grid-x.medium-up-2
+            .cell.medium-9.padding-bottom-1
+              p.subheader Follow us on social media
+            .cell.flex-container.align-justify
+                a(href="http://www.facebook.com" title="Lilyford Foundation on Facebook" target="_blank" rel="noopener").icon.icon-facebook.text-2x
+                a(href="http://www.twitter.com" title="Lilyford Foundation on Twitter" target="_blank" rel="noopener").icon.icon-twitter.text-2x
+                a(href="http://www.instagram.com" title="Lilyford Foundation on Instagram" target="_blank" rel="noopener").icon.icon-instagram.text-2x
+                a(href="htp://www.linkedin.com" title="Lilyford Foundation on Linkedin" target="_blank" rel="noopener").icon.icon-linkedin.text-2x
+
 

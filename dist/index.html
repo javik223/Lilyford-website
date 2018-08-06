@@ -10,24 +10,43 @@
     <link href="/assets/css/app.css" rel="stylesheet"/>
   </head>
   <body></body>
-  <header class="header align-center-middle padding-1">
-    <div class="logo small-4 medium-2 large-2 column"><a href="/" title="Lilyford Foundation"><img src="/assets/img/lilyford-logo.png" alt="Lilyford" height="30"/></a></div>
-    <nav class="primary-nav medium-9 large-7 column">
-      <ul>
-        <li><a href="/about" title="About Lilyford foundation">About</a></li>
-        <li><a href="/our-programmes" title="Our Programmes at Lilyford foundation">Our Programmes</a></li>
-        <li><a href="/media-center" title="Media &amp; Events">Media</a></li>
-        <li><a href="/contact" title="Contact">Contact</a></li>
-        <li><a href="/take-action" title="Take action, join our cause or volunteer">Take Action</a></li>
-      </ul>
-    </nav>
-    <div class="social-icons column text-right show-for-large">
-      <li><a href="/twiiter" title="twiiter"><i class="icon icon-twitter"></i></a></li>
-      <li><a href="/facebook" title="facebook"><i class="icon icon-facebook"></i></a></li>
-      <li><a href="/instagram" title="instagram"><i class="icon icon-instagram"></i></a></li>
-      <li><a href="/linkedin" title="linkedin"><i class="icon icon-linkedin"></i></a></li>
-    </div>
-  </header>
+  <div class="grid-container">
+    <header class="header padding-1 align-middle">
+      <div class="cell logo small-5 medium-2"><a href="/" title="Lilyford Foundation"><img src="/assets/img/lilyford-logo.png" alt="Lilyford" height="30"/></a></div>
+      <div class="cell nav primary-nav medium-10 large-8 large-offset-2 js-primary-nav">
+        <ul>
+          <li><a href="/about" title="About Lilyford foundation">About</a>
+            <ul class="dropdown">
+              <li><a href="/about" title="About Lilyford Foundation">About Lilyford Foundation</a></li>
+              <li><a href="/about/board-of-directors" title="Board of Directors">Board of Directors</a></li>
+            </ul>
+          </li>
+          <li><a href="/our-programmes" title="Our Programmes at Lilyford foundation">Our Programmes</a>
+            <ul class="dropdown">
+              <li><a href="/our-programmes" title="Overview">Overview</a></li>
+              <li><a href="/our-programmes/health.html" title="Health Programmes">Health</a></li>
+              <li><a href="/our-programmes/education.html" title="Education">Education</a></li>
+              <li><a href="/our-programmes/welfare.html">Welfare</a></li>
+              <li><a href="/our-programmes/skill-and-opportunity.html" title="Skill and Opportunity">Skill &amp; Opportunity</a></li>
+              <li><a href="/our-programmes/disaster-relief-for-idps.html" title="Disaster Relief for IDPs">Disaster Relief for IDPs</a></li>
+              <li><a href="/our-programmes/housing-and-shelter.html" title="Housing and Shelter">Housing &amp; Shelter</a></li>
+            </ul>
+          </li>
+          <li><a href="/media-center" title="Media &amp; Events">Media</a></li>
+          <li><a href="/contact" title="Contact">Contact</a></li>
+          <li><a href="/take-action" title="Take action, join our cause or volunteer">Take Action</a>
+            <ul class="dropdown">
+              <li><a href="/take-action/partner.html">Partners</a></li>
+              <li><a href="/take-action/volunteer.html">Volunteer</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="hamburger-menu medium-9 js-hamburger-menu">
+        <div class="bar"></div>
+      </div>
+    </header>
+  </div>
   <div class="flex-container">
     <div class="hero hero--with-gradient-background">
       <div class="hero__image"><img src="/assets/img/homepage-hero.jpg" alt="Doing good has never been better"/></div>
@@ -88,14 +107,13 @@
         <p class="subheader">Our programmes are holistic and works together to help us achieve our mission to make life better</p>
       </div>
       <div class="cell padding-top-3 padding-bottom-3">
-        <div class="grid-x small-up-2 medium-up-4 text-center small-unstack icon-groups grid-padding-x carousel js-carousel"><a class="icon-groups__item"><img src="/assets/img/health-icon.svg" alt="Health"/>
-            <h4 class="color-blue">Health</h4></a><a class="icon-groups__item"><img src="/assets/img/education-icon.svg" alt="Education"/>
-            <h4 class="color-purple">Education</h4></a><a class="icon-groups__item"><img src="/assets/img/welfare-icon.svg" alt="Welfare"/>
-            <h4 class="color-turquoise">Welfare</h4></a><a class="icon-groups__item"><img src="/assets/img/skill-icon.svg" alt="Skill &amp; Opportunity"/>
-            <h4 class="color-crimson">Skill &amp; Opportunity</h4></a><a class="icon-groups__item"><img src="/assets/img/education-icon.svg" alt="Education"/>
-            <h4 class="color-purple">Education</h4></a><a class="icon-groups__item"><img src="/assets/img/welfare-icon.svg" alt="Welfare"/>
-            <h4 class="color-turquoise">Welfare</h4></a><a class="icon-groups__item"><img src="/assets/img/skill-icon.svg" alt="Skill &amp; Opportunity"/>
-            <h4 class="color-crimson">Skill &amp; Opportunity</h4></a></div>
+        <div class="grid-x small-up-2 medium-up-4 text-center small-unstack icon-groups grid-padding-x carousel js-carousel"><a class="icon-groups__item" href="/our-programmes/health.html" title="Health Programmes"><img src="/assets/img/health-icon.svg" alt="Health"/>
+            <h4 class="color-blue">Health</h4></a><a class="icon-groups__item" href="/our-programmes/education.html" title="Educational Programmes"><img src="/assets/img/education-icon.svg" alt="Education"/>
+            <h4 class="color-purple">Education</h4></a><a class="icon-groups__item" href="/our-programmes/welfare.html" title="Welfare and Widow Empowerment"><img src="/assets/img/welfare-icon.svg" alt="Welfare and Widow Empowerement"/>
+            <h4 class="color-turquoise">Welfare &amp; Widow Empowerment</h4></a><a class="icon-groups__item" href="/our-programmes/skill-and-opportunity.html" title="Skill and Opportunity"><img src="/assets/img/skill-icon.svg" alt="Skill &amp; Opportunity"/>
+            <h4 class="color-crimson">Skill &amp; Opportunity</h4></a><a class="icon-groups__item" href="/our-programmes/disaster-relief-for-idps.html" title="Disaster relief for IDPs"><img src="/assets/img/education-icon.svg" alt="Education"/>
+            <h4 class="color-purple">Disaster Relief for IDPs</h4></a><a class="icon-groups__item" href="/our-programmes/housing-and-shelter.html" title="Housing &amp;amp; Shelter"><img src="/assets/img/housing-and-shelter-icon.svg" alt="Education"/>
+            <h4 class="color-blue">Housing &amp; Shelter</h4></a></div>
         <div class="cell carousel__nav">
           <div class="prev"><i class="icon icon-arrow-left">&nbsp;</i></div>
           <div class="next"><i class="icon icon-arrow-right">&nbsp;</i></div>
@@ -107,7 +125,7 @@
     <div class="grid-x">
       <h3 class="cell uppercase text-center strong color-blue">Impact</h3>
     </div>
-    <div class="grid-x padding-bottom-2 padding-top-1">
+    <div class="grid-x padding-bottom-2 padding-top-1 js-slick" data-slick="{ &quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1, &quot;prevArrow&quot;: &quot;.js-featured-impacts .prev&quot;, &quot;nextArrow&quot;: &quot;.js-featured-impacts .next&quot;, &quot;adaptiveHeight&quot;: true }">
       <div class="featured featured-double-image">
         <div class="featured__image">
           <div><img src="assets/img/ogidi-onitsha-1.jpg" alt=""/></div>
@@ -118,8 +136,17 @@
           <p>Medical outreach by Lilyford in Ogidi & Onitsha, located in Anambra State, Nigeria</p>
         </div>
       </div>
+      <div class="featured">
+        <div class="featured__image">
+          <div><img src="assets/img/ogidi-onitsha-1.jpg" alt=""/></div>
+        </div>
+        <div class="featured__content">
+          <h4 class="strong color-crimson">Stronger in Health</h4>
+          <p>Medical outreach by Lilyford in Ogidi & Onitsha, located in Anambra State, Nigeria</p>
+        </div>
+      </div>
     </div>
-    <div class="cell carousel__nav text-center">
+    <div class="cell carousel__nav text-center js-featured-impacts">
       <div class="prev"><i class="icon icon-arrow-left">&nbsp;</i></div>
       <div class="next"><i class="icon icon-arrow-right">&nbsp;</i></div>
     </div>
@@ -148,10 +175,11 @@
         </div>
       </div>
       <div class="cell medium-8 medium-centered">
-        <div class="flex-container align-justify column">
-          <div class="grid-x">
+        <div class="grid-x medium-up-2">
+          <div class="cell medium-9 padding-bottom-1">
             <p class="subheader">Follow us on social media</p>
-          </div><a class="icon icon-facebook text-2x" href="http://www.facebook.com" title="Lilyford Foundation on Facebook" target="_blank" rel="noopener"></a><a class="icon icon-twitter text-2x" href="http://www.twitter.com" title="Lilyford Foundation on Twitter" target="_blank" rel="noopener"></a><a class="icon icon-instagram text-2x" href="http://www.instagram.com" title="Lilyford Foundation on Instagram" target="_blank" rel="noopener"></a><a class="icon icon-linkedin text-2x" href="htp://www.linkedin.com" title="Lilyford Foundation on Linkedin" target="_blank" rel="noopener"></a>
+          </div>
+          <div class="cell flex-container align-justify"><a class="icon icon-facebook text-2x" href="http://www.facebook.com" title="Lilyford Foundation on Facebook" target="_blank" rel="noopener"></a><a class="icon icon-twitter text-2x" href="http://www.twitter.com" title="Lilyford Foundation on Twitter" target="_blank" rel="noopener"></a><a class="icon icon-instagram text-2x" href="http://www.instagram.com" title="Lilyford Foundation on Instagram" target="_blank" rel="noopener"></a><a class="icon icon-linkedin text-2x" href="htp://www.linkedin.com" title="Lilyford Foundation on Linkedin" target="_blank" rel="noopener"></a></div>
         </div>
       </div>
     </div>

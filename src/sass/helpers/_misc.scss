@@ -10,3 +10,13 @@
     top: rem-calc(-80);
   }
 }
+
+.large-detach-to-right-position-absolute {
+  @include breakpoint(large up) {
+    position: absolute;
+    right: 0;
+    top: rem-calc(-50);
+    z-index: 300;
+    top: rem-calc(-80);
+  }
+}

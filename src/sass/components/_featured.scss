@@ -141,8 +141,8 @@ $variations: (
   @extend .grid-margin-x;
   @extend .grid-margin-y;
   // @extend .small-up-2;
-  @extend .medium-up-2;
-  @extend .large-up-3;
+  @extend .medium-up-3;
+  @extend .large-up-4;
   user-select: none;
 
   @include breakpoint(small only) {

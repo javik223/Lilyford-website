@@ -1,4 +1,15 @@
 import dynamics from 'dynamics.js';
+import {
+  TimelineMax,
+  Back,
+  Elastic,
+  TweenLite,
+  TimelineLite,
+  Power4,
+} from 'gsap';
+
+import Dropdown from './dropdown';
+
 var carousel = $('.js-carousel');
 var circularCarousel = $('.js-circular-carousel');
 
@@ -19,13 +30,6 @@ carousel.slick({
         slidesToShow: 3,
       },
     },
-    // {
-    //   breakpoint: 860,
-    //   settings: {
-    //     slidesToScroll: 3,
-    //     slidesToShow: 3,
-    //   },
-    // },
   ],
 });
 
@@ -157,4 +161,62 @@ let pageNav = (function pageNav() {
 
 $('.js-slick').slick();
 
-console.log(circularCarousel);
+let harmbugerMenu = $('.js-hamburger-menu');
+
+console.log(harmbugerMenu.css('display'));
+
+if (harmbugerMenu.css('display') === 'block') {
+  let Menu = (function() {
+    let options = {
+      container: $('.js-primary-nav'),
+      items: $('.js-primary-nav > ul > li'),
+      ease: Back,
+    };
+    let myDropdown = new Dropdown(options);
+
+    function toggle() {
+      if (!options.container.hasClass('visible')) {
+        myDropdown.show();
+        options.container.addClass('visible');
+      } else {
+        myDropdown.hide();
+        options.container.removeClass('visible');
+      }
+    }
+
+    return {
+      toggle,
+    };
+  })();
+
+  harmbugerMenu.on('click', function() {
+    $(this).toggleClass('animate');
+    $(this)
+      .find('.bar')
+      .toggleClass('animate');
+    Menu.toggle();
+  });
+}
+
+// Show dropdown menu when each of the dropdowns is clicked
+let dropdowns = $('.js-primary-nav > ul').find('.dropdown');
+console.log('Dropdowns:', dropdowns);
+dropdowns.each(function(index, dropdown) {
+  dropdown = $(dropdown);
+  const thisDropdown = new Dropdown({
+    container: dropdown,
+    items: dropdown.find('>li'),
+    ease: Back,
+  });
+
+  console.log('Dropdown:', dropdown.parent());
+  dropdown.parent().hover(
+    function() {
+      thisDropdown.show();
+    },
+    function() {
+      thisDropdown.hide();
+    },
+  );
+  // dropdown.parent().hover(thisDropdown.show, thisDropdown.hide);
+});

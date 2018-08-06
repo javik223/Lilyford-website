@@ -7,15 +7,15 @@
   background-color: darken($blue, 20%);
   overflow: hidden;
   align-items: center;
-  min-height: 50vh;
+  min-height: rem-calc(500);
+
+  @include breakpoint(small only) {
+    min-height: rem-calc(300);
+  }
 }
 
 .hero-50vh {
   min-height: 50vh;
-
-  @include breakpoint(small only) {
-    min-height: 60vh;
-  }
 }
 
 .hero__image {

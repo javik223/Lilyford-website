@@ -1,21 +1,44 @@
-header.header.align-center-middle.padding-1
-  .logo.small-4.medium-2.large-2.column
-    a(href="/", title="Lilyford Foundation")
-      img(src="/assets/img/lilyford-logo.png", alt="Lilyford", height="30")
-  nav.primary-nav.medium-9.large-7.column
-    ul
-      li
-        a(href="/about", title="About Lilyford foundation") About
-      li
-        a(href="/our-programmes", title="Our Programmes at Lilyford foundation") Our Programmes
-      li
-        a(href="/media-center", title="Media & Events") Media
-      li
-        a(href="/contact", title="Contact") Contact
-      li
-        a(href="/take-action", title="Take action, join our cause or volunteer") Take Action
-
-
-  .social-icons.column.text-right.show-for-large
-    include ./_social-icons
-
+.grid-container
+  header.header.padding-1.align-middle
+    .cell.logo.small-5.medium-2
+      a(href="/", title="Lilyford Foundation")
+        img(src="/assets/img/lilyford-logo.png", alt="Lilyford", height="30")
+    .cell.nav.primary-nav.medium-10.large-8.large-offset-2.js-primary-nav
+      ul
+        li
+          a(href="/about", title="About Lilyford foundation") About
+          ul.dropdown
+            li
+              a(href="/about" title="About Lilyford Foundation") About Lilyford Foundation
+            li
+              a(href="/about/board-of-directors" title="Board of Directors") Board of Directors
+        li
+          a(href="/our-programmes", title="Our Programmes at Lilyford foundation") Our Programmes
+          ul.dropdown
+            li
+              a(href="/our-programmes", title="Overview") Overview
+            li
+              a(href="/our-programmes/health.html", title="Health Programmes") Health
+            li
+              a(href="/our-programmes/education.html", title="Education") Education
+            li
+              a(href="/our-programmes/welfare.html") Welfare
+            li
+              a(href="/our-programmes/skill-and-opportunity.html" title="Skill and Opportunity") Skill &amp; Opportunity
+            li
+              a(href="/our-programmes/disaster-relief-for-idps.html" title="Disaster Relief for IDPs") Disaster Relief for IDPs
+            li
+              a(href="/our-programmes/housing-and-shelter.html" title="Housing and Shelter") Housing &amp; Shelter
+        li
+          a(href="/media-center", title="Media & Events") Media
+        li
+          a(href="/contact", title="Contact") Contact
+        li
+          a(href="/take-action", title="Take action, join our cause or volunteer") Take Action
+          ul.dropdown
+            li
+              a(href="/take-action/partner.html") Partners
+            li
+              a(href="/take-action/volunteer.html") Volunteer
+    .hamburger-menu.medium-9.js-hamburger-menu
+      .bar

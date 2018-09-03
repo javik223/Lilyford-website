@@ -9,13 +9,14 @@
     float: right;
     margin: 0;
   }
-  >ul {
+  > ul {
     margin-top: rem-calc(20);
   }
   li {
     float: left;
     list-style: none; // text-transform: uppercase;
     position: relative;
+
     @include breakpoint(medium up) {
       padding-bottom: rem-calc(20);
     }
@@ -47,9 +48,10 @@
     z-index: 10000;
     width: 110%;
     margin-left: -5%;
-    box-shadow: rem-calc(4) rem-calc(100) rem-calc(100) rem-calc(2) rgba($darkblue, 0.4);
+    box-shadow: rem-calc(4) rem-calc(100) rem-calc(100) rem-calc(2)
+      rgba($darkblue, 0.4);
     visibility: hidden; // overflow: hidden;
-    >ul {
+    > ul {
       width: 100%;
       background-color: $white;
       padding-bottom: rem-calc(20);
@@ -86,7 +88,8 @@
     transform: translateX(-50%);
     z-index: 2000;
     background-color: $white;
-    box-shadow: rem-calc(4) rem-calc(10) rem-calc(100) rem-calc(2) rgba($darkblue, 0.2);
+    box-shadow: rem-calc(4) rem-calc(10) rem-calc(100) rem-calc(2)
+      rgba($darkblue, 0.2);
     border-radius: rem-calc(4);
     display: none;
     &:before {

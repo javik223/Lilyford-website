@@ -28,6 +28,7 @@
       right: rem-calc(10);
     }
   }
+
   &__links {
     list-style-type: none;
     width: 100%;
@@ -41,6 +42,7 @@
       padding: rem-calc(10);
       padding-bottom: rem-calc(15);
       position: relative;
+      font-size: 90%;
 
       &:after {
         content: '';
@@ -82,8 +84,7 @@
       left: 0;
       margin-left: 0;
       background-color: $white;
-      box-shadow: rem-calc(8) rem-calc(12) rem-calc(20) rem-calc(2)
-        rgba($blue, 0.1);
+      box-shadow: rem-calc(8) rem-calc(12) rem-calc(20) rem-calc(2) rgba($blue, 0.1);
       visibility: hidden;
       overflow: hidden;
 

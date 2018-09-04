@@ -1,0 +1,35 @@
+{% extends '_layout.twig' %}
+{% block main %}
+    <div class="page-header">
+        <h2 class="heading color-blue">Board of Directors</h2>
+        <h4 class="subheader">{{ entry.text }}</h4>
+    </div>
+    {% cache %}
+    <div class="grid-container padding-bottom-3">
+        <div class="grid-x grid-margin-x grid-margin-y medium-up-2 large-up-3 text-center">
+            {% for entry in craft
+                .entries
+                .section('boardOfDirectors')
+                .all() %}
+                <div class="cell box-shadow padding-2">
+                    <a class="avatar box-shadow w80" href="{{ entry.url }}" title="{{ entry.title }}">
+                        {% if entry.profile_thumbnail | length %}
+                            {% set image = entry.profile_thumbnail.one() %}
+                            {% set transformedImage = craft.imager.transformImage(image, {
+                                width: 320,
+                                height: 320
+                            }) %}
+                            <img src="{{ transformedImage.url }}" alt="{{ entry.title }}" width="320" height="320">
+                        {% endif %}
+                    </a>
+                    <a href="{{ entry.url }}" title="{{ entry.title }}">
+                        <h3 class="color-purple padding-top-1">{{ entry.title }}</h3>
+                        <h5 class="color-black">{{ entry.profile_designation }}</h5>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endcache %}
+
+{% endblock %}

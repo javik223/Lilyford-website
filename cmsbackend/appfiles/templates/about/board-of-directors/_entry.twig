@@ -1,0 +1,74 @@
+{% extends '_layout.twig' %}
+
+{% block main %}
+    <div class="grid-container padding-bottom-3 bg-very-light-gray full">
+        <div class="cell padding-top-3 show-for-medium"></div>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell medium-4 padding-2">
+                    {% if entry.profile_picture|length %}
+                        {% set image = entry.profile_picture.one() %}
+                        {% set transformedImages = craft.imager.transformImage(image, [
+                            {
+                                width: 1200
+                            }, {
+                                width: 600
+                            }, {
+                                width: 400
+                            }
+                        ], {fillTransforms: true}) %}
+                        <img src="{{ craft.imager.placeholder({width: 800, height: 600}) }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedImages) }}" alt="{{ entry.title }} – {{ entry.profile_designation }}">
+                    {% endif %}
+                </div>
+                <div class="cell medium-8 large-7 padding-2">
+                    <a href="/about/board-of-directors" title="Board of Directors"></a>
+                    <div class="padding-bottom-2">
+                        <h5 class="subheader">BOARD OF DIRECTORS</h5>
+                        <h2 class="heading color-blue">{{ entry.title }}</h2>
+                    </div>
+                    {{ entry.profile_text }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-container padding-bottom-3 padding-top-3">
+        <h4 class="color-purple text-center">OTHER LILYFORD BOARD MEMBERS</h4>
+    </div>
+    {% set exempt = 'not ' ~ entry.id %}
+    {% set otherBoardMembers = craft.entries.section('boardOfDirectors').id(exempt).all() %}
+
+    <div class="grid-container">
+        <div class="grid-x small-up-2 medium-up-4 large-up-5 js-slick" data-slick='{"prevArrow": ".boardMemberThumb .prev", "nextArrow": ".boardMemberThumb .next", "slidesToShow": 2, "slidesToScroll": 2, "mobileFirst": true, "responsive": [{"breakpoint": 600, "settings": {"slidesToShow": 4, "slidesToScroll": 4}}, {"breakpoint": 1000, "settings": {"slidesToShow": 5, "slidesToScroll": 5}}]}'>
+            {% cache %}
+            {% for boardMember in otherBoardMembers %}
+                <div class="cell text-center padding-bottom-1 padding-top-2">
+                    <a class="avatar box-shadow w80" href="{{ boardMember.url }}" title="{{ boardMember.title }}">
+                        {% if boardMember.profile_thumbnail | length %}
+                            {% set image = boardMember.profile_thumbnail.one() %}
+                            {% set transformedImage = craft.imager.transformImage(image, {
+                                width: 320,
+                                height: 320
+                            }) %}
+                            <img src="{{ transformedImage.url }}" alt="{{ boardMember.title }}" width="320" height="320">
+                        {% endif %}
+                    </a>
+                    <a href="{{ boardMember.url }}" title="{{ boardMember.title }}">
+                        <h5 class="color-purple padding-top-1">{{ boardMember.title }}</h5>
+                        <h6 class="color-black">{{ boardMember.profile_designation }}</h6>
+                    </a>
+                </div>
+            {% endfor %}
+            {% endcache %}
+        </div>
+        <div class="cell medium-6 medium-centered text-center padding-2 position-relative boardMemberThumb">
+            <span class="prev">
+                <div class="icon icon-arrow-left"></div>
+            </span><span>&nbsp; &nbsp;</span>
+            <span class="next">
+                <div class="icon icon-arrow-right"></div></span></div>
+    </div>
+
+    {# Extra space before footer #}
+    <div class="margin-bottom-3" aria-hidden>&nbsp;</div>
+
+{% endblock %}

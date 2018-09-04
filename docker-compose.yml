@@ -1,0 +1,36 @@
+version: '3'
+services:
+  web:
+    image: webdevops/php-nginx:alpine-php7
+    restart: always
+    # deploy:
+    #   replicas: 1
+    #   restart_policy: on-failure
+    ports:
+      - '8090:80'
+    networks:
+      - webnet
+    volumes:
+      - '~/Documents/www/lilyford/cmsbackend/nginx/conf.d:/opt/docker/etc/nginx/conf.d'
+      - '~/Documents/www/lilyford/cmsbackend/appfiles:/app'
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/web
+  database:
+    image: postgres:10.5-alpine
+    restart: always
+    # deploy:
+    #   replicas: 1
+    #   restart_policy: on-failure
+    ports:
+      - '5432:5432'
+    volumes:
+      - '~/Documents/www/lilyford/cmsbackend/postgres/dbfiles:/var/lib/postgresql/data'
+    networks:
+      - webnet
+    environment:
+      - POSTGRES_PASSWORD=8793d810a5e9bb737a40ffab325eedef
+      - POSTGRES_USER=lilyford
+      - POSTGRES_DB=lilyford-db
+
+networks:
+  webnet:

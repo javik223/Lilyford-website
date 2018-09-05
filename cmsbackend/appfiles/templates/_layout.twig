@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Homepage</title>
+        {{ include('./partials/_seo.twig') }}
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Yeseva+One" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
         <link href="/assets/css/app.css" rel="stylesheet">
     </head>
     <body>
-        <nav>{% block header %}
-            {{ include('./partials/header.twig')  }}
-        {% endblock %}</nav>
-        <main>{% block main %}{% endblock %}</main>
+        <nav>
+            {% block header %}
+                {{ include('./partials/header.twig')  }}
+            {% endblock %}
+        </nav>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
         {% block footer %}
             {{ include('./partials/footer.twig') }}
         {% endblock %}

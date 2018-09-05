@@ -1,0 +1,194 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Navigate plugin for Craft CMS 3.x
+ *
+ * Navigate index.twig
+ *
+ * @author    Studio Espresso
+ * @copyright Copyright (c) 2018 Studio Espresso
+ * @link      https://studioespresso.co
+ * @package   Navigate
+ * @since     0.0.1
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import _self as macros %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("studioespresso\\navigate\\assetbundles\\navigate\\NavigateAsset") %}
+
+{# Link for the ? icon at the bottom of the page #}
+{% set docsUrl = "https://github.com/studioespresso/navigate/blob/master/README.md" %}
+
+{# The title of this CP section #}
+{% set pluginTitle = 'Navigate' %}
+{% set title = navigation.title is defined ? navigation.title : 'New navigation' %}
+
+
+{% set crumbs = [
+    { label: pluginTitle, url: url('navigate') },
+    { label: 'Edit', url: '#' }
+] %}
+
+{% block header %}
+    {% block pageTitle %}
+        {% if title is defined and title|length %}
+            <h1>{{ title }}</h1>
+        {% endif %}
+    {% endblock %}
+    {% block contextMenu %}
+        {% include 'navigate/_includes/_sites' %}
+    {% endblock %}
+    <div class="flex-grow"></div>
+{% endblock %}
+
+
+{% macro renderNode(navigation, node, level) %}
+    {% import _self as macros %}
+    {% set indent = 8 + (level - 1) * 35 %}
+    <li data-level="{{ level }}">
+        <div class="row" style="margin-left: -{{ indent }}px; padding-left: {{ indent }}px;" data-id="{{ node.id }}">
+            <div class="node__node element" data-id="{{ node.id }}" data-label="{{ node.name }}">
+                <div class="label">
+                    <span class="node__id visuallyhidden"><strong>{{ node.id }}</strong></span>
+                    <span class="status {{ node.enabled ? 'on': 'off' }}"></span>
+                    {% if node.type == 'element' and node.elementType == 'entry'  %}
+                        {% set nodeEntry = craft.entries.id(node.elementId).one() %}
+                        {% if nodeEntry|length %}
+                            <a href="{{ craft.entries.id(node.elementId).one().getCpEditUrl() }}" target="_blank">
+                                <span class="title">{{ node.name }}</span>
+                            </a>
+                        {% else %}
+                            <span class="title">{{ node.name }}</span>
+                        {% endif %}
+                    {% elseif node.type == 'element' and node.elementType == 'category'  %}
+                        {% set nodeCategory = craft.categories.id(node.elementId).one() %}
+                        {% if nodeCategory|length %}
+                            <a href="{{ nodeCategory.getCpEditUrl() }}" target="_blank">
+                                <span class="title">{{ node.name }}</span>
+                            </a>
+                        {% else %}
+                            <span class="title">{{ node.name }}</span>
+                        {% endif %}
+                    {% else %}
+                        <span class="title settings" data-id="{{ node.id }}">{{ node.name }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            <a class="move icon" title="{{ 'Move'|t('navigate') }}" data-id="{{ node.id }}"></a>
+            <a class="settings icon" title="{{ 'Settings'|t('navigate') }}" data-id="{{ node.id }}"></a>
+            <a class="delete icon" title="{{ 'Delete'|t('navigate') }}"></a>
+            <div class="node__type">
+                <span class="node__type--{{ node.type == 'element' ? node.elementType : node.type }}">{{ node.type == 'element' ? node.elementType : node.type }}</span>
+            </div>
+        </div>
+        {% if node.getChildren|length %}
+        {% set level = level + 1 %}
+        <ul>
+        {% for child in node.getChildren() %}
+            {{ macros.renderNode(navigation, child, level) }}
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+{% endmacro renderNode %}
+
+{# The content of the CP Section#}
+{% block content %}
+    <div id="navigate-nodes-input">
+        {% if not nodes|length %}
+            <div class="navigate__empty">
+                <p>{{ 'Use to buttons below to start adding items to your navigation'|t('navigate') }}</p>
+            </div>
+        {% endif %}
+        <div class="blocks">
+            <ul id="navigate__nav" class="navigate__nav structure">
+                {% set level = 1 %}
+                {% for node in nodes %}
+                    {{ macros.renderNode(navigation, node, level) }}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="buttons">
+            <div class="btngroup" id="navigate-nodeTypes">
+                {% for nodeType in nodeTypes %}
+                    <div class="btn{% if loop.first %} add icon{% endif %}"
+                         data-type="{{ nodeType.handle }}">{{ nodeType.title|t('navigate') }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <script id="navigate__node" type="text/template">
+            {% set replaceWith = {} %}
+            <div class="node__node element" data-id="{{ '%%id%%'|replace(replaceWith) }}" data-label="{{ '%%label%%'|replace(replaceWith) }}">
+                <div class="label">
+                    <span class="node__id visuallyhidden"><strong>{{ '%%id%%'|replace(replaceWith) }}</strong></span>
+                    <span class="status {{ '%%status%%'|replace(replaceWith) }}"></span>
+                    <span class="title">{{ '%%label%%'|replace(replaceWith) }}</span>
+                </div>
+            </div>
+            <a class="move icon" title="{{ 'Move'|t('navigate') }}" data-id="{{ '%%id%%'|replace(replaceWith) }}"></a>
+            <a class="settings icon" title="{{ 'Settings'|t('navigate') }}" data-id="{{ '%%id%%'|replace(replaceWith) }}"></a>
+            <a class="delete icon" title="{{ 'Delete'|t('navigate') }}" data-id="{{ '%%id%%'|replace(replaceWith) }}"></a>
+            <div class="node__type">
+                <span class="node__type--{{ '%%type%%'|replace(replaceWith)|lower }}">{{ '%%typeLabel%%'|replace(replaceWith)|t('navigate') }}</span>
+            </div>
+        </script>
+        <script id="node__url" type="text/template">
+            <div class="body">
+                <div class="field" id="node__url-name">
+                    <div class="heading">
+                        <label class="required" for="name">{{ 'Name'|t('navigate') }}</label>
+                    </div>
+                    <div class="input ltr">
+                        <input class="text node-name fullwidth" type="text" id="name" autocomplete="off" autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="field" id="node__url-url">
+                    <div class="heading">
+                        <label class="required" for="url">{{ 'URL'|t('navigate') }}</label>
+                    </div>
+                    <div class="input ltr">
+                        <input class="text node-url fullwidth" type="text" id="url" name="url" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="buttons right">
+                    <input type="button" class="btn cancel" value="{{ 'Cancel'|t('navigate') }}">
+                    <input type="submit" class="btn submit" value="{{ 'Add'|t('navigate') }}">
+                </div>
+            </footer>
+            <div class="spinner" style="display: none;"></div>
+        </script>
+
+    </div>
+
+{% endblock %}
+
+
+
+{% block details %}
+    <div id="settings" class="meta">
+        <div class="field" id="slug-field">
+            <div class="heading">
+                <label id="handle-label" for="handle">{{ 'Handle'|t('navigate') }}</label>
+            </div>
+            <div class="input ltr">
+                <span>{{ navigation.handle }}</span>
+
+            </div>
+        </div>
+        <div class="field" id="slug-field">
+            <div class="heading">
+                <label id="handle-label" for="handle">{{ "Maximum levels"|t('navigate') }}</label>
+            </div>
+            <div class="input ltr">
+                <span>{{ navigation.levels }}</span>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Navigate plugin for Craft CMS 3.x
+ *
+ * Navigate Settings.twig
+ *
+ * @author    Studio Espresso
+ * @copyright Copyright (c) 2018 Studio Espresso
+ * @link      https://studioespresso.co
+ * @package   Navigate
+ * @since     0.0.1
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: 'Sidebar label'|t('navigate'),
+    instructions: 'You can change the plugin label in the CP sidebar here.'|t('navigate'),
+    id: 'pluginLabel',
+    name: 'pluginLabel',
+    value: settings['pluginLabel']})
+}}
+
+{{ forms.lightswitchField({
+    label: 'Allow non-admin users to add/remove navigations'|t('navigate'),
+    id: 'anyoneCanAdd',
+    name: 'anyoneCanAdd',
+    on: settings['anyoneCanAdd']
+}) }}

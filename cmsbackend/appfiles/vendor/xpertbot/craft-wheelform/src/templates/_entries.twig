@@ -1,0 +1,65 @@
+{% extends '_layouts/cp' %}
+{% set title = "Entries"|t('app') %}
+
+{% do view.registerAssetBundle("wheelform\\assets\\WheelformCpAsset") %}
+
+{% set crumbs = [
+    { label: 'Wheel Form', url: url('wheelform') },
+] %}
+
+{% set content %}
+<div class="tableview">
+    {% if entries is not empty %}
+    <div class="clearfix">
+        {{ pager | raw }}
+    </div>
+        <table class="data fullwidth" id="entries-table">
+            <thead>
+                <tr>
+                    <th scope="col" data-attribute="View">
+                        {{ 'View Message' | t('wheelform') }}
+                    </th>
+                    {% if headerFields is not empty %}
+                        {% for h in headerFields %}
+                            <th>{{h.getLabel()}}</th>
+                        {% endfor %}
+                    {% endif %}
+                    <th class="thin text-center">{{ "Status" | t('wheelform') }}</th>
+                    <th scope="col" data-attribute="dateSubmitted" class="text-right">
+                        {{ 'Date Submitted' | t('wheelform') }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                    <tr data-id="{{ entry.id }}">
+                        <td class="view-message">
+                            <a href="{{ url('wheelform/entry/' ~ entry.id)}}">
+                                {{ "View" | t('wheelform') }}
+                            </a>
+                        </td>
+                        {% if headerFields is not empty %}
+                            {% for field in headerFields %}
+                                <td>
+                                {% set messageValue = entry.getValueById(field.id) %}
+                                {{ messageValue is not empty ? messageValue.value|nl2br : '' }}
+                                </td>
+                            {% endfor %}
+                        {% endif %}
+                        <td class="text-center">
+                            {% if entry.read == 0 %}
+                                <span class="new-badge">!</span>
+                            {% else %}
+                                <span>-</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-right">{{ entry.dateCreated | datetime('short') }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p> {{ 'No Entries' | t('wheelform')}}</p>
+    {% endif %}
+</div>
+{% endset %}

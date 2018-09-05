@@ -1,0 +1,25 @@
+<html>
+<body>
+    <ul>
+    {% for name, field in fields %}
+        <li>
+            <strong>{{ field.label }}:</strong><br>
+            {% switch field.type %}
+
+                {% case "file" %}
+                    {{ field.value.name }}
+
+                {% case "checkbox" %}
+                    {{ field.value | join(',')}}
+
+                {% default %}
+                {# Text based items #}
+                {{ field.value|nl2br }}
+
+            {% endswitch %}
+            <br>&nbsp;
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

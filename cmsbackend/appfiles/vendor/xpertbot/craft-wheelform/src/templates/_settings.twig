@@ -1,0 +1,51 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    first: true,
+    label: "From Email"|t('wheelform'),
+    required: true,
+    id: 'from_email',
+    name: 'from_email',
+    instructions: "The email address that the contact form will send from."|t('wheelform'),
+    value: settings.from_email,
+    autofocus: true,
+    errors: settings.getErrors('from_email')
+}) }}
+
+{{ forms.textField({
+    label: "CP Nav Label"|t('wheelform'),
+    required: false,
+    id: 'cp_label',
+    name: 'cp_label',
+    instructions: "Label displayed on Admin sidebar navigation."|t('wheelform'),
+    value: settings.cp_label | default('Forms'),
+    errors: settings.getErrors('cp_label')
+}) }}
+
+{{ forms.textField({
+    label: "Success Flash Message"|t('wheelform'),
+    id: "success_message",
+    name: "success_message",
+    instructions: "The flash message displayed after successfully sending a message."|t('wheelform'),
+    value: settings.success_message ?? "Thank You! we will review your submission shortly." |t ('wheelform'),
+    errors: settings.getErrors('success_message'),
+    required: true,
+}) }}
+
+{{ forms.textField({
+    label: "Recaptcha Public Key"|t('wheelform'),
+    id: "recaptcha_public",
+    name: "recaptcha_public",
+    value: settings.recaptcha_public | default(''),
+    errors: settings.getErrors('recaptcha_public'),
+    required: false,
+}) }}
+
+{{ forms.textField({
+    label: "Recaptcha Private Key"|t('wheelform'),
+    id: "recaptcha_secret",
+    name: "recaptcha_secret",
+    value: settings.recaptcha_secret | default(''),
+    errors: settings.getErrors('recaptcha_secret'),
+    required: false,
+}) }}

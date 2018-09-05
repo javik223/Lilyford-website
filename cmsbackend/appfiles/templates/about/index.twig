@@ -1,84 +1,5 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>About Lilyford Foundation</title>
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Yeseva+One" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
-        <link href="/assets/css/app.css" rel="stylesheet">
-    </head>
-    <body></body>
-    <div class="grid-container">
-        <header class="header padding-1 align-middle">
-            <div class="cell logo small-5 medium-2">
-                <a href="/" title="Lilyford Foundation"><img src="/assets/img/lilyford-logo.png" alt="Lilyford" height="30"></a>
-            </div>
-            <div class="cell nav primary-nav medium-10 large-8 large-offset-2 js-primary-nav">
-                <ul>
-                    <li>
-                        <a href="/about" title="About Lilyford foundation">About</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="/about" title="About Lilyford Foundation">About Lilyford Foundation</a>
-                            </li>
-                            <li>
-                                <a href="/about/board-of-directors" title="Board of Directors">Board of Directors</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/our-programmes" title="Our Programmes at Lilyford foundation">Our Programmes</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="/our-programmes" title="Overview">Overview</a>
-                            </li>
-                            <li>
-                                <a href="/our-programmes/health.html" title="Health Programmes">Health</a>
-                            </li>
-                            <li>
-                                <a href="/our-programmes/education.html" title="Education">Education</a>
-                            </li>
-                            <li>
-                                <a href="/our-programmes/welfare.html">Welfare</a>
-                            </li>
-                            <li>
-                                <a href="/our-programmes/skill-and-opportunity.html" title="Skill and Opportunity">Skill &amp; Opportunity</a>
-                            </li>
-                            <li>
-                                <a href="/our-programmes/disaster-relief-for-idps.html" title="Disaster Relief for IDPs">Disaster Relief for IDPs</a>
-                            </li>
-                            <li>
-                                <a href="/our-programmes/housing-and-shelter.html" title="Housing and Shelter">Housing &amp; Shelter</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/media-center" title="Media &amp; Events">Media</a>
-                    </li>
-                    <li>
-                        <a href="/contact" title="Contact">Contact</a>
-                    </li>
-                    <li>
-                        <a href="/take-action" title="Take action, join our cause or volunteer">Take Action</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="/take-action/partner.html">Partners</a>
-                            </li>
-                            <li>
-                                <a href="/take-action/volunteer.html">Volunteer</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="hamburger-menu medium-9 js-hamburger-menu">
-                <div class="bar"></div>
-            </div>
-        </header>
-    </div>
+{% extends '_layout.twig' %}
+{% block main %}
     <div class="page-header">
         <h2 class="heading color-blue">About Lilyford</h2>
     </div>
@@ -88,7 +9,7 @@
             <div class="hero__content hero__content--bottom">
                 <div class="cell medium-10 large-6 medium-centered padding-1">
                     <h1>
-                        <em>Lending a helping hand and bridging the gap</em>
+                        <em>{{ entry.subHeader }}</em>
                     </h1>
                 </div>
             </div>
@@ -97,54 +18,36 @@
     <div class="grid-container">
         <div class="grid-x position-relative">
             <div class="cell padding-top-3 large-8">
-                <h4 class="medium-text-center medium-10 large-12 medium-centered large-text-left">Lilyford foundation is a not-for-profit organisation, non-political and non-governmental organisation that helps people in need and provide opportunities for people to pursue their dreams and lead better lives.</h4>
+                <h4 class="medium-text-center medium-10 large-12 medium-centered large-text-left">{{ entry.introText }}</h4>
                 <div class="grid-x padding-top-2 padding-bottom-3">
                     <div class="cell medium-6 padding-2 box-shadow border-bottom-8 border-bottom-crimson">
                         <h3 class="padding-bottom-2 color-crimson">Vision</h3>
-                        <p>To provide a helping hand in achieving a poverty, hunger and basic-health-issues free society and to provide succour to the poor and needy in our immediate environment and Africa at large.</p>
+                        {{ entry.vision }}
                     </div>
                     <div class="cell medium-6 padding-2 box-shadow border-bottom-8 border-bottom-turquoise">
                         <h3 class="padding-bottom-2 color-turquoise">Mission</h3>
-                        <p>To collaborate with organisations with similar goals to create a healthy living and sustainable environment for the less privilege in society.</p>
-                        <p>To achieve a life of giving and promote the values of integrity and selflessness within our host communities and beyond.</p>
-                        <p>To offer voluntary support and assistance to deserving indigent students to achieve their educational aspirations.</p>
+                        {{ entry.mission }}
                     </div>
                 </div>
-                <p>Lilyford focuses on people-oriented programmes and with the help of our beneficiary communities, provide relief for the most pressing community issues. Our values, activities and our belief in helping and uplifting those in need are sacrosanct with the
-                    <a href="/about/founding-story.html" title="Lilyford Founding Story">
-                        <strong>Lilyford founding story.</strong>
-                    </a>
-                </p><img src="/assets/img/our-focus.jpg" alt="Our Focus">
+                {{ entry.text }}
             </div>
             <div class="cell small-10 medium-centered large-3 large-detach-to-right-position-absolute bg-white small-centered box-shadow">
                 <div class="cell large-12 padding-2 text-center">
                     <h3 class="color-crimson strong padding-bottom-2">Our Aims &amp; Objectives</h3>
+
+                    {% set aimsAndObjectives = entry.aimsObjectives %}
                     <div class="grid-x grid-margin-y grid-padding-x medium-up-2 large-up-1">
-                        <div class="cell"><img src="/assets/img/reduce-poverty icon.svg" alt="Improve Quality of Life">
-                            <h4 class="color-purple padding-top-1">Improve Quality of Life</h4>
-                            <p>of people affected by abject poverty, through social programmes to restore their confidence and enable them to live meaningful lives</p>
-                        </div>
-                        <div class="cell"><img src="/assets/img/improve-healthcare icon.svg" alt="Improve Access To Education">
-                            <h4 class="color-turquoise padding-top-1">Improve Access To Education</h4>
-                            <p>through educational funds and award of scholarships to deserving indigent students across the primary, secondary and tertiary levels of education</p>
-                        </div>
-                        <div class="cell"><img src="/assets/img/improve-healthcare icon.svg" alt="Capacity Building">
-                            <h4 class="color-turquoise padding-top-1">Capacity Building</h4>
-                            <p>through empowerment of youths and windows, skills acquisition and engagement of youths in productive ventures that eliminates vices</p>
-                        </div>
-                        <div class="cell"><img src="/assets/img/improve-healthcare icon.svg" alt="Improve Healthcare">
-                            <h4 class="color-turquoise padding-top-1">Improve Healthcare</h4>
-                            <p>through provision of health facilities and seasonal health programmes for people without access to quality health care</p>
-                        </div>
-                        <div class="cell"><img src="/assets/img/self-sustenance icon.svg" alt="Provide Self Sustenance">
-                            <h4 class="color-red padding-top-1">Provide Self Sustenance</h4>
-                            <p>through provision of soft loans for petty trades and small scale business enterprises, to help them manage their future and that of their families.
-                            </p>
-                        </div>
-                        <div class="cell"><img src="/assets/img/homelessness icon.svg" alt="Eradicate Homelessness">
-                            <h4 class="color-chinese-purple padding-top-1">Eradicate Homelessness</h4>
-                            <p>through re-building of degraded and neglected environments and building of shelters for less privileged families and the elderly.</p>
-                        </div>
+                        {% for block in aimsAndObjectives %}
+                            <div class="cell">
+
+                                {% if block.aimsIcon | length %}
+                                    <img src="{{ block.aimsIcon.one().url }}" alt="{{ block.aimsText }}">
+                                    <h4 class="color-purple padding-top-1">
+                                    {% endif %}{{ block.aimsTitle }}</h4>
+                                <p>{{ block.aimsText }}</p>
+                            </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -159,89 +62,4 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="grid-x">
-            <div class="cell medium-6 secondary-nav">
-                <div class="grid-x medium-unstack grid-padding-x">
-                    <ul class="cell medium-6 large-3">
-                        <li>
-                            <a href="#" title="About">About</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Board of Directors">Board of Directors</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Policy">Policy</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Contact">Contact</a>
-                        </li>
-                    </ul>
-                    <ul class="cell medium-6 large-3">
-                        <li>
-                            <a href="#" title="Programmes">Programmes</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Education">Education</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Housing">Housing</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Welfare">Welfare</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Skill &amp; Opportunity">Skill & Opportunity</a>
-                        </li>
-                    </ul>
-                    <ul class="cell medium-6 large-3">
-                        <li>
-                            <a href="#" title="Take Action">Take Action</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Partner with Lilyford">Partner with Lilyford</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Volunteer">Volunteer</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Media">Media</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="cell medium-6">
-                <div class="grid-x">
-                    <ul class="cell social-icons medium-6 padding-bottom-2">
-                        <li>
-                            <a href="/twiiter" title="twiiter">
-                                <i class="icon icon-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/facebook" title="facebook">
-                                <i class="icon icon-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/instagram" title="instagram">
-                                <i class="icon icon-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/linkedin" title="linkedin">
-                                <i class="icon icon-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="cell medium-6 medium-text-right">
-                        <p>&copy; Copyright 2018 Lilyford Foundation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="/assets/js/jquery/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="/assets/js/app.js"></script>
-</html>
+{% endblock %}

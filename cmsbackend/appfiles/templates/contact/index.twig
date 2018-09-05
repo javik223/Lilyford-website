@@ -1,0 +1,47 @@
+{% extends '_layout.twig' %}
+
+{% block main %}
+    <div class="grid-container">
+        <div class="grid-x padding-1">
+            <div class="cell padding-bottom-2">
+                <h1 class="page-title">Contact Us</h1>
+                <h3 class="subheader">{{ entry.subHeader }}</h3>
+            </div>
+            <div class="cell medium-6 padding-top-2 small-order-2 medium-order-1">
+                <div class="grid-y grid-margin-y">
+                    <div class="cell">
+                        <h4 class="strong color-crimson">Volunteering &amp; Partnerships</h4>
+                        {{ entry.volunteeringPartnerships }}
+                    </div>
+                    <div class="cell">
+                        <h4 class="strong color-crimson">Correspondence</h4>
+                        {{ entry.correspondence }}
+                    </div>
+                    <div class="cell padding-top-3 padding-bottom-3">
+                        <div class="flex-container align-justify large-8">
+                            {% include 'partials/socialicons-2x.twig' %}
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <h3 class="color-crimson">Signup for updates
+                            <div class="grid-x padding-top-1">
+                                <div class="cell small-8 medium-9 text-right">
+                                    <input name="Email Address" type="text" placeholder="Email Address">
+                                </div>
+                                <div class="cell small-4 medium-3">
+                                    <input class="button button no-radius" type="button" value="SIGN UP">
+                                </div>
+                            </div>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="cell medium-6 small-order-1">
+                <div class="grid-y grid-margin-y circular-background">
+                    <div class="cell"><img src="/assets/img/children-at-ogidi.png" alt="Lilyford's outreach at Ogidi"></div>
+                </div>
+            </div>
+            <div class="margin-bottom-3 padding-bottom-3"></div>
+        </div>
+    </div>
+{% endblock %}

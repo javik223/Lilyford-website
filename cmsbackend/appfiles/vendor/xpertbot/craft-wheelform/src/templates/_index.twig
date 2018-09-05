@@ -1,0 +1,73 @@
+{% extends "_layouts/cp" %}
+
+{% do view.registerAssetBundle("wheelform\\assets\\WheelformCpAsset") %}
+
+{% set title = title ? title : "Wheel Forms" %}
+
+{% block actionButton %}
+    <div class="buttons">
+        <a class="btn submit icon" href="{{ url('wheelform/form/new') }}">{{ 'New Form'|t('wheelform') }}</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="tableview">
+        {% if wheelforms is not empty %}
+            <table class="data fullwidth">
+                <thead>
+                    <tr>
+                        <th scope="col" class="thin">
+                            {{ 'Form ID' | t('wheelform') }}
+                        </th>
+                        <th class="thin">
+                            {{ 'Active' | t('wheelform') }}
+                        </th>
+                        <th scope="col">
+                            {{ 'Form Name' | t('wheelform') }}
+                        </th>
+                        <th scope="col">
+                            {{ 'Entries' | t('wheelform') }}
+                        </th>
+                        <th scope="col" class="thin">
+                            {{ 'New' | t('wheelform') }}
+                        </th>
+                        {% if currentUser.admin %}
+                            <th scope="col" class="thin">
+                                {{ 'Settings' | t('wheelform') }}
+                            </th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in wheelforms %}
+                        <tr data-id="{{ form.id }}" data-name="{{ form.name|t }}">
+                            <td>{{ form.id }}</td>
+                            <td><span class="status {{ form.active ? 'active' : 'disabled' }}"></span></td>
+                            <td>{{ form.name }}</td>
+                            <td>
+                            {% if form.entryCount > 0 %}<a href="{{ url('wheelform/form/' ~ form.id ~ '/entries')}}">{% endif %}
+                            {{ form.entryCount }}
+                            {% if form.entryCount > 0 %}</a>{% endif %}
+                            </td>
+                            <td>
+                            {% if form.hasNew() %}
+                                <span class="new-badge">!</span>
+                            {% else %}
+                                --
+                            {% endif %}
+                            </td>
+                            {% if currentUser.admin %}
+                                <td>
+                                    <a href="{{ url('wheelform/form/edit/'~ form.id) }}" class="settings icon" title="{{ 'Settings'|t('wheelform') }}"></a>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>{{ 'No forms' | t('wheelform') }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

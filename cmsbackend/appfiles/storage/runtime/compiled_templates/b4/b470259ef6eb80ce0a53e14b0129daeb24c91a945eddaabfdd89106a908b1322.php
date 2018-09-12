@@ -25,53 +25,39 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        // line 2
+        $context["imageHelper"] = $this->loadTemplate("./macros/image-helper.twig", "/about/board-of-directors/_entry", 2);
+        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 4
     public function block_main($context, array $blocks = array())
     {
-        // line 4
+        // line 5
         echo "    <div class=\"grid-container padding-bottom-3 bg-very-light-gray full\">
         <div class=\"cell padding-top-3 show-for-medium\"></div>
         <div class=\"grid-container\">
             <div class=\"grid-x\">
                 <div class=\"cell medium-4 padding-2\">
                     ";
-        // line 9
-        if (twig_length_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 9, $this->source); })()), "profile_picture", array()))) {
-            // line 10
-            echo "                        ";
-            $context["image"] = craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 10, $this->source); })()), "profile_picture", array()), "one", array(), "method");
-            // line 11
-            echo "                        ";
-            $context["transformedImages"] = craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["craft"]) || array_key_exists("craft", $context) ? $context["craft"] : (function () { throw new Twig_Error_Runtime('Variable "craft" does not exist.', 11, $this->source); })()), "imager", array()), "transformImage", array(0 => (isset($context["image"]) || array_key_exists("image", $context) ? $context["image"] : (function () { throw new Twig_Error_Runtime('Variable "image" does not exist.', 11, $this->source); })()), 1 => array(0 => array("width" => 1200), 1 => array("width" => 600), 2 => array("width" => 400)), 2 => array("fillTransforms" => true)), "method");
-            // line 20
-            echo "                        <img src=\"";
-            echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["craft"]) || array_key_exists("craft", $context) ? $context["craft"] : (function () { throw new Twig_Error_Runtime('Variable "craft" does not exist.', 20, $this->source); })()), "imager", array()), "placeholder", array(0 => array("width" => 800, "height" => 600)), "method"), "html", null, true);
-            echo "\" sizes=\"100vw\" srcset=\"";
-            echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["craft"]) || array_key_exists("craft", $context) ? $context["craft"] : (function () { throw new Twig_Error_Runtime('Variable "craft" does not exist.', 20, $this->source); })()), "imager", array()), "srcset", array(0 => (isset($context["transformedImages"]) || array_key_exists("transformedImages", $context) ? $context["transformedImages"] : (function () { throw new Twig_Error_Runtime('Variable "transformedImages" does not exist.', 20, $this->source); })())), "method"), "html", null, true);
-            echo "\" alt=\"";
-            echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 20, $this->source); })()), "title", array()), "html", null, true);
-            echo " – ";
-            echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 20, $this->source); })()), "profile_designation", array()), "html", null, true);
-            echo "\">
-                    ";
-        }
-        // line 22
-        echo "                </div>
+        // line 11
+        echo "                    ";
+        echo $context["imageHelper"]->macro_srcset(craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 11, $this->source); })()), "profilePicture", array()), "one", array(), "method"), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 11, $this->source); })()), "title", array()));
+        echo "
+                </div>
                 <div class=\"cell medium-8 large-7 padding-2\">
                     <a href=\"/about/board-of-directors\" title=\"Board of Directors\"></a>
                     <div class=\"padding-bottom-2\">
                         <h5 class=\"subheader\">BOARD OF DIRECTORS</h5>
                         <h2 class=\"heading color-blue\">";
-        // line 27
-        echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 27, $this->source); })()), "title", array()), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 17, $this->source); })()), "title", array()), "html", null, true);
         echo "</h2>
                     </div>
                     ";
-        // line 29
-        echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 29, $this->source); })()), "profile_text", array()), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 19, $this->source); })()), "profileText", array()), "html", null, true);
         echo "
                 </div>
             </div>
@@ -81,22 +67,22 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
         <h4 class=\"color-purple text-center\">OTHER LILYFORD BOARD MEMBERS</h4>
     </div>
     ";
-        // line 37
-        $context["exempt"] = ("not " . craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 37, $this->source); })()), "id", array()));
-        // line 38
+        // line 27
+        $context["exempt"] = ("not " . craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["entry"]) || array_key_exists("entry", $context) ? $context["entry"] : (function () { throw new Twig_Error_Runtime('Variable "entry" does not exist.', 27, $this->source); })()), "id", array()));
+        // line 28
         echo "    ";
-        $context["otherBoardMembers"] = craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["craft"]) || array_key_exists("craft", $context) ? $context["craft"] : (function () { throw new Twig_Error_Runtime('Variable "craft" does not exist.', 38, $this->source); })()), "entries", array()), "section", array(0 => "boardOfDirectors"), "method"), "id", array(0 => (isset($context["exempt"]) || array_key_exists("exempt", $context) ? $context["exempt"] : (function () { throw new Twig_Error_Runtime('Variable "exempt" does not exist.', 38, $this->source); })())), "method"), "all", array(), "method");
-        // line 39
+        $context["otherBoardMembers"] = craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["craft"]) || array_key_exists("craft", $context) ? $context["craft"] : (function () { throw new Twig_Error_Runtime('Variable "craft" does not exist.', 28, $this->source); })()), "entries", array()), "section", array(0 => "boardOfDirectors"), "method"), "id", array(0 => (isset($context["exempt"]) || array_key_exists("exempt", $context) ? $context["exempt"] : (function () { throw new Twig_Error_Runtime('Variable "exempt" does not exist.', 28, $this->source); })())), "method"), "all", array(), "method");
+        // line 29
         echo "
     <div class=\"grid-container\">
         <div class=\"grid-x small-up-2 medium-up-4 large-up-5 js-slick\" data-slick='{\"prevArrow\": \".boardMemberThumb .prev\", \"nextArrow\": \".boardMemberThumb .next\", \"slidesToShow\": 2, \"slidesToScroll\": 2, \"mobileFirst\": true, \"responsive\": [{\"breakpoint\": 600, \"settings\": {\"slidesToShow\": 4, \"slidesToScroll\": 4}}, {\"breakpoint\": 1000, \"settings\": {\"slidesToShow\": 5, \"slidesToScroll\": 5}}]}'>
             ";
-        // line 42
+        // line 32
         $cacheService = Craft::$app->getTemplateCaches();
         $request = Craft::$app->getRequest();
         $ignoreCache1 = ($request->getIsLivePreview() || $request->getToken());
         if (!$ignoreCache1) {
-            $cacheKey1 = "Owz7bKjo7Se0veudwkvJE9vejOB2QwClsPac";
+            $cacheKey1 = "Ke81yV4MC8h2Jl03TTjcP1DEWCJXORK7omCz";
             $cacheBody1 = $cacheService->getTemplateCache($cacheKey1, false);
         } else {
             $cacheBody1 = null;
@@ -106,51 +92,40 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
                 $cacheService->startTemplateCache($cacheKey1);
             }
             ob_start();
-            // line 43
+            // line 33
             echo "            ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["otherBoardMembers"]) || array_key_exists("otherBoardMembers", $context) ? $context["otherBoardMembers"] : (function () { throw new Twig_Error_Runtime('Variable "otherBoardMembers" does not exist.', 43, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["otherBoardMembers"]) || array_key_exists("otherBoardMembers", $context) ? $context["otherBoardMembers"] : (function () { throw new Twig_Error_Runtime('Variable "otherBoardMembers" does not exist.', 33, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["boardMember"]) {
-                // line 44
+                // line 34
                 echo "                <div class=\"cell text-center padding-bottom-1 padding-top-2\">
                     <a class=\"avatar box-shadow w80\" href=\"";
-                // line 45
+                // line 35
                 echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "url", array()), "html", null, true);
                 echo "\" title=\"";
                 echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "title", array()), "html", null, true);
                 echo "\">
                         ";
-                // line 46
-                if (twig_length_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "profile_thumbnail", array()))) {
-                    // line 47
-                    echo "                            ";
-                    $context["image"] = craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "profile_thumbnail", array()), "one", array(), "method");
-                    // line 48
-                    echo "                            ";
-                    $context["transformedImage"] = craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["craft"]) || array_key_exists("craft", $context) ? $context["craft"] : (function () { throw new Twig_Error_Runtime('Variable "craft" does not exist.', 48, $this->source); })()), "imager", array()), "transformImage", array(0 => (isset($context["image"]) || array_key_exists("image", $context) ? $context["image"] : (function () { throw new Twig_Error_Runtime('Variable "image" does not exist.', 48, $this->source); })()), 1 => array("width" => 320, "height" => 320)), "method");
-                    // line 52
-                    echo "                            <img src=\"";
-                    echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["transformedImage"]) || array_key_exists("transformedImage", $context) ? $context["transformedImage"] : (function () { throw new Twig_Error_Runtime('Variable "transformedImage" does not exist.', 52, $this->source); })()), "url", array()), "html", null, true);
-                    echo "\" alt=\"";
-                    echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "title", array()), "html", null, true);
-                    echo "\" width=\"320\" height=\"320\">
+                // line 37
+                echo "
                         ";
-                }
-                // line 54
-                echo "                    </a>
+                // line 38
+                echo $context["imageHelper"]->macro_srcset(craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "profileThumbnail", array()), "one", array(), "method"), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "title", array()));
+                echo "
+                    </a>
                     <a href=\"";
-                // line 55
+                // line 40
                 echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "url", array()), "html", null, true);
                 echo "\" title=\"";
                 echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "title", array()), "html", null, true);
                 echo "\">
                         <h5 class=\"color-purple padding-top-1\">";
-                // line 56
+                // line 41
                 echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "title", array()), "html", null, true);
                 echo "</h5>
                         <h6 class=\"color-black\">";
-                // line 57
-                echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "profile_designation", array()), "html", null, true);
+                // line 42
+                echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["boardMember"], "profileDesignation", array()), "html", null, true);
                 echo "</h6>
                     </a>
                 </div>
@@ -159,7 +134,7 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['boardMember'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 61
+            // line 46
             echo "            ";
             $cacheBody1 = ob_get_clean();
             if (!$ignoreCache1) {
@@ -167,7 +142,7 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
             }
         }
         echo $cacheBody1;
-        // line 62
+        // line 47
         echo "        </div>
         <div class=\"cell medium-6 medium-centered text-center padding-2 position-relative boardMemberThumb\">
             <span class=\"prev\">
@@ -178,7 +153,7 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
     </div>
 
     ";
-        // line 72
+        // line 57
         echo "    <div class=\"margin-bottom-3\" aria-hidden=\"true\">&nbsp;</div>
 
 ";
@@ -196,12 +171,13 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
 
     public function getDebugInfo()
     {
-        return array (  182 => 72,  171 => 62,  163 => 61,  153 => 57,  149 => 56,  143 => 55,  140 => 54,  132 => 52,  129 => 48,  126 => 47,  124 => 46,  118 => 45,  115 => 44,  110 => 43,  95 => 42,  90 => 39,  87 => 38,  85 => 37,  74 => 29,  69 => 27,  62 => 22,  50 => 20,  47 => 11,  44 => 10,  42 => 9,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  157 => 57,  146 => 47,  138 => 46,  128 => 42,  124 => 41,  118 => 40,  113 => 38,  110 => 37,  104 => 35,  101 => 34,  96 => 33,  81 => 32,  76 => 29,  73 => 28,  71 => 27,  60 => 19,  55 => 17,  45 => 11,  38 => 5,  35 => 4,  31 => 1,  29 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends '_layout.twig' %}
+{% import './macros/image-helper.twig' as imageHelper %}
 
 {% block main %}
     <div class=\"grid-container padding-bottom-3 bg-very-light-gray full\">
@@ -209,19 +185,8 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
         <div class=\"grid-container\">
             <div class=\"grid-x\">
                 <div class=\"cell medium-4 padding-2\">
-                    {% if entry.profile_picture|length %}
-                        {% set image = entry.profile_picture.one() %}
-                        {% set transformedImages = craft.imager.transformImage(image, [
-                            {
-                                width: 1200
-                            }, {
-                                width: 600
-                            }, {
-                                width: 400
-                            }
-                        ], {fillTransforms: true}) %}
-                        <img src=\"{{ craft.imager.placeholder({width: 800, height: 600}) }}\" sizes=\"100vw\" srcset=\"{{ craft.imager.srcset(transformedImages) }}\" alt=\"{{ entry.title }} – {{ entry.profile_designation }}\">
-                    {% endif %}
+                    {# Profile Image #}
+                    {{ imageHelper.srcset(entry.profilePicture.one(), entry.title) }}
                 </div>
                 <div class=\"cell medium-8 large-7 padding-2\">
                     <a href=\"/about/board-of-directors\" title=\"Board of Directors\"></a>
@@ -229,7 +194,7 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
                         <h5 class=\"subheader\">BOARD OF DIRECTORS</h5>
                         <h2 class=\"heading color-blue\">{{ entry.title }}</h2>
                     </div>
-                    {{ entry.profile_text }}
+                    {{ entry.profileText }}
                 </div>
             </div>
         </div>
@@ -246,18 +211,13 @@ class __TwigTemplate_9308fae2cfcf68b7a3e2dfdbea6d5657b139138aa27290f26a002ab9fca
             {% for boardMember in otherBoardMembers %}
                 <div class=\"cell text-center padding-bottom-1 padding-top-2\">
                     <a class=\"avatar box-shadow w80\" href=\"{{ boardMember.url }}\" title=\"{{ boardMember.title }}\">
-                        {% if boardMember.profile_thumbnail | length %}
-                            {% set image = boardMember.profile_thumbnail.one() %}
-                            {% set transformedImage = craft.imager.transformImage(image, {
-                                width: 320,
-                                height: 320
-                            }) %}
-                            <img src=\"{{ transformedImage.url }}\" alt=\"{{ boardMember.title }}\" width=\"320\" height=\"320\">
-                        {% endif %}
+                        {# Board Member picture #}
+
+                        {{ imageHelper.srcset(boardMember.profileThumbnail.one(), boardMember.title) }}
                     </a>
                     <a href=\"{{ boardMember.url }}\" title=\"{{ boardMember.title }}\">
                         <h5 class=\"color-purple padding-top-1\">{{ boardMember.title }}</h5>
-                        <h6 class=\"color-black\">{{ boardMember.profile_designation }}</h6>
+                        <h6 class=\"color-black\">{{ boardMember.profileDesignation }}</h6>
                     </a>
                 </div>
             {% endfor %}

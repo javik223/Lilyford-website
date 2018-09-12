@@ -1,4 +1,5 @@
 {% extends '_layout.twig' %}
+{% import './macros/image-helper.twig' as imageHelper %}
 
 {% block main %}
     <div class="grid-container padding-bottom-3 bg-very-light-gray full">
@@ -6,19 +7,8 @@
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell medium-4 padding-2">
-                    {% if entry.profile_picture|length %}
-                        {% set image = entry.profile_picture.one() %}
-                        {% set transformedImages = craft.imager.transformImage(image, [
-                            {
-                                width: 1200
-                            }, {
-                                width: 600
-                            }, {
-                                width: 400
-                            }
-                        ], {fillTransforms: true}) %}
-                        <img src="{{ craft.imager.placeholder({width: 800, height: 600}) }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedImages) }}" alt="{{ entry.title }} – {{ entry.profile_designation }}">
-                    {% endif %}
+                    {# Profile Image #}
+                    {{ imageHelper.srcset(entry.profilePicture.one(), entry.title) }}
                 </div>
                 <div class="cell medium-8 large-7 padding-2">
                     <a href="/about/board-of-directors" title="Board of Directors"></a>
@@ -26,7 +16,7 @@
                         <h5 class="subheader">BOARD OF DIRECTORS</h5>
                         <h2 class="heading color-blue">{{ entry.title }}</h2>
                     </div>
-                    {{ entry.profile_text }}
+                    {{ entry.profileText }}
                 </div>
             </div>
         </div>
@@ -43,18 +33,13 @@
             {% for boardMember in otherBoardMembers %}
                 <div class="cell text-center padding-bottom-1 padding-top-2">
                     <a class="avatar box-shadow w80" href="{{ boardMember.url }}" title="{{ boardMember.title }}">
-                        {% if boardMember.profile_thumbnail | length %}
-                            {% set image = boardMember.profile_thumbnail.one() %}
-                            {% set transformedImage = craft.imager.transformImage(image, {
-                                width: 320,
-                                height: 320
-                            }) %}
-                            <img src="{{ transformedImage.url }}" alt="{{ boardMember.title }}" width="320" height="320">
-                        {% endif %}
+                        {# Board Member picture #}
+
+                        {{ imageHelper.srcset(boardMember.profileThumbnail.one(), boardMember.title) }}
                     </a>
                     <a href="{{ boardMember.url }}" title="{{ boardMember.title }}">
                         <h5 class="color-purple padding-top-1">{{ boardMember.title }}</h5>
-                        <h6 class="color-black">{{ boardMember.profile_designation }}</h6>
+                        <h6 class="color-black">{{ boardMember.profileDesignation }}</h6>
                     </a>
                 </div>
             {% endfor %}

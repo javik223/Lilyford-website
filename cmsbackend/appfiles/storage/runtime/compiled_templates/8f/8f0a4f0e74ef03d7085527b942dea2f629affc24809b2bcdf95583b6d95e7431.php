@@ -25,24 +25,37 @@ class __TwigTemplate_aae43aade8fd9a2f22589a5149143769b959d6f15dc7ebd7973a103e93e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        // line 2
+        $context["imageHelper"] = $this->loadTemplate("./macros/image-helper.twig", "about/", 2);
+        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 3
     public function block_main($context, array $blocks = array())
     {
-        // line 3
+        // line 4
         echo "    <div class=\"page-header\">
         <h2 class=\"heading color-blue\">About Lilyford</h2>
     </div>
     <div class=\"flex-container\">
         <div class=\"hero hero--with-gradient-background\">
-            <div class=\"hero__image\"><img src=\"/assets/img/about-hero-image.jpg\" alt=\"Lilyford Foundation in Onitsha\"></div>
+            <div class=\"hero__image\">
+
+                ";
+        // line 12
+        echo "
+                ";
+        // line 13
+        echo $context["imageHelper"]->macro_srcset(craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "heroImage", array()), "one", array(), "method"), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "title", array()));
+        echo "
+
+            </div>
             <div class=\"hero__content hero__content--bottom\">
                 <div class=\"cell medium-10 large-6 medium-centered padding-1\">
                     <h1>
                         <em>";
-        // line 12
+        // line 19
         echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "subHeader", array()), "html", null, true);
         echo "</em>
                     </h1>
@@ -54,72 +67,86 @@ class __TwigTemplate_aae43aade8fd9a2f22589a5149143769b959d6f15dc7ebd7973a103e93e
         <div class=\"grid-x position-relative\">
             <div class=\"cell padding-top-3 large-8\">
                 <h4 class=\"medium-text-center medium-10 large-12 medium-centered large-text-left\">";
-        // line 21
+        // line 28
         echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "introText", array()), "html", null, true);
         echo "</h4>
                 <div class=\"grid-x padding-top-2 padding-bottom-3\">
                     <div class=\"cell medium-6 padding-2 box-shadow border-bottom-8 border-bottom-crimson\">
                         <h3 class=\"padding-bottom-2 color-crimson\">Vision</h3>
                         ";
-        // line 25
+        // line 32
         echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "vision", array()), "html", null, true);
         echo "
                     </div>
                     <div class=\"cell medium-6 padding-2 box-shadow border-bottom-8 border-bottom-turquoise\">
                         <h3 class=\"padding-bottom-2 color-turquoise\">Mission</h3>
                         ";
-        // line 29
+        // line 36
         echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "mission", array()), "html", null, true);
         echo "
                     </div>
                 </div>
                 ";
-        // line 32
+        // line 39
         echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "text", array()), "html", null, true);
         echo "
             </div>
             <div class=\"cell small-10 medium-centered large-3 large-detach-to-right-position-absolute bg-white small-centered box-shadow\">
                 <div class=\"cell large-12 padding-2 text-center\">
                     <h3 class=\"color-crimson strong padding-bottom-2\">Our Aims &amp; Objectives</h3>
-                    <div class=\"grid-x grid-margin-y grid-padding-x medium-up-2 large-up-1\">
-                        <div class=\"cell\"><img src=\"/assets/img/reduce-poverty icon.svg\" alt=\"Improve Quality of Life\">
-                            <h4 class=\"color-purple padding-top-1\">Improve Quality of Life</h4>
-                            <p>of people affected by abject poverty, through social programmes to restore their confidence and enable them to live meaningful lives</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/improve-healthcare icon.svg\" alt=\"Improve Access To Education\">
-                            <h4 class=\"color-turquoise padding-top-1\">Improve Access To Education</h4>
-                            <p>through educational funds and award of scholarships to deserving indigent students across the primary, secondary and tertiary levels of education</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/improve-healthcare icon.svg\" alt=\"Capacity Building\">
-                            <h4 class=\"color-turquoise padding-top-1\">Capacity Building</h4>
-                            <p>through empowerment of youths and windows, skills acquisition and engagement of youths in productive ventures that eliminates vices</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/improve-healthcare icon.svg\" alt=\"Improve Healthcare\">
-                            <h4 class=\"color-turquoise padding-top-1\">Improve Healthcare</h4>
-                            <p>through provision of health facilities and seasonal health programmes for people without access to quality health care</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/self-sustenance icon.svg\" alt=\"Provide Self Sustenance\">
-                            <h4 class=\"color-red padding-top-1\">Provide Self Sustenance</h4>
-                            <p>through provision of soft loans for petty trades and small scale business enterprises, to help them manage their future and that of their families.
-                            </p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/homelessness icon.svg\" alt=\"Eradicate Homelessness\">
-                            <h4 class=\"color-chinese-purple padding-top-1\">Eradicate Homelessness</h4>
-                            <p>through re-building of degraded and neglected environments and building of shelters for less privileged families and the elderly.</p>
-                        </div>
+
+                    ";
+        // line 45
+        $context["aimsAndObjectives"] = craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "aimsObjectives", array());
+        // line 46
+        echo "                    <div class=\"grid-x grid-margin-y grid-padding-x medium-up-2 large-up-1\">
+                        ";
+        // line 47
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["aimsAndObjectives"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["block"]) {
+            // line 48
+            echo "                            <div class=\"cell\">
+
+                                ";
+            // line 50
+            if (twig_length_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["block"], "aimsIcon", array()))) {
+                // line 51
+                echo "                                    <img src=\"";
+                echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["block"], "aimsIcon", array()), "one", array(), "method"), "url", array()), "html", null, true);
+                echo "\" alt=\"";
+                echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["block"], "aimsText", array()), "html", null, true);
+                echo "\">
+                                    <h4 class=\"color-purple padding-top-1\">
+                                    ";
+            }
+            // line 53
+            echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["block"], "aimsTitle", array()), "html", null, true);
+            echo "</h4>
+                                <p>";
+            // line 54
+            echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), $context["block"], "aimsText", array()), "html", null, true);
+            echo "</p>
+                            </div>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['block'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 57
+        echo "
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class=\"grid-container padding-top-3 padding-bottom-3\"><img class=\"w100\" src=\"/assets/img/lilyford-doctors-assembly.jpg\" alt=\"Lilyford outreach programme in Onitsha\"></div>
-    <div class=\"grid-container padding-top-2 padding-bottom-3\">
-        <div class=\"grid-x\">
-            <div class=\"cell medium-10 large-8\">
-                <h3 class=\"color-purple string uppercase\">Our Structure</h3>
-                <p>Lilyford Foundation’s team comprises the Board of Directors, Project directors, Membership Coordinators and Volunteers. The Board members provide advisory and strategic direction for Lilyford, while the Project directors and membership coordinators facilitate our numerous outreach and intervention projects. Beneficiary communities are major stakeholders in our operations and are also involved in the decision-making process</p>
-            </div>
-        </div>
+    <div class=\"grid-container padding-top-3 padding-bottom-3\">
+        ";
+        // line 65
+        echo "        ";
+        echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), ($context["entry"] ?? null), "moreText", array()), "html", null, true);
+        echo "
+
     </div>
 ";
     }
@@ -136,19 +163,26 @@ class __TwigTemplate_aae43aade8fd9a2f22589a5149143769b959d6f15dc7ebd7973a103e93e
 
     public function getDebugInfo()
     {
-        return array (  78 => 32,  72 => 29,  65 => 25,  58 => 21,  46 => 12,  35 => 3,  32 => 2,  15 => 1,);
+        return array (  146 => 65,  137 => 57,  128 => 54,  124 => 53,  115 => 51,  113 => 50,  109 => 48,  105 => 47,  102 => 46,  100 => 45,  91 => 39,  85 => 36,  78 => 32,  71 => 28,  59 => 19,  50 => 13,  47 => 12,  38 => 4,  35 => 3,  31 => 1,  29 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends '_layout.twig' %}
+{% import './macros/image-helper.twig' as imageHelper %}
 {% block main %}
     <div class=\"page-header\">
         <h2 class=\"heading color-blue\">About Lilyford</h2>
     </div>
     <div class=\"flex-container\">
         <div class=\"hero hero--with-gradient-background\">
-            <div class=\"hero__image\"><img src=\"/assets/img/about-hero-image.jpg\" alt=\"Lilyford Foundation in Onitsha\"></div>
+            <div class=\"hero__image\">
+
+                {# Hero Image #}
+
+                {{ imageHelper.srcset(entry.heroImage.one(), entry.title) }}
+
+            </div>
             <div class=\"hero__content hero__content--bottom\">
                 <div class=\"cell medium-10 large-6 medium-centered padding-1\">
                     <h1>
@@ -177,45 +211,29 @@ class __TwigTemplate_aae43aade8fd9a2f22589a5149143769b959d6f15dc7ebd7973a103e93e
             <div class=\"cell small-10 medium-centered large-3 large-detach-to-right-position-absolute bg-white small-centered box-shadow\">
                 <div class=\"cell large-12 padding-2 text-center\">
                     <h3 class=\"color-crimson strong padding-bottom-2\">Our Aims &amp; Objectives</h3>
+
+                    {% set aimsAndObjectives = entry.aimsObjectives %}
                     <div class=\"grid-x grid-margin-y grid-padding-x medium-up-2 large-up-1\">
-                        <div class=\"cell\"><img src=\"/assets/img/reduce-poverty icon.svg\" alt=\"Improve Quality of Life\">
-                            <h4 class=\"color-purple padding-top-1\">Improve Quality of Life</h4>
-                            <p>of people affected by abject poverty, through social programmes to restore their confidence and enable them to live meaningful lives</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/improve-healthcare icon.svg\" alt=\"Improve Access To Education\">
-                            <h4 class=\"color-turquoise padding-top-1\">Improve Access To Education</h4>
-                            <p>through educational funds and award of scholarships to deserving indigent students across the primary, secondary and tertiary levels of education</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/improve-healthcare icon.svg\" alt=\"Capacity Building\">
-                            <h4 class=\"color-turquoise padding-top-1\">Capacity Building</h4>
-                            <p>through empowerment of youths and windows, skills acquisition and engagement of youths in productive ventures that eliminates vices</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/improve-healthcare icon.svg\" alt=\"Improve Healthcare\">
-                            <h4 class=\"color-turquoise padding-top-1\">Improve Healthcare</h4>
-                            <p>through provision of health facilities and seasonal health programmes for people without access to quality health care</p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/self-sustenance icon.svg\" alt=\"Provide Self Sustenance\">
-                            <h4 class=\"color-red padding-top-1\">Provide Self Sustenance</h4>
-                            <p>through provision of soft loans for petty trades and small scale business enterprises, to help them manage their future and that of their families.
-                            </p>
-                        </div>
-                        <div class=\"cell\"><img src=\"/assets/img/homelessness icon.svg\" alt=\"Eradicate Homelessness\">
-                            <h4 class=\"color-chinese-purple padding-top-1\">Eradicate Homelessness</h4>
-                            <p>through re-building of degraded and neglected environments and building of shelters for less privileged families and the elderly.</p>
-                        </div>
+                        {% for block in aimsAndObjectives %}
+                            <div class=\"cell\">
+
+                                {% if block.aimsIcon | length %}
+                                    <img src=\"{{ block.aimsIcon.one().url }}\" alt=\"{{ block.aimsText }}\">
+                                    <h4 class=\"color-purple padding-top-1\">
+                                    {% endif %}{{ block.aimsTitle }}</h4>
+                                <p>{{ block.aimsText }}</p>
+                            </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class=\"grid-container padding-top-3 padding-bottom-3\"><img class=\"w100\" src=\"/assets/img/lilyford-doctors-assembly.jpg\" alt=\"Lilyford outreach programme in Onitsha\"></div>
-    <div class=\"grid-container padding-top-2 padding-bottom-3\">
-        <div class=\"grid-x\">
-            <div class=\"cell medium-10 large-8\">
-                <h3 class=\"color-purple string uppercase\">Our Structure</h3>
-                <p>Lilyford Foundation’s team comprises the Board of Directors, Project directors, Membership Coordinators and Volunteers. The Board members provide advisory and strategic direction for Lilyford, while the Project directors and membership coordinators facilitate our numerous outreach and intervention projects. Beneficiary communities are major stakeholders in our operations and are also involved in the decision-making process</p>
-            </div>
-        </div>
+    <div class=\"grid-container padding-top-3 padding-bottom-3\">
+        {# More text #}
+        {{ entry.moreText }}
+
     </div>
 {% endblock %}", "about/", "/app/templates/about/index.twig");
     }

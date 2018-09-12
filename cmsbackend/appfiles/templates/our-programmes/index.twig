@@ -1,0 +1,24 @@
+{% extends '_layout' %}
+{% block main %}
+    <div class="page-header">
+        <h2 class="heading color-blue">Programmes</h2>
+    </div>
+
+    <div class="grid-container">
+        <div class="featured-programmes">
+            {% for programme in craft
+                .entries
+                .section('ourProgrammes')
+                .all() %}
+                <a class="featured-programme bg-{{ programme.color }}" href="{{ programme.url }}" title="{{ programme.title }}">
+                    <div class="featured-programme__content">
+                        <img src="{{ programme.inverseIcon.one().url }}" alt="{{ programme.title }}">
+                        <p class="featured-programme__title margin-bottom-0">
+                            {{ programme.title }}
+                        </p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

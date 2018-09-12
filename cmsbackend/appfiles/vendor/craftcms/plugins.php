@@ -214,4 +214,45 @@ return array (
     'developerUrl' => 'https://ethercreative.co.uk',
     'documentationUrl' => 'https://github.com/ethercreative/seo/blob/v3/README.md',
   ),
+  'verbb/field-manager' => 
+  array (
+    'class' => 'verbb\\fieldmanager\\FieldManager',
+    'basePath' => $vendorDir . '/verbb/field-manager/src',
+    'handle' => 'field-manager',
+    'aliases' => 
+    array (
+      '@verbb/fieldmanager' => $vendorDir . '/verbb/field-manager/src',
+    ),
+    'name' => 'Field Manager',
+    'version' => '2.0.2',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Manage your fields and field groups with ease with simple field or group cloning and quicker overall management.',
+    'developer' => 'Verbb',
+    'developerUrl' => 'https://verbb.io',
+    'developerEmail' => 'support@verbb.io',
+    'documentationUrl' => 'https://github.com/verbb/field-manager',
+    'changelogUrl' => 'https://raw.githubusercontent.com/verbb/field-manager/craft-3/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => true,
+  ),
+  'rias/craft-colour-swatches' => 
+  array (
+    'class' => 'rias\\colourswatches\\ColourSwatches',
+    'basePath' => $vendorDir . '/rias/craft-colour-swatches/src',
+    'handle' => 'colour-swatches',
+    'aliases' => 
+    array (
+      '@rias/colourswatches' => $vendorDir . '/rias/craft-colour-swatches/src',
+    ),
+    'name' => 'Colour Swatches',
+    'version' => '1.1.4',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Let clients choose from a predefined set of colours.',
+    'developer' => 'Rias',
+    'developerUrl' => 'https://rias.be',
+    'documentationUrl' => 'https://github.com/Rias500/craft-colour-swatches/blob/master/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/Rias500/craft-colour-swatches/master/CHANGELOG.md',
+    'hasCpSettings' => false,
+    'hasCpSection' => false,
+  ),
 );

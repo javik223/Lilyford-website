@@ -53,6 +53,7 @@ class ComposerStaticInitad6e86ae405347a3c8e283d8e184430f
         'v' => 
         array (
             'verbb\\redactortweaks\\' => 21,
+            'verbb\\fieldmanager\\' => 19,
         ),
         't' => 
         array (
@@ -61,6 +62,10 @@ class ComposerStaticInitad6e86ae405347a3c8e283d8e184430f
         's' => 
         array (
             'studioespresso\\navigate\\' => 24,
+        ),
+        'r' => 
+        array (
+            'rias\\colourswatches\\' => 20,
         ),
         'o' => 
         array (
@@ -321,6 +326,10 @@ class ComposerStaticInitad6e86ae405347a3c8e283d8e184430f
         array (
             0 => __DIR__ . '/..' . '/verbb/redactor-tweaks/src',
         ),
+        'verbb\\fieldmanager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/verbb/field-manager/src',
+        ),
         'topshelfcraft\\wordsmith\\' => 
         array (
             0 => __DIR__ . '/..' . '/topshelfcraft/wordsmith/src',
@@ -328,6 +337,10 @@ class ComposerStaticInitad6e86ae405347a3c8e283d8e184430f
         'studioespresso\\navigate\\' => 
         array (
             0 => __DIR__ . '/..' . '/studioespresso/craft-navigate/src',
+        ),
+        'rias\\colourswatches\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rias/craft-colour-swatches/src',
         ),
         'olivestudio\\olivemenus\\' => 
         array (
@@ -6471,6 +6484,10 @@ class ComposerStaticInitad6e86ae405347a3c8e283d8e184430f
         'olivestudio\\olivemenus\\services\\OlivemenuItemsService' => __DIR__ . '/..' . '/olivestudio/craft-olivemenus/src/services/OlivemenuItemsService.php',
         'olivestudio\\olivemenus\\services\\OlivemenusService' => __DIR__ . '/..' . '/olivestudio/craft-olivemenus/src/services/OlivemenusService.php',
         'olivestudio\\olivemenus\\variables\\OlivemenusVariable' => __DIR__ . '/..' . '/olivestudio/craft-olivemenus/src/variables/OlivemenusVariable.php',
+        'rias\\colourswatches\\ColourSwatches' => __DIR__ . '/..' . '/rias/craft-colour-swatches/src/ColourSwatches.php',
+        'rias\\colourswatches\\assetbundles\\colourswatchesfield\\ColourSwatchesFieldAsset' => __DIR__ . '/..' . '/rias/craft-colour-swatches/src/assetbundles/colourswatchesfield/ColourSwatchesFieldAsset.php',
+        'rias\\colourswatches\\fields\\ColourSwatches' => __DIR__ . '/..' . '/rias/craft-colour-swatches/src/fields/ColourSwatches.php',
+        'rias\\colourswatches\\models\\ColourSwatches' => __DIR__ . '/..' . '/rias/craft-colour-swatches/src/models/ColourSwatches.php',
         'studioespresso\\navigate\\Navigate' => __DIR__ . '/..' . '/studioespresso/craft-navigate/src/Navigate.php',
         'studioespresso\\navigate\\assetbundles\\Navigate\\NavigateAsset' => __DIR__ . '/..' . '/studioespresso/craft-navigate/src/assetbundles/navigate/NavigateAsset.php',
         'studioespresso\\navigate\\controllers\\DefaultController' => __DIR__ . '/..' . '/studioespresso/craft-navigate/src/controllers/DefaultController.php',
@@ -6501,6 +6518,14 @@ class ComposerStaticInitad6e86ae405347a3c8e283d8e184430f
         'topshelfcraft\\wordsmith\\services\\TypographyService' => __DIR__ . '/..' . '/topshelfcraft/wordsmith/src/services/TypographyService.php',
         'topshelfcraft\\wordsmith\\services\\WordsmithService' => __DIR__ . '/..' . '/topshelfcraft/wordsmith/src/services/WordsmithService.php',
         'topshelfcraft\\wordsmith\\twigextensions\\WordsmithTwigExtension' => __DIR__ . '/..' . '/topshelfcraft/wordsmith/src/twigextensions/WordsmithTwigExtension.php',
+        'verbb\\fieldmanager\\FieldManager' => __DIR__ . '/..' . '/verbb/field-manager/src/FieldManager.php',
+        'verbb\\fieldmanager\\assetbundles\\FieldManagerAsset' => __DIR__ . '/..' . '/verbb/field-manager/src/assetbundles/FieldManagerAsset.php',
+        'verbb\\fieldmanager\\base\\PluginTrait' => __DIR__ . '/..' . '/verbb/field-manager/src/base/PluginTrait.php',
+        'verbb\\fieldmanager\\controllers\\BaseController' => __DIR__ . '/..' . '/verbb/field-manager/src/controllers/BaseController.php',
+        'verbb\\fieldmanager\\models\\Settings' => __DIR__ . '/..' . '/verbb/field-manager/src/models/Settings.php',
+        'verbb\\fieldmanager\\services\\Export' => __DIR__ . '/..' . '/verbb/field-manager/src/services/Export.php',
+        'verbb\\fieldmanager\\services\\Import' => __DIR__ . '/..' . '/verbb/field-manager/src/services/Import.php',
+        'verbb\\fieldmanager\\services\\Service' => __DIR__ . '/..' . '/verbb/field-manager/src/services/Service.php',
         'verbb\\redactortweaks\\RedactorTweaks' => __DIR__ . '/..' . '/verbb/redactor-tweaks/src/RedactorTweaks.php',
         'verbb\\redactortweaks\\RedactorTweaksAsset' => __DIR__ . '/..' . '/verbb/redactor-tweaks/src/RedactorTweaksAsset.php',
         'wheelform\\Mailer' => __DIR__ . '/..' . '/xpertbot/craft-wheelform/src/Mailer.php',

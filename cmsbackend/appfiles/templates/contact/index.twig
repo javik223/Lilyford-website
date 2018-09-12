@@ -1,4 +1,5 @@
 {% extends '_layout.twig' %}
+{% import 'macros/image-helper.twig' as imageHelper %}
 
 {% block main %}
     <div class="grid-container">
@@ -38,7 +39,9 @@
             </div>
             <div class="cell medium-6 small-order-1">
                 <div class="grid-y grid-margin-y circular-background">
-                    <div class="cell"><img src="/assets/img/children-at-ogidi.png" alt="Lilyford's outreach at Ogidi"></div>
+                    <div class="cell">
+                        {{ imageHelper.transform(entry.heroImage.one(), entry.title) }}
+                    </div>
                 </div>
             </div>
             <div class="margin-bottom-3 padding-bottom-3"></div>

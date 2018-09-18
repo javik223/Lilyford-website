@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "927d433be4580b6f206825227d4d8090",
+    "content-hash": "50af7200132c2354eb8f6d526083ad8f",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -531,11 +531,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.23",
+            "version": "3.0.24",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/0994bbe16ccb7cb0a0992d5591a61051758e5580",
-                "reference": "0994bbe16ccb7cb0a0992d5591a61051758e5580",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/c107ad908a987faba50f72831df4bdc9df775f2e",
+                "reference": "c107ad908a987faba50f72831df4bdc9df775f2e",
                 "shasum": ""
             },
             "require": {
@@ -606,7 +606,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-09-04T17:57:44+00:00"
+            "time": "2018-09-11T17:17:27+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1180,11 +1180,11 @@
         },
         {
             "name": "ether/seo",
-            "version": "3.3.1",
+            "version": "3.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ethercreative/seo/zipball/b917148fc1976999806528d9da710723affe4bf5",
-                "reference": "b917148fc1976999806528d9da710723affe4bf5",
+                "url": "https://api.github.com/repos/ethercreative/seo/zipball/148c726dd925936788ba38f4513d36e84622fe6a",
+                "reference": "148c726dd925936788ba38f4513d36e84622fe6a",
                 "shasum": ""
             },
             "require": {
@@ -1196,8 +1196,7 @@
                 "name": "SEO",
                 "developer": "Ether Creative",
                 "developerUrl": "https://ethercreative.co.uk",
-                "class": "ether\\seo\\Seo",
-                "schemaVersion": "3.0.0"
+                "class": "ether\\seo\\Seo"
             },
             "autoload": {
                 "psr-4": {
@@ -1212,7 +1211,7 @@
                 "issues": "https://github.com/ethercreative/seo",
                 "docs": "https://github.com/ethercreative/seo/blob/v3/README.md"
             },
-            "time": "2018-09-03T21:43:28+00:00"
+            "time": "2018-09-10T09:41:14+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -3119,20 +3118,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.1.2",
+            "version": "v6.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
-                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8ddcb66ac10c392d3beb54829eef8ac1438595f4",
+                "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4",
                 "shasum": ""
             },
             "require": {
                 "egulias/email-validator": "~2.0",
                 "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9.1",
-                "symfony/phpunit-bridge": "~3.3@dev"
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses",
@@ -3149,7 +3144,6 @@
                     "lib/swift_required.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3169,7 +3163,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2018-07-13T07:04:35+00:00"
+            "time": "2018-09-11T07:12:52+00:00"
         },
         {
             "name": "symfony/console",

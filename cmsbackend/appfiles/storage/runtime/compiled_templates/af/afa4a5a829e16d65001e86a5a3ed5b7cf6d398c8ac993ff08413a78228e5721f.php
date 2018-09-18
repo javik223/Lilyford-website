@@ -190,7 +190,7 @@ class __TwigTemplate_1ebe5c8e5f57ad38e1bac6e5a4f7df230963900dc1957bee7aa66552b43
         echo "[keywords]\"
 \t\t\t\t\tvalue=\"";
         // line 150
-        echo twig_escape_filter($this->env, craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new Twig_Error_Runtime('Variable "value" does not exist.', 150, $this->source); })()), "keywords", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['craft\web\twig\Extension']->jsonEncodeFilter(craft\helpers\Template::attribute($this->env, $this->getSourceContext(), (isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new Twig_Error_Runtime('Variable "value" does not exist.', 150, $this->source); })()), "keywords", array())), "html", null, true);
         echo "\"
 \t\t\t\t>
 \t\t\t\t<input
@@ -717,7 +717,7 @@ class __TwigTemplate_1ebe5c8e5f57ad38e1bac6e5a4f7df230963900dc1957bee7aa66552b43
 \t\t\t\t\ttype=\"hidden\"
 \t\t\t\t\tid=\"{{ id }}Keywords\"
 \t\t\t\t\tname=\"{{ name }}[keywords]\"
-\t\t\t\t\tvalue=\"{{ value.keywords }}\"
+\t\t\t\t\tvalue=\"{{ value.keywords|json_encode }}\"
 \t\t\t\t>
 \t\t\t\t<input
 \t\t\t\t\ttype=\"hidden\"

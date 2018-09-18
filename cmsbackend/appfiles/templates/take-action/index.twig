@@ -1,0 +1,26 @@
+{% extends '_layout' %}
+{% import 'macros/image-helper.twig' as imageHelper %}
+{% block main %}
+    <div class="page-header">
+        <h2 class="heading color-blue">Take Action</h2>
+        <h5 class="subheader">{{ entry.subHeader | striptags }}</h5>
+    </div>
+
+    {% set takeActionProgrammes = entry.takeActionProgrammes %}
+    {% for item in takeActionProgrammes %}
+        <div class="row margin-bottom-2">
+            <div class="hero-card hero-card-dark bg-{{ item.takeActionProgrammeColor }} color-white">
+                <div class="hero-card__image">
+                    {% set image = item.takeActionProgrammeImage.one() %}
+                    {{ imageHelper.srcset(image.url(), image.title) }}
+                </div>
+                <div class="hero-card__content padding-3">
+                    <h2>{{ item.takeActionProgrammeTitle }}</h2>
+                    <p>{{ item.takeActionProgrammeExcerpt }}</p>
+                    <button class="button uppercase strong dark margin-top-2">{{ item.takeActionProgrammeButtonTitle }}</button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

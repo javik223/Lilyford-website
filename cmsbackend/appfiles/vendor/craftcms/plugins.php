@@ -197,23 +197,6 @@ return array (
     'hasCpSettings' => false,
     'hasCpSection' => false,
   ),
-  'ether/seo' => 
-  array (
-    'class' => 'ether\\seo\\Seo',
-    'basePath' => $vendorDir . '/ether/seo/src',
-    'handle' => 'seo',
-    'aliases' => 
-    array (
-      '@ether/seo' => $vendorDir . '/ether/seo/src',
-    ),
-    'name' => 'SEO',
-    'version' => '3.3.1',
-    'schemaVersion' => '3.0.0',
-    'description' => 'SEO utilities including a unique field type, sitemap, & redirect manager',
-    'developer' => 'Ether Creative',
-    'developerUrl' => 'https://ethercreative.co.uk',
-    'documentationUrl' => 'https://github.com/ethercreative/seo/blob/v3/README.md',
-  ),
   'verbb/field-manager' => 
   array (
     'class' => 'verbb\\fieldmanager\\FieldManager',
@@ -254,5 +237,21 @@ return array (
     'changelogUrl' => 'https://raw.githubusercontent.com/Rias500/craft-colour-swatches/master/CHANGELOG.md',
     'hasCpSettings' => false,
     'hasCpSection' => false,
+  ),
+  'ether/seo' => 
+  array (
+    'class' => 'ether\\seo\\Seo',
+    'basePath' => $vendorDir . '/ether/seo/src',
+    'handle' => 'seo',
+    'aliases' => 
+    array (
+      '@ether/seo' => $vendorDir . '/ether/seo/src',
+    ),
+    'name' => 'SEO',
+    'version' => '3.4.4',
+    'description' => 'SEO utilities including a unique field type, sitemap, & redirect manager',
+    'developer' => 'Ether Creative',
+    'developerUrl' => 'https://ethercreative.co.uk',
+    'documentationUrl' => 'https://github.com/ethercreative/seo/blob/v3/README.md',
   ),
 );

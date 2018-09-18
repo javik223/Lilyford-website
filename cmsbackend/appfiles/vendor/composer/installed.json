@@ -542,12 +542,12 @@
     },
     {
         "name": "craftcms/cms",
-        "version": "3.0.23",
-        "version_normalized": "3.0.23.0",
+        "version": "3.0.24",
+        "version_normalized": "3.0.24.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/cms/zipball/0994bbe16ccb7cb0a0992d5591a61051758e5580",
-            "reference": "0994bbe16ccb7cb0a0992d5591a61051758e5580",
+            "url": "https://api.github.com/repos/craftcms/cms/zipball/c107ad908a987faba50f72831df4bdc9df775f2e",
+            "reference": "c107ad908a987faba50f72831df4bdc9df775f2e",
             "shasum": ""
         },
         "require": {
@@ -594,7 +594,7 @@
             "ext-imagick": "Adds support for more image processing formats and options.",
             "ext-intl": "Adds rich internationalization support."
         },
-        "time": "2018-09-04T17:57:44+00:00",
+        "time": "2018-09-11T17:17:27+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1221,26 +1221,25 @@
     },
     {
         "name": "ether/seo",
-        "version": "3.3.1",
-        "version_normalized": "3.3.1.0",
+        "version": "3.4.4",
+        "version_normalized": "3.4.4.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ethercreative/seo/zipball/b917148fc1976999806528d9da710723affe4bf5",
-            "reference": "b917148fc1976999806528d9da710723affe4bf5",
+            "url": "https://api.github.com/repos/ethercreative/seo/zipball/148c726dd925936788ba38f4513d36e84622fe6a",
+            "reference": "148c726dd925936788ba38f4513d36e84622fe6a",
             "shasum": ""
         },
         "require": {
             "craftcms/cms": "^3.0.0-RC1"
         },
-        "time": "2018-09-03T21:43:28+00:00",
+        "time": "2018-09-10T09:41:14+00:00",
         "type": "craft-plugin",
         "extra": {
             "handle": "seo",
             "name": "SEO",
             "developer": "Ether Creative",
             "developerUrl": "https://ethercreative.co.uk",
-            "class": "ether\\seo\\Seo",
-            "schemaVersion": "3.0.0"
+            "class": "ether\\seo\\Seo"
         },
         "installation-source": "dist",
         "autoload": {
@@ -3240,27 +3239,23 @@
     },
     {
         "name": "swiftmailer/swiftmailer",
-        "version": "v6.1.2",
-        "version_normalized": "6.1.2.0",
+        "version": "v6.1.3",
+        "version_normalized": "6.1.3.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
-            "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8ddcb66ac10c392d3beb54829eef8ac1438595f4",
+            "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4",
             "shasum": ""
         },
         "require": {
             "egulias/email-validator": "~2.0",
             "php": ">=7.0.0"
         },
-        "require-dev": {
-            "mockery/mockery": "~0.9.1",
-            "symfony/phpunit-bridge": "~3.3@dev"
-        },
         "suggest": {
             "ext-intl": "Needed to support internationalized email addresses",
             "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
         },
-        "time": "2018-07-13T07:04:35+00:00",
+        "time": "2018-09-11T07:12:52+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3273,7 +3268,6 @@
                 "lib/swift_required.php"
             ]
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],

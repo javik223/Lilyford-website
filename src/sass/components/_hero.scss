@@ -74,11 +74,9 @@
       content: '';
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        180deg,
+      background: linear-gradient(180deg,
         transparent,
-        rgba(darken($blue, 40%), 0.6) 80%
-      );
+        rgba(darken($blue, 40%), 0.6) 80%);
       mix-blend-mode: multiply;
       position: absolute;
       top: 0;
@@ -154,6 +152,8 @@
     overflow: hidden;
     text-align: center;
     align-content: center;
+    object-fit: cover;
+    object-position: center center;
   }
 
   @include breakpoint(medium) {
@@ -164,29 +164,34 @@
 
     img {
       max-width: none;
-      // width: 100%;
+      width: 100%;
+      height: 100%;
+      text-align: center;
       float: none;
     }
 
     &__image {
       flex: 2;
     }
+
     &__content {
       flex: 1;
     }
   }
 
   @include breakpoint(medium only) {
-    img {
-      // height: 100%;
-      width: auto;
-    }
+    flex-direction: column;
+
+    // img {
+    //   // height: 100%;
+    //   width: auto;
+    // }
   }
 }
 
 .hero-card-dark {
   color: $white;
-  background-color: darken($blue, 10%);
+  // background-color: darken($blue, 10%);
 
   .button {
     background-color: $white;

@@ -1,4 +1,4 @@
-<?php // vmx0KY4g2TWPn
+<?php // vO0hQIZ8ruJmg
 /**
  * @link http://craftcms.com/
  * @copyright Copyright (c) Pixel & Tonic, Inc.
@@ -23,20 +23,28 @@ class ContentBehavior extends Behavior
      * @var string[] List of supported field handles.
      */
     public static $fieldHandles = [
+        'takeActionProgrammeExcerpt' => true,
         'seo' => true,
         'heroImage' => true,
+        'takeActionProgrammeImage' => true,
         'color' => true,
         'mission' => true,
+        'entriesLink' => true,
         'quickFactsSummary' => true,
         'moreText' => true,
         'profilePicture' => true,
         'quickFactsStatistics' => true,
+        'takeActionProgrammeTitle' => true,
         'icon' => true,
         'instagram' => true,
+        'takeActionProgrammeColor' => true,
         'aimsObjectives' => true,
         'volunteeringPartnerships' => true,
+        'linkURL' => true,
         'profileThumbnail' => true,
         'quickFacts' => true,
+        'takeActionProgrammeButtonTitle' => true,
+        'takeActionProgrammes' => true,
         'correspondence' => true,
         'theChallenge' => true,
         'inverseIcon' => true,
@@ -59,6 +67,11 @@ class ContentBehavior extends Behavior
     // =========================================================================
 
     /**
+     * @var mixed Value for field with the handle “takeActionProgrammeExcerpt”.
+     */
+    public $takeActionProgrammeExcerpt;
+
+    /**
      * @var mixed Value for field with the handle “seo”.
      */
     public $seo;
@@ -69,6 +82,11 @@ class ContentBehavior extends Behavior
     public $heroImage;
 
     /**
+     * @var mixed Value for field with the handle “takeActionProgrammeImage”.
+     */
+    public $takeActionProgrammeImage;
+
+    /**
      * @var mixed Value for field with the handle “color”.
      */
     public $color;
@@ -77,6 +95,11 @@ class ContentBehavior extends Behavior
      * @var mixed Value for field with the handle “mission”.
      */
     public $mission;
+
+    /**
+     * @var mixed Value for field with the handle “entriesLink”.
+     */
+    public $entriesLink;
 
     /**
      * @var mixed Value for field with the handle “quickFactsSummary”.
@@ -99,6 +122,11 @@ class ContentBehavior extends Behavior
     public $quickFactsStatistics;
 
     /**
+     * @var mixed Value for field with the handle “takeActionProgrammeTitle”.
+     */
+    public $takeActionProgrammeTitle;
+
+    /**
      * @var mixed Value for field with the handle “icon”.
      */
     public $icon;
@@ -107,6 +135,11 @@ class ContentBehavior extends Behavior
      * @var mixed Value for field with the handle “instagram”.
      */
     public $instagram;
+
+    /**
+     * @var mixed Value for field with the handle “takeActionProgrammeColor”.
+     */
+    public $takeActionProgrammeColor;
 
     /**
      * @var mixed Value for field with the handle “aimsObjectives”.
@@ -119,6 +152,11 @@ class ContentBehavior extends Behavior
     public $volunteeringPartnerships;
 
     /**
+     * @var mixed Value for field with the handle “linkURL”.
+     */
+    public $linkURL;
+
+    /**
      * @var mixed Value for field with the handle “profileThumbnail”.
      */
     public $profileThumbnail;
@@ -127,6 +165,16 @@ class ContentBehavior extends Behavior
      * @var mixed Value for field with the handle “quickFacts”.
      */
     public $quickFacts;
+
+    /**
+     * @var mixed Value for field with the handle “takeActionProgrammeButtonTitle”.
+     */
+    public $takeActionProgrammeButtonTitle;
+
+    /**
+     * @var mixed Value for field with the handle “takeActionProgrammes”.
+     */
+    public $takeActionProgrammes;
 
     /**
      * @var mixed Value for field with the handle “correspondence”.

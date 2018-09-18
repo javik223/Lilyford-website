@@ -1,12 +1,12 @@
 {
   "require": {
-    "craftcms/cms": "3.0.23",
+    "craftcms/cms": "3.0.24",
     "vlucas/phpdotenv": "^2.4.0",
     "craftcms/redactor": "2.1.6",
     "benjamminf/craft-embedded-assets": "1.0.2",
     "aelvan/imager": "v2.1.0",
     "topshelfcraft/wordsmith": "3.0.2",
-    "ether/seo": "3.3.1",
+    "ether/seo": "3.4.4",
     "studioespresso/craft-navigate": "1.1.3",
     "olivestudio/craft-olivemenus": "1.0.0",
     "xpertbot/craft-wheelform": "v1.12.0",

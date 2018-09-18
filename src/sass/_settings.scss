@@ -76,42 +76,45 @@ $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $purple: #a10ab3;
-$darkblue: #333894;
 $blue: #3a2be0;
+$darkblue: darken($blue, 10%);
 $turquoise: #50e3c2;
 $chinese-purple: #bd10e0;
 $crimson: #ec2a81;
 $sun-yellow: #f5a623;
 $dark-red: #db1750;
 
-$foundation-palette: (
-  primary: $blue,
-  secondary: $purple,
-  success: $turquoise,
-  warning: #ffae00,
-  alert: $crimson,
+$foundation-palette: (primary: $blue,
+secondary: $purple,
+success: $turquoise,
+warning: #ffae00,
+alert: $crimson,
 );
 
-$extended-palette: (
-  purple: $purple,
-  darkblue: $darkblue,
-  blue: $blue,
-  turquoise: $turquoise,
-  chinese-purple: $chinese-purple,
-  crimson: $crimson,
-  white: $white,
-  light-gray: $light-gray,
-  very-light-gray: rgba($light-gray, 0.4),
-  dark-gary: $dark-gray,
-  black: $black,
-  sun-yellow: $sun-yellow,
-  dark-red: $dark-red,
+$extended-palette: (purple: $purple,
+darkblue: $darkblue,
+blue: $blue,
+turquoise: $turquoise,
+chinese-purple: $chinese-purple,
+crimson: $crimson,
+white: $white,
+light-gray: $light-gray,
+very-light-gray: rgba($light-gray, 0.4),
+dark-gary: $dark-gray,
+black: $black,
+sun-yellow: $sun-yellow,
+dark-red: $dark-red,
 );
 
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: Josefin, 'Neutraface 2 Text', 'Helvetica Neue', Helvetica,
-  Roboto, Arial, sans-serif;
+$body-font-family: Josefin,
+'Neutraface 2 Text',
+'Helvetica Neue',
+Helvetica,
+Roboto,
+Arial,
+sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -133,12 +136,11 @@ $print-transparent-backgrounds: true;
 // 2. Breakpoints
 // --------------
 
-$breakpoints: (
-  small: 0,
-  medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
-  xxlarge: 1440px,
+$breakpoints: (small: 0,
+medium: 640px,
+large: 1024px,
+xlarge: 1200px,
+xxlarge: 1440px,
 );
 $print-breakpoint: large;
 $breakpoint-classes: (small medium large);
@@ -148,9 +150,8 @@ $breakpoint-classes: (small medium large);
 
 $grid-row-width: $global-width;
 $grid-column-count: 12;
-$grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+$grid-column-gutter: (small: 20px,
+medium: 30px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -162,67 +163,55 @@ $block-grid-max: 8;
 $header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
-$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+$font-family-monospace: Consolas,
+'Liberation Mono',
+Courier,
+monospace;
 $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0rem;
-$header-styles: (
-  small: (
-    'h1': (
-      'font-size': 36,
-      'line-height': 32,
-      'margin-bottom': 8,
-    ),
-    'h2': (
-      'font-size': 28,
-      'line-height': 26,
-      'margin-bottom': 8,
-    ),
-    'h3': (
-      'font-size': 24,
-      'margin-bottom': 4,
-    ),
-    'h4': (
-      'font-size': 20,
-      'margin-bottom': 4,
-    ),
-    'h5': (
-      'font-size': 18,
-      'margin-bottom': 4,
-    ),
-    'h6': (
-      'font-size': 16,
-      'margin-bottom': 4,
-    ),
-  ),
-  medium: (
-    'h1': (
-      'font-size': 48,
-      'line-height': 40,
-      'margin-bottom': 8,
-    ),
-    'h2': (
-      'font-size': 40,
-      'line-height': 36,
-      'margin-bottom': 8,
-    ),
-    'h3': (
-      'font-size': 31,
-      'margin-bottom': 4,
-    ),
-    'h4': (
-      'font-size': 25,
-      'margin-bottom': 4,
-    ),
-    'h5': (
-      'font-size': 20,
-      'margin-bottom': 4,
-    ),
-    'h6': (
-      'font-size': 16,
-      'margin-bottom': 4,
-    ),
-  ),
+$header-styles: (small: ('h1': ('font-size': 36,
+'line-height': 32,
+'margin-bottom': 8,
+),
+'h2': ('font-size': 28,
+'line-height': 26,
+'margin-bottom': 8,
+),
+'h3': ('font-size': 24,
+'margin-bottom': 4,
+),
+'h4': ('font-size': 20,
+'margin-bottom': 4,
+),
+'h5': ('font-size': 18,
+'margin-bottom': 4,
+),
+'h6': ('font-size': 16,
+'margin-bottom': 4,
+),
+),
+medium: ('h1': ('font-size': 48,
+'line-height': 40,
+'margin-bottom': 8,
+),
+'h2': ('font-size': 40,
+'line-height': 36,
+'margin-bottom': 8,
+),
+'h3': ('font-size': 31,
+'margin-bottom': 4,
+),
+'h4': ('font-size': 25,
+'margin-bottom': 4,
+),
+'h5': ('font-size': 20,
+'margin-bottom': 4,
+),
+'h6': ('font-size': 16,
+'margin-bottom': 4,
+),
+),
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
@@ -357,23 +346,20 @@ $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
-$button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+$button-sizes: (tiny: 0.6rem,
+small: 0.75rem,
+default: 0.9rem,
+large: 1.25rem,
 );
-$button-palette: map-merge(
-  $foundation-palette,
-  (
-    white: $white,
-    dark: darken($blue, 10%),
-  )
-);
+$button-palette: map-merge($foundation-palette,
+(white: $white,
+dark: darken($blue, 10%),
+));
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
-$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-transition: background-color 0.25s ease-out,
+color 0.25s ease-out;
 
 // 12. Button Group
 // ----------------
@@ -413,17 +399,14 @@ $card-margin-bottom: $global-margin;
 // ----------------
 
 $closebutton-position: right top;
-$closebutton-offset-horizontal: (
-  small: 0.66rem,
-  medium: 1rem,
+$closebutton-offset-horizontal: (small: 0.66rem,
+medium: 1rem,
 );
-$closebutton-offset-vertical: (
-  small: 0.33em,
-  medium: 0.5rem,
+$closebutton-offset-vertical: (small: 0.33em,
+medium: 0.5rem,
 );
-$closebutton-size: (
-  small: 1.5em,
-  medium: 2em,
+$closebutton-size: (small: 1.5em,
+medium: 2em,
 );
 $closebutton-lineheight: 1;
 $closebutton-color: $dark-gray;
@@ -451,10 +434,9 @@ $dropdown-border: 1px solid $medium-gray;
 $dropdown-font-size: 1rem;
 $dropdown-width: 300px;
 $dropdown-radius: $global-radius;
-$dropdown-sizes: (
-  tiny: 100px,
-  small: 200px,
-  large: 400px,
+$dropdown-sizes: (tiny: 100px,
+small: 200px,
+large: 400px,
 );
 
 // 18. Dropdown Menu
@@ -517,7 +499,8 @@ $input-padding: $form-spacing * 0.75;
 $input-shadow: inset 0 1px 2px rgba($blue, 0.1);
 $input-shadow-focus: 0 0 10px rgba($blue, 0.3);
 $input-cursor-disabled: not-allowed;
-$input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+$input-transition: box-shadow 0.5s,
+border-color 0.25s ease-in-out;
 $input-number-spinners: true;
 $input-radius: rem-calc(2);
 $form-button-radius: $global-radius;
@@ -568,11 +551,9 @@ $meter-fill-bad: $alert-color;
 // 25. Off-canvas
 // --------------
 
-$offcanvas-sizes: (
-  small: 250px,
+$offcanvas-sizes: (small: 250px,
 );
-$offcanvas-vertical-sizes: (
-  small: 250px,
+$offcanvas-vertical-sizes: (small: 250px,
 );
 $offcanvas-background: $light-gray;
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
@@ -674,15 +655,13 @@ $prototype-font-bold: $global-weight-bold;
 
 $prototype-list-breakpoints: $global-prototype-breakpoints;
 $prototype-style-type-unordered: (disc, circle, square);
-$prototype-style-type-ordered: (
-  decimal,
-  lower-alpha,
-  lower-latin,
-  lower-roman,
-  upper-alpha,
-  upper-latin,
-  upper-roman
-);
+$prototype-style-type-ordered: (decimal,
+lower-alpha,
+lower-latin,
+lower-roman,
+upper-alpha,
+upper-latin,
+upper-roman);
 
 // 36. Prototype Overflow
 // ----------------------
@@ -718,18 +697,17 @@ $prototype-separator-margin-top: $global-margin;
 
 $prototype-shadow-breakpoints: $global-prototype-breakpoints;
 $prototype-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-  0 2px 10px 0 rgba(0, 0, 0, 0.12);
+0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
 // 41. Prototype Sizing
 // --------------------
 
 $prototype-sizing-breakpoints: $global-prototype-breakpoints;
 $prototype-sizing: (width, height);
-$prototype-sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%,
+$prototype-sizes: (25: 25%,
+50: 50%,
+75: 75%,
+100: 100%,
 );
 
 // 42. Prototype Spacing
@@ -760,9 +738,8 @@ $prototype-text-overflow: ellipsis;
 // --------------------
 
 $responsive-embed-margin-bottom: rem-calc(16);
-$responsive-embed-ratios: (
-  default: 4 by 3,
-  widescreen: 16 by 9,
+$responsive-embed-ratios: (default: 4 by 3,
+widescreen: 16 by 9,
 );
 
 // 47. Reveal
@@ -816,10 +793,8 @@ $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
-$table-row-stripe-hover: darken(
-  $table-background,
-  $table-color-scale + $table-hover-scale
-);
+$table-row-stripe-hover: darken($table-background,
+$table-color-scale + $table-hover-scale);
 $table-is-striped: true;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
@@ -901,9 +876,8 @@ $topbar-unstack-breakpoint: medium;
 $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
-$grid-margin-gutters: (
-  small: 20px,
-  medium: 30px,
+$grid-margin-gutters: (small: 20px,
+medium: 30px,
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

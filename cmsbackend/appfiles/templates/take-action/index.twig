@@ -3,10 +3,10 @@
 {% block main %}
     <div class="page-header">
         <h2 class="heading color-blue">Take Action</h2>
-        <h5 class="subheader">{{ entry.subHeader | striptags }}</h5>
+        <h5 class="subheader">{{ entry.introText }}</h5>
     </div>
 
-    {% set takeActionProgrammes = entry.takeActionProgrammes %}
+    {% set takeActionProgrammes = entry.takeActionProgrammes.all() %}
     {% for item in takeActionProgrammes %}
         <div class="row margin-bottom-2">
             <div class="hero-card hero-card-dark bg-{{ item.takeActionProgrammeColor }} color-white">

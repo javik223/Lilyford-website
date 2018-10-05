@@ -7,12 +7,12 @@ services:
     #   replicas: 1
     #   restart_policy: on-failure
     ports:
-      # - '8090:80'
+      - '8090:80'
     networks:
       - webnet
     volumes:
-      - 'cmsbackend/nginx/conf.d:/opt/docker/etc/nginx/conf.d'
-      - 'cmsbackend/appfiles:/app'
+      - './cmsbackend/nginx/conf.d:/opt/docker/etc/nginx/conf.d'
+      - './cmsbackend/appfiles:/app'
     environment:
       - WEB_DOCUMENT_ROOT=/app/web
       - VIRTUAL_HOST=pagespeed.wittsandstratts.com
@@ -25,7 +25,7 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - 'cmsbackend/postgres/dbfiles:/var/lib/postgresql/data'
+      - './cmsbackend/postgres/dbfiles:/var/lib/postgresql/data'
     networks:
       - webnet
     environment:

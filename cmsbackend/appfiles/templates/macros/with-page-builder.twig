@@ -1,0 +1,29 @@
+{% macro withPageBuilder(pageBuilderBlock) %}
+    {% import 'macros/page-builder' as pageBuilder %}
+    {% for item in pageBuilderBlock %}
+        {% switch item.type %}
+
+        {% case "text" %}
+            {{ pageBuilder.text(item) }}
+
+            {% case "carousel" %}
+                {{ pageBuilder.carousel(item) }}
+
+                {% case "stripCarousel" %}
+                    {{ pageBuilder.stripCarousel(item.images.all(), loop.index) }}
+
+                    {% case "video" %}
+                        {{ pageBuilder.video(item.video.one()) }}
+
+                        {% case "iconBlocks" %}
+                            {{ pageBuilder.iconBlocks(item) }}
+
+                            {% case "logoBlocks" %}
+                                {{ pageBuilder.logoBlocks(item.logoBlocks.all()) }}
+
+                                {% default %}
+
+                                {% endswitch %}
+
+                            {% endfor %}
+                        {% endmacro %}

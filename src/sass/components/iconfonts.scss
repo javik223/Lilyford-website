@@ -1,0 +1,231 @@
+@font-face {
+  font-family: "iconfonts";
+  src: url('/assets/fonts/iconfonts.eot');
+  src: url('/assets/fonts/iconfonts.eot?#iefix') format('eot'),
+    url('/assets/fonts/iconfonts.woff2') format('woff2'),
+    url('/assets/fonts/iconfonts.woff') format('woff'),
+    url('/assets/fonts/iconfonts.ttf') format('truetype'),
+    url('/assets/fonts/iconfonts.svg#iconfonts') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon-styles {
+  font-family: "iconfonts";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+   @if $filename==Water-and-Sanitations {
+      $char: "\E001";
+    }
+
+     @if $filename==arrow-left {
+      $char: "\E002";
+    }
+
+     @if $filename==arrow-right {
+      $char: "\E003";
+    }
+
+     @if $filename==beneficiaries {
+      $char: "\E004";
+    }
+
+     @if $filename==education {
+      $char: "\E005";
+    }
+
+     @if $filename==eye-test {
+      $char: "\E006";
+    }
+
+     @if $filename==facebook {
+      $char: "\E007";
+    }
+
+     @if $filename==glasses {
+      $char: "\E008";
+    }
+
+     @if $filename==health {
+      $char: "\E009";
+    }
+
+     @if $filename==homelessness {
+      $char: "\E00A";
+    }
+
+     @if $filename==housing-and-shelter {
+      $char: "\E00B";
+    }
+
+     @if $filename==improve-healthcare {
+      $char: "\E00C";
+    }
+
+     @if $filename==instagram {
+      $char: "\E00D";
+    }
+
+     @if $filename==linkedin {
+      $char: "\E00E";
+    }
+
+     @if $filename==medical {
+      $char: "\E00F";
+    }
+
+     @if $filename==reduce-poverty {
+      $char: "\E010";
+    }
+
+     @if $filename==self-sustenance {
+      $char: "\E011";
+    }
+
+     @if $filename==skill {
+      $char: "\E012";
+    }
+
+     @if $filename==twitter {
+      $char: "\E013";
+    }
+
+     @if $filename==volunteers {
+      $char: "\E014";
+    }
+
+     @if $filename==welfare {
+      $char: "\E015";
+    }
+
+    @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    }
+
+    @else {
+      @include icon-styles;
+    }
+
+    content: icon-char($filename);
+  }
+}
+
+.icon-Water-and-Sanitations {
+    @include icon(Water-and-Sanitations);
+  }
+
+  .icon-arrow-left {
+    @include icon(arrow-left);
+  }
+
+  .icon-arrow-right {
+    @include icon(arrow-right);
+  }
+
+  .icon-beneficiaries {
+    @include icon(beneficiaries);
+  }
+
+  .icon-education {
+    @include icon(education);
+  }
+
+  .icon-eye-test {
+    @include icon(eye-test);
+  }
+
+  .icon-facebook {
+    @include icon(facebook);
+  }
+
+  .icon-glasses {
+    @include icon(glasses);
+  }
+
+  .icon-health {
+    @include icon(health);
+  }
+
+  .icon-homelessness {
+    @include icon(homelessness);
+  }
+
+  .icon-housing-and-shelter {
+    @include icon(housing-and-shelter);
+  }
+
+  .icon-improve-healthcare {
+    @include icon(improve-healthcare);
+  }
+
+  .icon-instagram {
+    @include icon(instagram);
+  }
+
+  .icon-linkedin {
+    @include icon(linkedin);
+  }
+
+  .icon-medical {
+    @include icon(medical);
+  }
+
+  .icon-reduce-poverty {
+    @include icon(reduce-poverty);
+  }
+
+  .icon-self-sustenance {
+    @include icon(self-sustenance);
+  }
+
+  .icon-skill {
+    @include icon(skill);
+  }
+
+  .icon-twitter {
+    @include icon(twitter);
+  }
+
+  .icon-volunteers {
+    @include icon(volunteers);
+  }
+
+  .icon-welfare {
+    @include icon(welfare);
+  }
+
+  

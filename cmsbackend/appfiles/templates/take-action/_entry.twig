@@ -1,0 +1,13 @@
+{% extends '_layout' %}
+{% import 'macros/image-helper' as imageHelper %}
+{% import 'macros/with-page-builder' as build %}
+{% block main %}
+    {#<img src="{{ entry.heroImage.one().url }}" alt="{{ entry.heroImage.title }}">#}
+    <div class="page-header">
+        <h2 class="heading color-blue">{{ entry.title }}</h2>
+        <h4 class="subheader">{{ entry.introText }}</h4>
+    </div>
+    <div class="grid-container full text-center">
+        {{ build.withPageBuilder(entry.pageBuilder) }}
+    </div>
+{% endblock %}

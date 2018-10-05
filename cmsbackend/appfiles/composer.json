@@ -13,7 +13,10 @@
     "carlcs/craft-redactorcustomstyles": "v3.0.2",
     "verbb/redactor-tweaks": "2.0.2",
     "verbb/field-manager": "2.0.2",
-    "rias/craft-colour-swatches": "1.1.4"
+    "rias/craft-colour-swatches": "1.1.4",
+    "mikestecker/craft-videoembedder": "1.0.9",
+    "superbig/craft3-http2serverpush": "1.0.0",
+    "verbb/super-table": "2.0.9"
   },
   "autoload": {
     "psr-4": {

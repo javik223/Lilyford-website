@@ -1,7 +1,6 @@
 // Different classes of content, have different border-right colour and header colour
-$variations: (
-  education: $crimson,
-  health: $turquoise,
+$variations: (education: $crimson,
+health: $turquoise,
 );
 
 .featured {
@@ -13,7 +12,7 @@ $variations: (
   }
 
   &:not(.featured-double-image) {
-    > div {
+    >div {
       img {
         width: 100%;
       }
@@ -22,7 +21,7 @@ $variations: (
 
   &.featured-double-image {
     .featured__image {
-      > div {
+      >div {
         @include breakpoint(medium up) {
           max-height: rem-calc(450);
 
@@ -56,7 +55,8 @@ $variations: (
   @include breakpoint(small only) {
     flex-direction: column;
   }
-  > div {
+
+  >div {
     object-fit: cover;
     flex: 1;
     box-sizing: border-box;
@@ -96,8 +96,7 @@ $variations: (
   @extend .medium-centered;
   display: flex;
   background-color: $white;
-  box-shadow: rem-calc(8) rem-calc(10) rem-calc(50) rem-calc(1)
-    rgba($dark-gray, 0.3);
+  box-shadow: rem-calc(8) rem-calc(10) rem-calc(50) rem-calc(1) rgba($dark-gray, 0.3);
   border-right-width: rem-calc(10);
   border-right-style: solid;
   transition: all 0.3s ease-in-out;
@@ -108,7 +107,8 @@ $variations: (
     flex-direction: row;
   }
 
-  @each $variant, $color in $variations {
+  @each $variant,
+  $color in $variations {
     &-#{$variant} {
       border-right-color: $color;
 
@@ -118,13 +118,12 @@ $variations: (
     }
   }
 
-  > div {
+  >div {
     flex: 1;
   }
 
   &:hover {
-    box-shadow: rem-calc(12) rem-calc(16) rem-calc(50) rem-calc(1)
-      rgba($dark-gray, 0.3);
+    box-shadow: rem-calc(12) rem-calc(16) rem-calc(50) rem-calc(1) rgba($dark-gray, 0.3);
     transform: scale(1.05);
   }
 
@@ -141,8 +140,8 @@ $variations: (
   @extend .grid-margin-x;
   @extend .grid-margin-y;
   // @extend .small-up-2;
-  @extend .medium-up-3;
-  @extend .large-up-4;
+  @extend .medium-up-2;
+  // @extend .large-up-2;
   user-select: none;
 
   @include breakpoint(small only) {
@@ -188,8 +187,7 @@ $variations: (
   }
 
   &:hover {
-    box-shadow: rem-calc(2) rem-calc(10) rem-calc(40) rem-calc(2)
-      rgba($blue, 0.3);
+    box-shadow: rem-calc(2) rem-calc(10) rem-calc(40) rem-calc(2) rgba($blue, 0.3);
     transform: scale(1.1);
     z-index: 1000;
     color: rgba($white, 0.5);

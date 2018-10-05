@@ -254,4 +254,69 @@ return array (
     'developerUrl' => 'https://ethercreative.co.uk',
     'documentationUrl' => 'https://github.com/ethercreative/seo/blob/v3/README.md',
   ),
+  'mikestecker/craft-videoembedder' => 
+  array (
+    'class' => 'mikestecker\\videoembedder\\VideoEmbedder',
+    'basePath' => $vendorDir . '/mikestecker/craft-videoembedder/src',
+    'handle' => 'video-embedder',
+    'aliases' => 
+    array (
+      '@mikestecker/videoembedder' => $vendorDir . '/mikestecker/craft-videoembedder/src',
+    ),
+    'name' => 'Video Embedder',
+    'version' => '1.0.9',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Craft plugin to generate an embed URL from a YouTube or Vimeo URL.',
+    'developer' => 'Mike Stecker',
+    'developerUrl' => 'http://github.com/mikestecker',
+    'documentationUrl' => 'https://github.com/mikestecker/craft-videoembedder/blob/v1/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/mikestecker/craft-videoembedder/v1/CHANGELOG.md',
+    'hasCpSettings' => false,
+    'hasCpSection' => false,
+  ),
+  'superbig/craft3-http2serverpush' => 
+  array (
+    'class' => 'superbig\\http2serverpush\\Http2ServerPush',
+    'basePath' => $vendorDir . '/superbig/craft3-http2serverpush/src',
+    'handle' => 'http2-server-push',
+    'aliases' => 
+    array (
+      '@superbig/http2serverpush' => $vendorDir . '/superbig/craft3-http2serverpush/src',
+    ),
+    'name' => 'HTTP2 Server Push',
+    'version' => '1.0.0',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Automatically add HTTP2 Link headers for CSS, JS and image assets.',
+    'developer' => 'Superbig',
+    'developerUrl' => 'https://superbig.co',
+    'documentationUrl' => 'https://github.com/sjelfull/craft3-http2serverpush/blob/master/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/sjelfull/craft3-http2serverpush/master/CHANGELOG.md',
+    'hasCpSettings' => false,
+    'hasCpSection' => false,
+    'components' => 
+    array (
+      'http2ServerPushService' => 'superbig\\http2serverpush\\services\\Http2ServerPushService',
+    ),
+  ),
+  'verbb/super-table' => 
+  array (
+    'class' => 'verbb\\supertable\\SuperTable',
+    'basePath' => $vendorDir . '/verbb/super-table/src',
+    'handle' => 'super-table',
+    'aliases' => 
+    array (
+      '@verbb/supertable' => $vendorDir . '/verbb/super-table/src',
+    ),
+    'name' => 'Super Table',
+    'version' => '2.0.9',
+    'schemaVersion' => '2.0.4',
+    'description' => 'Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.',
+    'developer' => 'Verbb',
+    'developerUrl' => 'https://verbb.io',
+    'developerEmail' => 'support@verbb.io',
+    'documentationUrl' => 'https://github.com/verbb/super-table',
+    'changelogUrl' => 'https://raw.githubusercontent.com/verbb/super-table/craft-3/CHANGELOG.md',
+    'hasCpSettings' => false,
+    'hasCpSection' => false,
+  ),
 );

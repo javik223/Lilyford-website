@@ -5,8 +5,8 @@
             <div class="hero__image"><img src="/assets/img/homepage-hero.jpg" alt="Doing good has never been better"></div>
             <div class="hero__content hero__content--bottom">
                 <div class="medium-10 large-6 medium-centered">
-                    <h1 class="hero__lead">Health For Communities</h1>
-                    <h4>Through health programmes and Hygiene enhancement</h4>
+                    <h1 class="hero__lead">Better life for Communities</h1>
+                    <h4>We are impacting communities positively one person at a time</h4>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                         <h1 class="uppercase color-blue strong">Stronger in Health</h1>
                         <p>We believe in good health as a first step in living a good life and empowerment. We are empowering people to live better lives.</p>
                         <p>
-                            <a href="/stronger-in-health" title="Stronger in Health Outreach">
+                            <a href="/media/stronger-in-health-onitsha-ogidi" title="Stronger in Health Outreach">
                                 <small class="color-crimson">FIND OUT MORE</small>
                             </a>
                         </p>
@@ -43,7 +43,7 @@
                         <h1 class="uppercase color-blue strong">Stronger in Health</h1>
                         <p>We believe in good health as a first step in living a good life and empowerment. We are empowering people to live better lives.</p>
                         <p>
-                            <a href="/stronger-in-health" title="Stronger in Health Outreach">
+                            <a href="/media/stronger-in-health-onitsha-ogidi" title="Stronger in Health Outreach">
                                 <small class="color-crimson">FIND OUT MORE</small>
                             </a>
                         </p>
@@ -69,24 +69,16 @@
             </div>
             <div class="cell padding-top-3 padding-bottom-3">
                 <div class="grid-x small-up-2 medium-up-4 text-center small-unstack icon-groups grid-padding-x carousel js-carousel">
-                    <a class="icon-groups__item" href="/our-programmes/health.html" title="Health Programmes"><img src="/assets/img/health-icon.svg" alt="Health">
-                        <h4 class="color-blue">Health</h4>
-                    </a>
-                    <a class="icon-groups__item" href="/our-programmes/education.html" title="Educational Programmes"><img src="/assets/img/education-icon.svg" alt="Education">
-                        <h4 class="color-purple">Education</h4>
-                    </a>
-                    <a class="icon-groups__item" href="/our-programmes/welfare.html" title="Welfare and Widow Empowerment"><img src="/assets/img/welfare-icon.svg" alt="Welfare and Widow Empowerement">
-                        <h4 class="color-turquoise">Welfare &amp; Widow Empowerment</h4>
-                    </a>
-                    <a class="icon-groups__item" href="/our-programmes/skill-and-opportunity.html" title="Skill and Opportunity"><img src="/assets/img/skill-icon.svg" alt="Skill &amp; Opportunity">
-                        <h4 class="color-crimson">Skill &amp; Opportunity</h4>
-                    </a>
-                    <a class="icon-groups__item" href="/our-programmes/disaster-relief-for-idps.html" title="Disaster relief for IDPs"><img src="/assets/img/education-icon.svg" alt="Education">
-                        <h4 class="color-purple">Disaster Relief for IDPs</h4>
-                    </a>
-                    <a class="icon-groups__item" href="/our-programmes/housing-and-shelter.html" title="Housing &amp;amp; Shelter"><img src="/assets/img/housing-and-shelter-icon.svg" alt="Education">
-                        <h4 class="color-blue">Housing &amp; Shelter</h4>
-                    </a>
+                    {% for programme in craft
+                        .entries
+                        .section('ourProgrammes')
+                        .all() %}
+                        <a class="icon-groups__item" href="{{ programme.url }}" title="{{ programme.title }}">
+
+                            <img src="{{ programme.icon.one().url }}" alt="{{ programme.title }}">
+                            <h4 class="color-{{ programme.color }}">{{ programme.title }}</h4>
+                        </a>
+                    {% endfor %}
                 </div>
                 <div class="cell carousel__nav">
                     <div class="prev">
@@ -110,16 +102,9 @@
                     <div><img src="/assets/img/ogidi-onitsha-2.jpg" alt="Doing good has never been better"></div>
                 </div>
                 <div class="featured__content">
-                    <h4 class="strong color-crimson">Stronger in Health</h4>
-                    <p>Medical outreach by Lilyford in Ogidi & Onitsha, located in Anambra State, Nigeria</p>
-                </div>
-            </div>
-            <div class="featured">
-                <div class="featured__image">
-                    <div><img src="assets/img/ogidi-onitsha-1.jpg" alt=""></div>
-                </div>
-                <div class="featured__content">
-                    <h4 class="strong color-crimson">Stronger in Health</h4>
+                    <a href="/media/stronger-in-health-onitsha-ogidi">
+                        <h4 class="strong color-crimson">Stronger in Health</h4>
+                    </a>
                     <p>Medical outreach by Lilyford in Ogidi & Onitsha, located in Anambra State, Nigeria</p>
                 </div>
             </div>
@@ -160,7 +145,7 @@
                         <div class="cell small-8 medium-9 text-right">
                             <input name="email" type="text" placeholder="Email Address" value="">
                             <p class="newsletter-error-form text-left">
-                                <small>Newsletter Error Form</small>
+                                {#<small>Newsletter Error Form</small>#}
                             </p>
                         </div>
                         <div class=" cell=" cell" small-4=" small-4" medium-3"=" medium-3" "=" medium-3" "="medium-3">

@@ -8,16 +8,18 @@
 
     {% set takeActionProgrammes = entry.takeActionProgrammes.all() %}
     {% for item in takeActionProgrammes %}
-        <div class="row margin-bottom-2">
-            <div class="hero-card hero-card-dark bg-{{ item.takeActionProgrammeColor }} color-white">
-                <div class="hero-card__image">
-                    {% set image = item.takeActionProgrammeImage.one() %}
-                    {{ imageHelper.srcset(image.url(), image.title) }}
-                </div>
-                <div class="hero-card__content padding-3">
-                    <h2>{{ item.takeActionProgrammeTitle }}</h2>
-                    <p>{{ item.takeActionProgrammeExcerpt }}</p>
-                    <button class="button uppercase strong dark margin-top-2">{{ item.takeActionProgrammeButtonTitle }}</button>
+        <div class="grid-container">
+            <div class="grid-x margin-bottom-2">
+                <div class="hero-card hero-card-dark bg-{{ item.takeActionProgrammeColor }} color-white">
+                    <div class="hero-card__image">
+                        {% set image = item.takeActionProgrammeImage.one() %}
+                        {{ imageHelper.srcset(image.url(), image.title) }}
+                    </div>
+                    <div class="hero-card__content padding-3">
+                        <h2>{{ item.takeActionProgrammeTitle }}</h2>
+                        <p>{{ item.takeActionProgrammeExcerpt }}</p>
+                        <a href="{{ item.takeActionProgrammeButtonLink.one().url }}" class="button uppercase strong dark margin-top-2">{{ item.takeActionProgrammeButtonTitle }}</a>
+                    </div>
                 </div>
             </div>
         </div>

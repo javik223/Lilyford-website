@@ -7,10 +7,12 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
+const iconfont = require('gulp-iconfont');
+const iconfontCSS = require('gulp-iconfont-css');
 
 /* ---------------------------------------------------------------
-*  Settings
-*  -------------------------------------------------------------*/
+ *  Settings
+ *  -------------------------------------------------------------*/
 // All source files and folders are placed in the "src" directory,
 // the processed files will be compiled to the "dist" folder
 
@@ -40,11 +42,19 @@ const settings = {
     src: 'src/img',
     dist: 'dist/assets/img',
   },
+  iconfont: {
+    src: 'src/iconfonts',
+    path: 'icon-font-template.scss',
+    dist: 'dist/assets/fonts',
+    fontName: 'iconfonts',
+    targetPath: '../../../src/sass/components/iconfonts.scss', // The path where the (S)CSS file should be saved, relative to the path used in gulp.dest() (optional, defaults to _icons.css).
+    fontPath: '/assets/fonts/' // Directory of font files relative to generated (S)CSS file (optional, defaults to ./)
+  }
 };
 
 /* ---------------------------------------------------------------
-*  Gulp Tasks
-*  -------------------------------------------------------------*/
+ *  Gulp Tasks
+ *  -------------------------------------------------------------*/
 
 /**
  * Pug Tasks
@@ -52,11 +62,36 @@ const settings = {
 gulp.task('pug', () => {
   return gulp
     .src(`${settings.pug.src}/**/*.pug`)
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .on('error', onError)
     .pipe(pug())
     .pipe(gulp.dest(`${settings.pug.dist}`));
 });
+
+gulp.task('iconfont', () => {
+  return gulp
+    .src(`${settings.iconfont.src}/**/*.svg`)
+    .pipe(plumber({
+      errorHandler: onError
+    }))
+    .pipe(iconfontCSS({
+      path: settings.iconfont.path,
+      fontName: settings.iconfont.fontName,
+      targetPath: settings.iconfont.targetPath,
+      fontPath: settings.iconfont.fontPath
+    }))
+    .pipe(iconfont({
+      fontName: settings.iconfont.fontName,
+      // prependUnicode: true,
+      formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
+      timestamp: Math.round(Date.now() / 1000),
+      normalize: true,
+      fontHeight: 1001
+    }))
+    .pipe(gulp.dest(`${settings.iconfont.dist}`))
+})
 
 /**
  * Sass Tasks
@@ -66,7 +101,9 @@ gulp.task('sass', () => {
   return gulp
     .src(`${settings.sass.src}/**/*.scss`)
     .pipe(sourcemaps.init())
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .on('error', onError)
     .pipe(
       sass({
@@ -87,6 +124,7 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest(settings.fonts.dist));
 });
 
+
 // Copy Images
 gulp.task('images', () => {
   return gulp
@@ -103,7 +141,7 @@ gulp.task('images', () => {
 
 // Default Task
 
-gulp.task('serve', ['pug', 'sass', 'fonts', 'images'], function() {
+gulp.task('serve', ['pug', 'sass', 'fonts', 'images', 'iconfont'], function () {
   // Initialize Browsersync
   browserSync.init({
     server: {
@@ -123,6 +161,9 @@ gulp.task('serve', ['pug', 'sass', 'fonts', 'images'], function() {
   // Watch image files
   gulp.watch(`${settings.img.src}/**/*.*`, ['images']);
 
+  // Watch icon files
+  gulp.watch(`${settings.iconfont.src}/**/*.*`, ['iconfont']);
+
   // Watch js files
   // gulp.watch(`${settings.js.src}/**/*.js`, ["js"]);
 
@@ -137,7 +178,7 @@ gulp.task('default', ['serve']);
 
 // Utility Functions -----------------------------------------------------
 // Task error handler
-const onError = function(error, message) {
+const onError = function (error, message) {
   notify({
     title: 'Error in Build',
     message: error.message,

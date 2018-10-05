@@ -1,6 +1,8 @@
 @import 'settings';
 @import 'foundation';
 
+@import 'helpers/_fonts';
+
 // Foundation classes & modules
 @include foundation-global-styles;
 @include foundation-flex-classes;
@@ -17,26 +19,28 @@
 
 // Helpers
 @import 'helpers/color';
-@import 'helpers/_typography.scss';
-@import 'helpers/_button.scss';
-@import 'helpers/_circle-background.scss';
-@import 'helpers/_dimensions.scss';
-@import 'helpers/_misc.scss';
-@import 'helpers/_box-shadow.scss';
-@import 'helpers/_border.scss';
+@import 'helpers/_typography';
+@import 'helpers/_button';
+@import 'helpers/_circle-background';
+@import 'helpers/_dimensions';
+@import 'helpers/_misc';
+@import 'helpers/_box-shadow';
+@import 'helpers/_border';
 
 // Components
-@import 'components/_hero.scss';
-@import 'components/_social-icons.scss';
-@import 'components/_icon-groups.scss';
-@import 'components/_carousel.scss';
-@import 'components/_circular-carousel.scss';
-@import 'components/_featured.scss';
-@import 'components/_page-header.scss';
-@import 'components/_news-box.scss';
-@import 'components/_gallery.scss';
-@import 'components/_avatar.scss';
-@import 'components/_page-navigation.scss';
+@import 'components/_hero';
+@import 'components/_social-icons';
+@import 'components/_icon-groups';
+@import 'components/_carousel';
+@import 'components/_circular-carousel';
+@import 'components/_featured';
+@import 'components/_page-header';
+@import 'components/_news-box';
+@import 'components/_gallery';
+@import 'components/_avatar';
+@import 'components/_page-navigation';
+@import 'components/_video';
+@import 'components/iconfonts';
 
 // Sections
 @import './sections/_header';
@@ -49,6 +53,7 @@ html,
 body {
   outline: 0;
   width: 100%;
-  height: 100%;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

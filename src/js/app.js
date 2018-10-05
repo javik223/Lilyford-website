@@ -1,14 +1,7 @@
-import dynamics from 'dynamics.js';
-import {
-  TimelineMax,
-  Back,
-  Elastic,
-  TweenLite,
-  TimelineLite,
-  Power4,
-} from 'gsap';
+import dynamics from "dynamics.js";
+import { Back } from "gsap";
 
-import Dropdown from './dropdown';
+import Dropdown from "./dropdown";
 
 var carousel = $('.js-carousel');
 var circularCarousel = $('.js-circular-carousel');
@@ -18,19 +11,17 @@ carousel.slick({
   slidesToScroll: 2,
   speed: 300,
   // arrows: false,
-  prevArrow: carousel.parent().find('.prev'),
-  nextArrow: carousel.parent().find('.next'),
+  prevArrow: $(this).parent().find('.prev'),
+  nextArrow: $(this).parent().find('.next'),
   cssEase: 'ease-in-out',
   mobileFirst: true,
-  responsive: [
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToScroll: 3,
-        slidesToShow: 3,
-      },
+  responsive: [{
+    breakpoint: 480,
+    settings: {
+      slidesToScroll: 3,
+      slidesToShow: 3,
     },
-  ],
+  }, ],
 });
 
 circularCarousel.slick({
@@ -68,8 +59,7 @@ $('.js-gallery-thumb').slick({
   centerPadding: '20px',
   centerMode: true,
   mobileFirst: true,
-  responsive: [
-    {
+  responsive: [{
       breakpoint: 600,
       settings: {
         slidesToShow: 3,
@@ -94,11 +84,14 @@ let pageNav = (function pageNav() {
   let height = $(dropDown).outerHeight();
 
   function showDropDown() {
-    $dropDown.css({ height: 0, visibility: 'visible' }).addClass('isVisible');
+    $dropDown.css({
+      height: 0,
+      visibility: 'visible'
+    }).addClass('isVisible');
     dynamics.animate(
-      dropDown,
-      { height },
-      {
+      dropDown, {
+        height
+      }, {
         type: dynamics.spring,
         duration: 1300,
         frequency: 200,
@@ -112,9 +105,9 @@ let pageNav = (function pageNav() {
   function hideDropDown() {
     $dropDown.removeClass('isVisible');
     dynamics.animate(
-      dropDown,
-      { height: 0 },
-      {
+      dropDown, {
+        height: 0
+      }, {
         type: dynamics.spring,
         duration: 600,
         frequency: 50,
@@ -145,7 +138,7 @@ let pageNav = (function pageNav() {
    * ----------------------------------------------
    */
 
-  pageNavHeader.on('click', function() {
+  pageNavHeader.on('click', function () {
     if ($dropDown.hasClass('isVisible')) {
       hideDropDown();
     } else {
@@ -166,7 +159,7 @@ let harmbugerMenu = $('.js-hamburger-menu');
 console.log(harmbugerMenu.css('display'));
 
 if (harmbugerMenu.css('display') === 'block') {
-  let Menu = (function() {
+  let Menu = (function () {
     let options = {
       container: $('.js-primary-nav'),
       items: $('.js-primary-nav > ul > li'),
@@ -189,7 +182,7 @@ if (harmbugerMenu.css('display') === 'block') {
     };
   })();
 
-  harmbugerMenu.on('click', function() {
+  harmbugerMenu.on('click', function () {
     $(this).toggleClass('animate');
     $(this)
       .find('.bar')
@@ -201,7 +194,7 @@ if (harmbugerMenu.css('display') === 'block') {
 // Show dropdown menu when each of the dropdowns is clicked
 let dropdowns = $('.js-primary-nav > ul').find('.dropdown');
 console.log('Dropdowns:', dropdowns);
-dropdowns.each(function(index, dropdown) {
+dropdowns.each(function (index, dropdown) {
   dropdown = $(dropdown);
   const thisDropdown = new Dropdown({
     container: dropdown,
@@ -211,10 +204,10 @@ dropdowns.each(function(index, dropdown) {
 
   console.log('Dropdown:', dropdown.parent());
   dropdown.parent().hover(
-    function() {
+    function () {
       thisDropdown.show();
     },
-    function() {
+    function () {
       thisDropdown.hide();
     },
   );

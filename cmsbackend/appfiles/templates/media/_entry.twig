@@ -1,0 +1,29 @@
+{% extends '_layout' %}
+{% import 'macros/with-page-builder' as build %}
+{% import 'macros/image-helper' as imageHelper %}
+{% block main %}
+
+    <div class="grid-container margin-bottom-3 margin-top-1">
+        <div class="grid-x padding-2 bg-light-gray">
+            <div class="cell medium-10 large-6 medium-centered text-center">
+                <h6 class="subheader">
+                    <a class="subheader" href="/media/{{ entry.type }}" title="Programmes">{{ entry.type|upper }}</a>
+                </h6>
+                <h2 class="color-blue strong">{{ entry.title }}</h2>
+                <h4 class="subheader">{{ entry.subHeader }}</h4>
+            </div>
+        </div>
+
+        <div>
+            {% if entry.heroImage | length %}
+                {% set heroImage = entry.heroImage.one() %}
+                {{ imageHelper.srcset(heroImage.url, heroImage.title) }}
+            {% endif %}
+
+        </div>
+    </div>
+
+    <div class="grid-container">
+        {{ build.withPageBuilder(entry.pageBuilder) }}
+    </div>
+{% endblock %}

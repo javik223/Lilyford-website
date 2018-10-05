@@ -1,0 +1,138 @@
+{# Plain Text #}
+
+{% macro text(item) %}
+    <div class="grid-container">
+        <div class="grid-x margin-bottom-2 small-11 small-centered medium-10 large-8">{{ item.text }}</div>
+    </div>
+{% endmacro %}
+
+{# Carousel #}
+
+{% macro carousel(items) %}
+    {% import 'macros/image-helper' as imageHelper %}
+    <div class="grid-container">
+        <div class="grid-x padding-bottom-2">
+            <div class="gallery">
+                {% if items.title %}
+                    <h3 class="gallery__title">{{ items.title }}</h3>
+                {% endif %}
+
+                <div class="gallery__main js-gallery-main">
+                    {% for carouselImage in items.images.all() %}
+                        <div>
+
+                            {{ imageHelper.srcset(carouselImage, carouselImage.title) }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="gallery__thumbs js-gallery-thumb">
+                    {% for carouselImage in items.images.all() %}
+                        <div>
+                            {{ imageHelper.transform(carouselImage.url, carouselImage.title, 300, 200) }}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="gallery__navigation medium-6 medium-centered text-center">
+                    <span class="prev">
+                        <div class="icon icon-arrow-left"></div>
+                    </span>
+                    <span>&nbsp;</span>
+                    <span class="next">
+                        <div class="icon icon-arrow-right"></div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Strip Carousel #}
+
+{% macro stripCarousel(images, index) %}
+    {% import 'macros/image-helper' as imageHelper %}
+    <div class="grid-container margin-bottom-2">
+        <div class="grid-x">
+            <div class="js-slick cell" data-slick='{"slidesToShow": 2, "prevArrow": ".strip-carousel-{{ index }}-prev", "nextArrow": ".strip-carousel-{{ index }}-next", "responsive": [
+      {
+        "breakpoint": 960,
+        "settings": {
+          "centerMode": true,
+          "slidesToShow": 1,
+          "slidesToScroll": 1,
+          "centerPadding": "-10px"
+        }
+      }
+    ]}'>
+                {% for image in images %}
+                    <div class="cell padding-1">{{ imageHelper.transform(image.url, image.title, 1000) }}</div>
+                {% endfor %}
+            </div>
+            <div class="text-center cell strip-carousel-{{ index }}">
+                <span class="prev strip-carousel-{{ index }}-prev">
+                    <div class="icon icon-arrow-left"></div>
+                </span>
+
+                <span class="next strip-carousel-{{ index }}-next">
+                    <div class="icon icon-arrow-right"></div>
+                </span>
+
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Video block #}
+
+{% macro video(video) %}
+    <div class="grid-container full bg-very-light-gray">
+        <div class="grid-container padding-3">
+            <div class="cell medium-10 medium-centered">
+                <div class="video">
+                    {% set embeddedAsset = craft.embeddedAssets.get(video, {width: 200}) %}
+                    {{ embeddedAsset ? embeddedAsset.html }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Icon Blocks #}
+{% macro iconBlocks(iconBlock) %}
+    <div class="grid-container">
+        <div class="cell text-center padding-top-2 padding-bottom-3">
+            {% if iconBlock.iconBlockTitle %}
+                <div class="cell padding-2">
+                    <h4 class="uppercase strong color-blue">{{ iconBlock.iconBlockTitle }}</h4>
+                </div>
+            {% endif %}
+
+            <div class="grid-x small-up-2 medium-up-3 large-up-4 align-center-middle">
+                {% for icon in iconBlock.iconBlocks %}
+                    <div class="cell padding-bottom-1">
+                        <img src="{{ icon.iconBlockIcon.one().url }}" alt="{{ icon.iconBlockSubText }}">
+                        <h3 class="margin-0 padding-top-1 strong color-purple">{{ icon.iconBlockTitle }}</h3>
+                        <p>{{ icon.iconBlockSubText }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Logo Blocks #}
+{% macro logoBlocks(images) %}
+    {% import 'macros/image-helper' as imageHelper %}
+    <div class="grid-container">
+        <div class="cell text-center padding-top-2 padding-bottom-3">
+            <div class="grid-x small-up-4 medium-up-5 large-up-8 align-center-middle grid-margin-x">
+                {% for image in images %}
+                    <div class="cell padding-bottom-1">
+                        {{ imageHelper.transform(image.url, image.title, 400, 400) }}
+                        <p>&nbsp;</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}

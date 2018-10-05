@@ -1,4 +1,4 @@
-<?php // vO0hQIZ8ruJmg
+<?php // vihczAOEiLccw
 /**
  * @link http://craftcms.com/
  * @copyright Copyright (c) Pixel & Tonic, Inc.
@@ -27,6 +27,7 @@ class ContentBehavior extends Behavior
         'seo' => true,
         'heroImage' => true,
         'takeActionProgrammeImage' => true,
+        'takeActionProgrammeButtonLink' => true,
         'color' => true,
         'mission' => true,
         'entriesLink' => true,
@@ -38,22 +39,29 @@ class ContentBehavior extends Behavior
         'icon' => true,
         'instagram' => true,
         'takeActionProgrammeColor' => true,
+        'iconBlockSubText' => true,
         'aimsObjectives' => true,
         'volunteeringPartnerships' => true,
         'linkURL' => true,
         'profileThumbnail' => true,
         'quickFacts' => true,
+        'pageBuilder' => true,
         'takeActionProgrammeButtonTitle' => true,
         'takeActionProgrammes' => true,
+        'logoBlocks' => true,
+        'iconBlocks' => true,
+        'images' => true,
         'correspondence' => true,
         'theChallenge' => true,
         'inverseIcon' => true,
         'aimsTitle' => true,
         'aimsIcon' => true,
         'subHeader' => true,
+        'iconBlockIcon' => true,
         'profileText' => true,
         'whatWeAreDoing' => true,
         'facebook' => true,
+        'video' => true,
         'profileDesignation' => true,
         'introText' => true,
         'linkedin' => true,
@@ -61,6 +69,7 @@ class ContentBehavior extends Behavior
         'text' => true,
         'aimsText' => true,
         'vision' => true,
+        'iconBlockTitle' => true,
     ];
 
     // Properties
@@ -85,6 +94,11 @@ class ContentBehavior extends Behavior
      * @var mixed Value for field with the handle “takeActionProgrammeImage”.
      */
     public $takeActionProgrammeImage;
+
+    /**
+     * @var mixed Value for field with the handle “takeActionProgrammeButtonLink”.
+     */
+    public $takeActionProgrammeButtonLink;
 
     /**
      * @var mixed Value for field with the handle “color”.
@@ -142,6 +156,11 @@ class ContentBehavior extends Behavior
     public $takeActionProgrammeColor;
 
     /**
+     * @var mixed Value for field with the handle “iconBlockSubText”.
+     */
+    public $iconBlockSubText;
+
+    /**
      * @var mixed Value for field with the handle “aimsObjectives”.
      */
     public $aimsObjectives;
@@ -167,6 +186,11 @@ class ContentBehavior extends Behavior
     public $quickFacts;
 
     /**
+     * @var mixed Value for field with the handle “pageBuilder”.
+     */
+    public $pageBuilder;
+
+    /**
      * @var mixed Value for field with the handle “takeActionProgrammeButtonTitle”.
      */
     public $takeActionProgrammeButtonTitle;
@@ -175,6 +199,21 @@ class ContentBehavior extends Behavior
      * @var mixed Value for field with the handle “takeActionProgrammes”.
      */
     public $takeActionProgrammes;
+
+    /**
+     * @var mixed Value for field with the handle “logoBlocks”.
+     */
+    public $logoBlocks;
+
+    /**
+     * @var mixed Value for field with the handle “iconBlocks”.
+     */
+    public $iconBlocks;
+
+    /**
+     * @var mixed Value for field with the handle “images”.
+     */
+    public $images;
 
     /**
      * @var mixed Value for field with the handle “correspondence”.
@@ -207,6 +246,11 @@ class ContentBehavior extends Behavior
     public $subHeader;
 
     /**
+     * @var mixed Value for field with the handle “iconBlockIcon”.
+     */
+    public $iconBlockIcon;
+
+    /**
      * @var mixed Value for field with the handle “profileText”.
      */
     public $profileText;
@@ -220,6 +264,11 @@ class ContentBehavior extends Behavior
      * @var mixed Value for field with the handle “facebook”.
      */
     public $facebook;
+
+    /**
+     * @var mixed Value for field with the handle “video”.
+     */
+    public $video;
 
     /**
      * @var mixed Value for field with the handle “profileDesignation”.
@@ -255,6 +304,11 @@ class ContentBehavior extends Behavior
      * @var mixed Value for field with the handle “vision”.
      */
     public $vision;
+
+    /**
+     * @var mixed Value for field with the handle “iconBlockTitle”.
+     */
+    public $iconBlockTitle;
 
     /**
      * @var array Additional custom field values we don’t know about yet.

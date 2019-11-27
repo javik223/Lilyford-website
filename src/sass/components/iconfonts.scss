@@ -43,7 +43,7 @@
 @function icon-char($filename) {
   $char: "";
 
-   @if $filename==Water-and-Sanitations {
+   @if $filename==apartment {
       $char: "\E001";
     }
 
@@ -55,76 +55,252 @@
       $char: "\E003";
     }
 
-     @if $filename==beneficiaries {
+     @if $filename==books {
       $char: "\E004";
     }
 
-     @if $filename==education {
+     @if $filename==community {
       $char: "\E005";
     }
 
-     @if $filename==eye-test {
+     @if $filename==disaster {
       $char: "\E006";
     }
 
-     @if $filename==facebook {
+     @if $filename==disaster2 {
       $char: "\E007";
     }
 
-     @if $filename==glasses {
+     @if $filename==disaster3 {
       $char: "\E008";
     }
 
-     @if $filename==health {
+     @if $filename==disaster4 {
       $char: "\E009";
     }
 
-     @if $filename==homelessness {
+     @if $filename==drugs {
       $char: "\E00A";
     }
 
-     @if $filename==housing-and-shelter {
+     @if $filename==drugs2 {
       $char: "\E00B";
     }
 
-     @if $filename==improve-healthcare {
+     @if $filename==drugs3 {
       $char: "\E00C";
     }
 
-     @if $filename==instagram {
+     @if $filename==drugs4 {
       $char: "\E00D";
     }
 
-     @if $filename==linkedin {
+     @if $filename==drugs5 {
       $char: "\E00E";
     }
 
-     @if $filename==medical {
+     @if $filename==education {
       $char: "\E00F";
     }
 
-     @if $filename==reduce-poverty {
+     @if $filename==education2 {
       $char: "\E010";
     }
 
-     @if $filename==self-sustenance {
+     @if $filename==education3 {
       $char: "\E011";
     }
 
-     @if $filename==skill {
+     @if $filename==eye-test {
       $char: "\E012";
     }
 
-     @if $filename==twitter {
+     @if $filename==eyeglasses {
       $char: "\E013";
     }
 
-     @if $filename==volunteers {
+     @if $filename==eyeglasses2 {
       $char: "\E014";
     }
 
-     @if $filename==welfare {
+     @if $filename==eyeglasses3 {
       $char: "\E015";
+    }
+
+     @if $filename==eyeglasses4 {
+      $char: "\E016";
+    }
+
+     @if $filename==facebook {
+      $char: "\E017";
+    }
+
+     @if $filename==glasses {
+      $char: "\E018";
+    }
+
+     @if $filename==happy {
+      $char: "\E019";
+    }
+
+     @if $filename==health {
+      $char: "\E01A";
+    }
+
+     @if $filename==health2 {
+      $char: "\E01B";
+    }
+
+     @if $filename==health3 {
+      $char: "\E01C";
+    }
+
+     @if $filename==health4 {
+      $char: "\E01D";
+    }
+
+     @if $filename==health5 {
+      $char: "\E01E";
+    }
+
+     @if $filename==help {
+      $char: "\E01F";
+    }
+
+     @if $filename==help2 {
+      $char: "\E020";
+    }
+
+     @if $filename==homelessness {
+      $char: "\E021";
+    }
+
+     @if $filename==housing {
+      $char: "\E022";
+    }
+
+     @if $filename==housing2 {
+      $char: "\E023";
+    }
+
+     @if $filename==instagram {
+      $char: "\E024";
+    }
+
+     @if $filename==linkedin {
+      $char: "\E025";
+    }
+
+     @if $filename==medical {
+      $char: "\E026";
+    }
+
+     @if $filename==partner {
+      $char: "\E027";
+    }
+
+     @if $filename==partner2 {
+      $char: "\E028";
+    }
+
+     @if $filename==people {
+      $char: "\E029";
+    }
+
+     @if $filename==people2 {
+      $char: "\E02A";
+    }
+
+     @if $filename==people3 {
+      $char: "\E02B";
+    }
+
+     @if $filename==people4 {
+      $char: "\E02C";
+    }
+
+     @if $filename==people5 {
+      $char: "\E02D";
+    }
+
+     @if $filename==people6 {
+      $char: "\E02E";
+    }
+
+     @if $filename==people7 {
+      $char: "\E02F";
+    }
+
+     @if $filename==poor {
+      $char: "\E030";
+    }
+
+     @if $filename==self-sustenance {
+      $char: "\E031";
+    }
+
+     @if $filename==shelter {
+      $char: "\E032";
+    }
+
+     @if $filename==shelter2 {
+      $char: "\E033";
+    }
+
+     @if $filename==shelter3 {
+      $char: "\E034";
+    }
+
+     @if $filename==skills {
+      $char: "\E035";
+    }
+
+     @if $filename==skills2 {
+      $char: "\E036";
+    }
+
+     @if $filename==skills3 {
+      $char: "\E037";
+    }
+
+     @if $filename==syringe {
+      $char: "\E038";
+    }
+
+     @if $filename==syringe2 {
+      $char: "\E039";
+    }
+
+     @if $filename==twitter {
+      $char: "\E03A";
+    }
+
+     @if $filename==volunteer {
+      $char: "\E03B";
+    }
+
+     @if $filename==volunteer2 {
+      $char: "\E03C";
+    }
+
+     @if $filename==volunteer3 {
+      $char: "\E03D";
+    }
+
+     @if $filename==volunteer4 {
+      $char: "\E03E";
+    }
+
+     @if $filename==welfare {
+      $char: "\E03F";
+    }
+
+     @if $filename==welfare2 {
+      $char: "\E040";
+    }
+
+     @if $filename==welfare3 {
+      $char: "\E041";
     }
 
     @return $char;
@@ -144,8 +320,8 @@
   }
 }
 
-.icon-Water-and-Sanitations {
-    @include icon(Water-and-Sanitations);
+.icon-apartment {
+    @include icon(apartment);
   }
 
   .icon-arrow-left {
@@ -156,16 +332,80 @@
     @include icon(arrow-right);
   }
 
-  .icon-beneficiaries {
-    @include icon(beneficiaries);
+  .icon-books {
+    @include icon(books);
+  }
+
+  .icon-community {
+    @include icon(community);
+  }
+
+  .icon-disaster {
+    @include icon(disaster);
+  }
+
+  .icon-disaster2 {
+    @include icon(disaster2);
+  }
+
+  .icon-disaster3 {
+    @include icon(disaster3);
+  }
+
+  .icon-disaster4 {
+    @include icon(disaster4);
+  }
+
+  .icon-drugs {
+    @include icon(drugs);
+  }
+
+  .icon-drugs2 {
+    @include icon(drugs2);
+  }
+
+  .icon-drugs3 {
+    @include icon(drugs3);
+  }
+
+  .icon-drugs4 {
+    @include icon(drugs4);
+  }
+
+  .icon-drugs5 {
+    @include icon(drugs5);
   }
 
   .icon-education {
     @include icon(education);
   }
 
+  .icon-education2 {
+    @include icon(education2);
+  }
+
+  .icon-education3 {
+    @include icon(education3);
+  }
+
   .icon-eye-test {
     @include icon(eye-test);
+  }
+
+  .icon-eyeglasses {
+    @include icon(eyeglasses);
+  }
+
+  .icon-eyeglasses2 {
+    @include icon(eyeglasses2);
+  }
+
+  .icon-eyeglasses3 {
+    @include icon(eyeglasses3);
+  }
+
+  .icon-eyeglasses4 {
+    @include icon(eyeglasses4);
   }
 
   .icon-facebook {
@@ -176,20 +416,48 @@
     @include icon(glasses);
   }
 
+  .icon-happy {
+    @include icon(happy);
+  }
+
   .icon-health {
     @include icon(health);
+  }
+
+  .icon-health2 {
+    @include icon(health2);
+  }
+
+  .icon-health3 {
+    @include icon(health3);
+  }
+
+  .icon-health4 {
+    @include icon(health4);
+  }
+
+  .icon-health5 {
+    @include icon(health5);
+  }
+
+  .icon-help {
+    @include icon(help);
+  }
+
+  .icon-help2 {
+    @include icon(help2);
   }
 
   .icon-homelessness {
     @include icon(homelessness);
   }
 
-  .icon-housing-and-shelter {
-    @include icon(housing-and-shelter);
+  .icon-housing {
+    @include icon(housing);
   }
 
-  .icon-improve-healthcare {
-    @include icon(improve-healthcare);
+  .icon-housing2 {
+    @include icon(housing2);
   }
 
   .icon-instagram {
@@ -204,28 +472,112 @@
     @include icon(medical);
   }
 
-  .icon-reduce-poverty {
-    @include icon(reduce-poverty);
+  .icon-partner {
+    @include icon(partner);
+  }
+
+  .icon-partner2 {
+    @include icon(partner2);
+  }
+
+  .icon-people {
+    @include icon(people);
+  }
+
+  .icon-people2 {
+    @include icon(people2);
+  }
+
+  .icon-people3 {
+    @include icon(people3);
+  }
+
+  .icon-people4 {
+    @include icon(people4);
+  }
+
+  .icon-people5 {
+    @include icon(people5);
+  }
+
+  .icon-people6 {
+    @include icon(people6);
+  }
+
+  .icon-people7 {
+    @include icon(people7);
+  }
+
+  .icon-poor {
+    @include icon(poor);
   }
 
   .icon-self-sustenance {
     @include icon(self-sustenance);
   }
 
-  .icon-skill {
-    @include icon(skill);
+  .icon-shelter {
+    @include icon(shelter);
+  }
+
+  .icon-shelter2 {
+    @include icon(shelter2);
+  }
+
+  .icon-shelter3 {
+    @include icon(shelter3);
+  }
+
+  .icon-skills {
+    @include icon(skills);
+  }
+
+  .icon-skills2 {
+    @include icon(skills2);
+  }
+
+  .icon-skills3 {
+    @include icon(skills3);
+  }
+
+  .icon-syringe {
+    @include icon(syringe);
+  }
+
+  .icon-syringe2 {
+    @include icon(syringe2);
   }
 
   .icon-twitter {
     @include icon(twitter);
   }
 
-  .icon-volunteers {
-    @include icon(volunteers);
+  .icon-volunteer {
+    @include icon(volunteer);
+  }
+
+  .icon-volunteer2 {
+    @include icon(volunteer2);
+  }
+
+  .icon-volunteer3 {
+    @include icon(volunteer3);
+  }
+
+  .icon-volunteer4 {
+    @include icon(volunteer4);
   }
 
   .icon-welfare {
     @include icon(welfare);
+  }
+
+  .icon-welfare2 {
+    @include icon(welfare2);
+  }
+
+  .icon-welfare3 {
+    @include icon(welfare3);
   }
 
   

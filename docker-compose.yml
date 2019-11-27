@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     image: webdevops/php-nginx:alpine-php7
-    restart: always
+    # restart: always
     # deploy:
     #   replicas: 1
     #   restart_policy: on-failure
@@ -18,7 +18,7 @@ services:
       - VIRTUAL_HOST=pagespeed.wittsandstratts.com
   database:
     image: postgres:10.5-alpine
-    restart: always
+    # restart: always
     # deploy:
     #   replicas: 1
     #   restart_policy: on-failure
